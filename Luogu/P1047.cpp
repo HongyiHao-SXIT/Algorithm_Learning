@@ -1,33 +1,30 @@
-#include<cstdio>
-#include<iostream>
+#include <iostream>
+#include <vector>
+
 using namespace std;
-#include<cstring>
 
-int L,M;
+int main() {
+    int l, m;
+    cin >> l >> m;
 
-int cnt=0;
+    vector<bool> removed(l + 1, false);
 
-int vis[10000+10];
-
-int main()
-{
-    memset(vis,0,sizeof(vis));
-    cin>>L>>M;
-    for(int i=0;i<=L;i++)
-        vis[i]=0;
-    for(int i=1;i<=M;i++)
-    {
-        int head,tail;
-        cin>>head>>tail;
-        for(int j=head;j<=tail;j++)
-            if(vis[j]==0)
-                vis[j]=1;
+    for (int i = 0; i < m; ++i) {
+        int u, v;
+        cin >> u >> v;
+        for (int j = u; j <= v; ++j) {
+            removed[j] = true;
+        }
     }
-    for(int i=0;i<=L;i++)
-    {
-        if(vis[i]==0)
-            cnt++;
+
+    int remaining = 0;
+    for (int i = 0; i <= l; ++i) {
+        if (!removed[i]) {
+            ++remaining;
+        }
     }
-    cout<<cnt<<endl;
+
+    cout << remaining << endl;
+
     return 0;
 }
