@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Student_Management.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Student_Management.dir\\src\\UserInterface.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Student_Management\\src\\UserInterface.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Student_Management/src/UserInterface.cpp",
+  "output": "CMakeFiles/Student_Management.dir/src/UserInterface.cpp.obj"
+},
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Student_Management.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Student_Management.dir\\src\\main.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Student_Management\\src\\main.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Student_Management/src/main.cpp",
+  "output": "CMakeFiles/Student_Management.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Student_Management.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Student_Management.dir\\src\\menu.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Student_Management\\src\\menu.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Student_Management/src/menu.cpp",
+  "output": "CMakeFiles/Student_Management.dir/src/menu.cpp.obj"
+},
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Student_Management.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Student_Management.dir\\src\\student.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Student_Management\\src\\student.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Student_Management/src/student.cpp",
+  "output": "CMakeFiles/Student_Management.dir/src/student.cpp.obj"
+},
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Student_Management.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\Student_Management.dir\\src\\student_management_system.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Student_Management\\src\\student_management_system.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Student_Management/src/student_management_system.cpp",
+  "output": "CMakeFiles/Student_Management.dir/src/student_management_system.cpp.obj"
+}
+]
