@@ -18,7 +18,7 @@ private:
         auto duration = std::chrono::duration_cast<std::chrono::seconds>(
             now - last_achievement_time);
         
-        if (duration.count() >= 31536000) { // 365天
+        if (duration.count() >= 31536000) {
             reputation = 0;
         }
     }
@@ -75,13 +75,12 @@ public:
 int main() {
     WolfReputation wolf;
     
-    // 测试用例
-    wolf.addQualification(ProfessionalLevel::Advanced); // +3
-    wolf.addEducation(EducationLevel::Master);         // +20
-    wolf.addCompetition(CompetitionLevel::National);    // +50
-    wolf.addAchievement(AchievementType::SoftwareCopyright); // +40
+    wolf.addQualification(ProfessionalLevel::Advanced);
+    wolf.addEducation(EducationLevel::Master);
+    wolf.addCompetition(CompetitionLevel::National);
+    wolf.addAchievement(AchievementType::SoftwareCopyright);
     
-    std::cout << "当前声望: " << wolf.getReputation() << std::endl; // 应输出113
+    std::cout << "当前声望: " << wolf.getReputation() << std::endl;
     
     return 0;
 }
