@@ -1,146 +1,146 @@
 #include <iostream>
-#include <cstring>
-#include <cstdlib>
-#define MAX 100
+#include <vector>
+#include <string>
+#include <climits>
+#include <memory>
 using namespace std;
 
-typedef struct {
-    int weigth;
+const int MAX_NODES = 100;
+
+struct HuffmanNode {
+    int weight;
     int parent;
-    int rchild;
-    int lchild;
-} HTNode, *HuffmanTree;
+    int left_child;
+    int right_child;
+};
 
-static char N[MAX];
+struct MinPair {
+    int first;
+    int second;
+};
 
-typedef char **HuffmanCode;
+class HuffmanEncoder {
+private:
+    vector<HuffmanNode> tree;
+    vector<string> codes;
+    string input_string;
+    vector<int> weights;
 
-typedef struct {
-    int s1;
-    int s2;
-} MinCode;
+    MinPair findTwoSmallestNodes(int range) {
+        MinPair result = {-1, -1};
+        int min1 = INT_MAX, min2 = INT_MAX;
 
-MinCode Select(HuffmanTree HT, int n);
-
-HuffmanCode HuffmanCoding(HuffmanTree HT, HuffmanCode HC, int *w, int n) {
-    int i, s1 = 0, s2 = 0;
-    HuffmanTree p;
-    char *cd;
-    int f, c, start, m;
-    MinCode min;
-
-    m = 2 * n - 1;
-
-    HT = (HuffmanTree)malloc((m + 1) * sizeof(HTNode));
-
-    for (p = HT, i = 0; i <= n; i++, p++, w++) {
-        p->weigth = *w;
-        p->parent = 0;
-        p->rchild = 0;
-        p->lchild = 0;
+        for (int i = 1; i <= range; ++i) {
+            if (tree[i].parent == 0) {
+                if (tree[i].weight < min1) {
+                    min2 = min1;
+                    result.second = result.first;
+                    min1 = tree[i].weight;
+                    result.first = i;
+                } else if (tree[i].weight < min2) {
+                    min2 = tree[i].weight;
+                    result.second = i;
+                }
+            }
+        }
+        return result;
     }
 
-    for (; i <= m; i++, p++) {
-        p->weigth = 0;
-        p->parent = 0;
-        p->lchild = 0;
-        p->rchild = 0;
-    }
+public:
+    void encode(const string& str, const vector<int>& w) {
+        input_string = str;
+        weights = w;
+        const int n = input_string.size();
+        const int total_nodes = 2 * n - 1;
 
-    for (i = n + 1; i <= m; i++) {
-        min = Select(HT, i - 1);
-        s1 = min.s1;
-        s2 = min.s2;
+        // Initialize Huffman tree
+        tree.resize(total_nodes + 1);
 
-        HT[s1].parent = i;
-        HT[s2].parent = i;
-        HT[i].lchild = s1;
-        HT[i].rchild = s2;
-        HT[i].weigth = HT[s1].weigth + HT[s2].weigth; // Merge weights
-    }
-
-    cout << "Huffman Tree List:" << endl;
-    cout << "Serial Number\tWeight\tParent Node\tLeft Child\tRight Child" << endl;
-    for (i = 1; i <= m; i++)
-        printf("%d\t%d\t%d\t%d\t%d\n", i, HT[i].weigth, HT[i].parent, HT[i].lchild, HT[i].rchild);
-
-    HC = (HuffmanCode)malloc((n + 1) * sizeof(char *));
-    cd = (char *)malloc(n * sizeof(char));
-    cd[n - 1] = '\0';
-
-    for (i = 1; i <= n; i++) {
-        start = n - 1;
-
-        for (c = i, f = HT[i].parent; f != 0; c = f, f = HT[f].parent) {
-            if (HT[f].lchild == c)
-                cd[--start] = '0';
-            else
-                cd[--start] = '1';
+        // Set leaf nodes
+        for (int i = 1; i <= n; ++i) {
+            tree[i] = {weights[i-1], 0, 0, 0};
         }
 
-        HC[i] = (char *)malloc((n - start) * sizeof(char));
-        strcpy(HC[i], &cd[start]);
-    }
-    free(cd);
-    return HC;
-}
+        // Build the Huffman tree
+        for (int i = n + 1; i <= total_nodes; ++i) {
+            auto [s1, s2] = findTwoSmallestNodes(i - 1);
+            tree[s1].parent = i;
+            tree[s2].parent = i;
+            tree[i] = {
+                tree[s1].weight + tree[s2].weight,
+                0, s1, s2
+            };
+        }
 
-// Function to select the two smallest nodes
-MinCode Select(HuffmanTree HT, int n) {
-    int min, secmin;
-    int i, s1, s2;
-    MinCode code;
-    s1 = 1;
-    s2 = 1;
-    min = 0x3f3f3f3f;
-    for (i = 1; i <= n; i++) {
-        if (HT[i].weigth < min && HT[i].parent == 0) {
-            min = HT[i].weigth;
-            s1 = i;
+        // Generate Huffman codes
+        codes.resize(n + 1);
+        string temp_code(n, ' ');
+
+        for (int i = 1; i <= n; ++i) {
+            int current = i;
+            int parent = tree[current].parent;
+            int code_pos = n - 1;
+
+            while (parent != 0) {
+                if (tree[parent].left_child == current) {
+                    temp_code[code_pos--] = '0';
+                } else {
+                    temp_code[code_pos--] = '1';
+                }
+                current = parent;
+                parent = tree[current].parent;
+            }
+
+            codes[i] = temp_code.substr(code_pos + 1);
         }
     }
-    secmin = 0x3f3f3f3f;
-    for (i = 1; i <= n; i++) {
-        if ((HT[i].weigth < secmin) && (i != s1) && HT[i].parent == 0) {
-            secmin = HT[i].weigth;
-            s2 = i;
+
+    void displayTree() const {
+        cout << "Huffman Tree Structure:\n";
+        cout << "Index\tWeight\tParent\tLeft\tRight\n";
+        for (size_t i = 1; i < tree.size(); ++i) {
+            cout << i << "\t" << tree[i].weight << "\t"
+                 << tree[i].parent << "\t"
+                 << tree[i].left_child << "\t"
+                 << tree[i].right_child << "\n";
         }
     }
-    code.s1 = s1;
-    code.s2 = s2;
-    return code;
-}
+
+    void displayCodes() const {
+        cout << "\nHuffman Codes:\n";
+        cout << "Char\tWeight\tCode\n";
+        for (size_t i = 1; i <= input_string.size(); ++i) {
+            cout << input_string[i-1] << "\t"
+                 << weights[i-1] << "\t"
+                 << codes[i] << "\n";
+        }
+
+        cout << "\nCompact Code Representation:\n";
+        for (size_t i = 1; i <= input_string.size(); ++i) {
+            cout << codes[i] << " ";
+        }
+        cout << endl;
+    }
+};
 
 int main() {
-    HuffmanTree HT = NULL;
-    HuffmanCode HC = NULL;
-    int *w = NULL;
-    int i, n;
+    HuffmanEncoder encoder;
+    string input;
+    vector<int> weights;
 
-    cout << "Please enter the string to be encoded: ";
-    cin.getline(N, MAX);
-    n = strlen(N);
-    w = (int *)malloc((n + 1) * sizeof(int));
-    w[0] = 0;
+    cout << "Enter the string to encode: ";
+    getline(cin, input);
 
-    cout << "Please enter the weights in sequence:" << endl;
-    for (i = 1; i <= n; i++) {
-        printf("w[%d]=", i);
-        cin >> w[i];
+    weights.resize(input.size());
+    cout << "Enter the weights for each character:\n";
+    for (size_t i = 0; i < input.size(); ++i) {
+        cout << input[i] << ": ";
+        cin >> weights[i];
     }
 
-    HC = HuffmanCoding(HT, HC, w, n);
-
-    cout << "Huffman Codes:" << endl;
-    cout << "Character\tWeight\tCode" << endl;
-    for (i = 1; i <= n; i++)
-        cout << N[i - 1] << "\t" << w[i] << "\t" << HC[i] << endl;
-
-    cout << "Huffman Codes (only codes):" << endl;
-    for (i = 1; i <= n; i++)
-        printf("%s\t", HC[i]);
-    cout << endl;
+    encoder.encode(input, weights);
+    encoder.displayTree();
+    encoder.displayCodes();
 
     return 0;
 }
-    

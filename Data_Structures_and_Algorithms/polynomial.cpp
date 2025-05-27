@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdbool.h>
 
 typedef struct polynomial {
     int coef;
@@ -14,42 +14,32 @@ bool insert(Link head, int coef, int exp);
 void combin2List(Link heada, Link headb, Link headab);
 
 int main() {
-    Link headA, headB;
-    Link headAB;
+    Link headA = (Link)malloc(sizeof(Node));
+    Link headB = (Link)malloc(sizeof(Node));
+    Link headAB = (Link)malloc(sizeof(Node));
 
-    headA = (Link)malloc(sizeof(Node));
-    if (headA == NULL) {
+    if (!headA || !headB || !headAB) {
         printf("Memory allocation failed!\n");
+        free(headA); free(headB); free(headAB);
         return 1;
     }
+
     headA->next = NULL;
-    headB = (Link)malloc(sizeof(Node));
-    if (headB == NULL) {
-        printf("Memory allocation failed!\n");
-        free(headA);
-        return 1;
-    }
     headB->next = NULL;
-    headAB = (Link)malloc(sizeof(Node));
-    if (headAB == NULL) {
-        printf("Memory allocation failed!\n");
-        free(headA);
-        free(headB);
-        return 1;
-    }
     headAB->next = NULL;
 
-    printf("Please enter the coefficients and exponents of the first polynomial, ending with (0 0):\n");
+    printf("Enter the coefficients and exponents of the first polynomial, ending with (0 0):\n");
     inputPoly(headA);
-    printf("The first ");
+    printf("First ");
     print(headA);
-    printf("Please enter the coefficients and exponents of the second polynomial, ending with (0 0):\n");
+
+    printf("Enter the coefficients and exponents of the second polynomial, ending with (0 0):\n");
     inputPoly(headB);
-    printf("The second ");
+    printf("Second ");
     print(headB);
 
     combin2List(headA, headB, headAB);
-    printf("After merging ");
+    printf("Merged ");
     print(headAB);
 
     Link temp;
@@ -74,117 +64,108 @@ int main() {
 
 void inputPoly(Link head) {
     int coef, exp;
-    printf("Please enter the coefficient and exponent (e.g., \"2 3\" represents 2x^3): ");
-    scanf("%d %d", &coef, &exp);
-    while (coef != 0 || exp != 0) {
-        insert(head, coef, exp);
-        printf("Please enter the coefficient and exponent: ");
+    while (true) {
+        printf("Enter coefficient and exponent (e.g., 2 3 means 2x^3): ");
         scanf("%d %d", &coef, &exp);
+        if (coef == 0 && exp == 0)
+            break;
+        if (!insert(head, coef, exp)) {
+            printf("Insertion failed, out of memory!\n");
+            break;
+        }
     }
 }
 
 bool insert(Link head, int coef, int exp) {
-    Link node;
-    Link q, p;
-    q = head;
-    p = head->next;
-    node = (Link)malloc(sizeof(Node));
-    if (node == NULL) {
-        printf("Memory allocation failed!\n");
-        return false;
-    }
-    node->coef = coef;
-    node->exp = exp;
+    if (coef == 0) return true;
 
-    if (head->next == NULL) {
-        head->next = node;
-        node->next = NULL;
-    } else {
-        while (p != NULL) {
-            if (node->exp > p->exp) {
-                node->next = p;
-                q->next = node;
-                return true;
-            } else if (node->exp == p->exp) {
-                p->coef += node->coef;
-                free(node);
-                return true;
-            } else {
-                q = p;
-                p = p->next;
-            }
-        }
-        q->next = node;
-        node->next = NULL;
+    Link prev = head;
+    Link curr = head->next;
+
+    while (curr != NULL && curr->exp > exp) {
+        prev = curr;
+        curr = curr->next;
     }
+
+    if (curr != NULL && curr->exp == exp) {
+        curr->coef += coef;
+        if (curr->coef == 0) {
+            prev->next = curr->next;
+            free(curr);
+        }
+        return true;
+    }
+
+    Link newNode = (Link)malloc(sizeof(Node));
+    if (!newNode) return false;
+    newNode->coef = coef;
+    newNode->exp = exp;
+    newNode->next = curr;
+    prev->next = newNode;
     return true;
 }
 
 void print(Link head) {
-    Link p;
-    printf("The polynomial is as follows:\n");
-    p = head->next;
+    Link p = head->next;
 
-    if (p == NULL) {
-        printf("The polynomial is empty\n");
+    printf("Polynomial:\n");
+
+    if (!p) {
+        printf("0\n");
         return;
     }
 
-    bool isFirstItem = true;
-    while (p != NULL) {
-        if (!isFirstItem && p->coef > 0) {
+    bool isFirst = true;
+    while (p) {
+        if (!isFirst && p->coef > 0) {
             printf("+");
         }
-        if (p->coef != 1 && p->coef != -1) {
+
+        if (p->exp == 0) {
             printf("%d", p->coef);
-        } else if (p->coef == -1) {
-            printf("-");
-        }
-        if (p->exp == 1) {
-            printf("x");
-        } else if (p->exp > 1) {
-            printf("x^%d", p->exp);
-        } else if (p->exp == 0) {
-            if (p->coef == 1 || p->coef == -1) {
-                printf("1");
-            } else {
+        } else {
+            if (p->coef == -1)
+                printf("-");
+            else if (p->coef != 1)
                 printf("%d", p->coef);
-            }
+
+            printf("x");
+            if (p->exp != 1)
+                printf("^%d", p->exp);
         }
+
+        isFirst = false;
         p = p->next;
-        isFirstItem = false;
     }
     printf("\n");
 }
 
 void combin2List(Link heada, Link headb, Link headab) {
-    Link pa, pb, pab;
-    pa = heada->next;
-    pb = headb->next;
-    pab = headab;
+    Link pa = heada->next;
+    Link pb = headb->next;
 
-    while (pa != NULL && pb != NULL) {
+    while (pa && pb) {
         if (pa->exp > pb->exp) {
-            insert(pab, pa->coef, pa->exp);
+            insert(headab, pa->coef, pa->exp);
             pa = pa->next;
         } else if (pa->exp < pb->exp) {
-            insert(pab, pb->coef, pb->exp);
+            insert(headab, pb->coef, pb->exp);
             pb = pb->next;
-        } else if (pa->exp == pb->exp) {
-            int newCoef = pa->coef + pb->coef;
-            if (newCoef != 0) {
-                insert(pab, newCoef, pa->exp);
-            }
+        } else {
+            int sum = pa->coef + pb->coef;
+            if (sum != 0)
+                insert(headab, sum, pa->exp);
             pa = pa->next;
             pb = pb->next;
         }
     }
-    while (pa != NULL) {
-        insert(pab, pa->coef, pa->exp);
+
+    while (pa) {
+        insert(headab, pa->coef, pa->exp);
         pa = pa->next;
     }
-    while (pb != NULL) {
-        insert(pab, pb->coef, pb->exp);
+    while (pb) {
+        insert(headab, pb->coef, pb->exp);
         pb = pb->next;
     }
-}    
+}
