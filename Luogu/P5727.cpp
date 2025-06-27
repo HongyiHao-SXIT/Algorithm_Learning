@@ -1,9 +1,8 @@
 #include <iostream>
 using namespace std;
 
-
 void hail(int num) {
-    int arr[1000]; 
+    int arr[1000];
     int time = 0;
     arr[time] = num;
     time++;

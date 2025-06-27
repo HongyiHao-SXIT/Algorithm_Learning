@@ -20,7 +20,6 @@ public:
         return comment;
     }
 
-    // 累加好感度
     void setComment(double comment) {
         this->comment += comment;
     }

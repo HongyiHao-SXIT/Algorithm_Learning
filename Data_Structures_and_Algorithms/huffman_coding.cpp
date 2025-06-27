@@ -53,15 +53,12 @@ public:
         const int n = input_string.size();
         const int total_nodes = 2 * n - 1;
 
-        // Initialize Huffman tree
         tree.resize(total_nodes + 1);
 
-        // Set leaf nodes
         for (int i = 1; i <= n; ++i) {
             tree[i] = {weights[i-1], 0, 0, 0};
         }
 
-        // Build the Huffman tree
         for (int i = n + 1; i <= total_nodes; ++i) {
             auto [s1, s2] = findTwoSmallestNodes(i - 1);
             tree[s1].parent = i;
@@ -72,7 +69,6 @@ public:
             };
         }
 
-        // Generate Huffman codes
         codes.resize(n + 1);
         string temp_code(n, ' ');
 

@@ -1,25 +1,40 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
+struct Candidate {
+    int id;
+    string votes;
+};
+
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n;
     cin >> n;
 
-    string max_votes = "";
-    int winner = 0;
-
-    for (int i = 1; i <= n; ++i) {
-        string votes;
-        cin >> votes;
-        if (votes.length() > max_votes.length() || (votes.length() == max_votes.length() && votes > max_votes)) {
-            max_votes = votes;
-            winner = i;
-        }
+    vector<Candidate> candidates(n);
+    
+    for (int i = 0; i < n; ++i) {
+        candidates[i].id = i + 1;
+        cin >> candidates[i].votes;
     }
 
-    cout << winner << endl;
-    cout << max_votes << endl;
+    auto compare = [](const Candidate& a, const Candidate& b) {
+        if (a.votes.length() != b.votes.length()) {
+            return a.votes.length() > b.votes.length();
+        }
+        return a.votes > b.votes;
+    };
+
+    sort(candidates.begin(), candidates.end(), compare);
+
+    cout << candidates[0].id << '\n';
+    cout << candidates[0].votes << endl;
 
     return 0;
 }

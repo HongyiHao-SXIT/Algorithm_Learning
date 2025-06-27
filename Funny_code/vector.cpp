@@ -1,13 +1,18 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
+#include <string>
+
 using namespace std;
-int main()
-{
-    vector<string> v1;
-    v1.push_back("nhooo");
-    v1.push_back(".com");
-    for(vector<string>::iterator itr=v1.begin();itr!=v1.end();++itr){
-        cout<<*itr;
+
+int main() {
+    vector<string> websites;
+    
+    websites.push_back("nhooo");
+    websites.push_back(".com");
+    
+    for (vector<string>::iterator it = websites.begin(); it != websites.end(); ++it) {
+        cout << *it;
     }
-    return 0; 
+    
+    return 0;
 }

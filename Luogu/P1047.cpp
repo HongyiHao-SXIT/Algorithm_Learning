@@ -1,26 +1,34 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int l, m;
     cin >> l >> m;
 
-    vector<bool> removed(l + 1, false);
-
-    for (int i = 0; i < m; ++i) {
-        int u, v;
-        cin >> u >> v;
-        for (int j = u; j <= v; ++j) {
-            removed[j] = true;
-        }
+    vector<pair<int, int>> intervals(m);
+    for (auto& interval : intervals) {
+        cin >> interval.first >> interval.second;
     }
 
-    int remaining = 0;
-    for (int i = 0; i <= l; ++i) {
-        if (!removed[i]) {
-            ++remaining;
+    // Sort intervals by start point
+    sort(intervals.begin(), intervals.end());
+
+    int remaining = l + 1;
+    int last = -1;
+
+    for (const auto& [u, v] : intervals) {
+        if (u > last) {
+            remaining -= (v - u + 1);
+            last = v;
+        } else if (v > last) {
+            remaining -= (v - last);
+            last = v;
         }
     }
 

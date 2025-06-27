@@ -1,57 +1,51 @@
 #include <iostream>
+#include <vector>
+
 using namespace std;
 
-const int MAX_W = 200;
-const int MAX_X = 200;
-const int MAX_H = 200;
+struct Cube {
+    int w, x, h;
+    vector<vector<vector<int>>> data;
 
+    Cube(int w, int x, int h) : w(w), x(x), h(h), 
+        data(w + 1, vector<vector<int>>(x + 1, vector<int>(h + 1, 1))) {}
 
-int cube[MAX_W + 1][MAX_X + 1][MAX_H + 1];
+    void remove_block(int x1, int y1, int z1, int x2, int y2, int z2) {
+        for (int i = x1; i <= x2; ++i)
+            for (int j = y1; j <= y2; ++j)
+                for (int k = z1; k <= z2; ++k)
+                    data[i][j][k] = 0;
+    }
+
+    int count_remaining() const {
+        int count = 0;
+        for (const auto& plane : data)
+            for (const auto& row : plane)
+                for (int val : row)
+                    count += val;
+        return count;
+    }
+};
 
 int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int w, x, h;
     cin >> w >> x >> h;
 
-
-    for (int i = 1; i <= w; i++) {
-        for (int j = 1; j <= x; j++) {
-            for (int k = 1; k <= h; k++) {
-                cube[i][j][k] = 1;
-            }
-        }
-    }
+    Cube cube(w, x, h);
 
     int q;
     cin >> q;
 
-
-    for (int t = 0; t < q; t++) {
+    while (q--) {
         int x1, y1, z1, x2, y2, z2;
         cin >> x1 >> y1 >> z1 >> x2 >> y2 >> z2;
-
-
-        for (int i = x1; i <= x2; i++) {
-            for (int j = y1; j <= y2; j++) {
-                for (int k = z1; k <= z2; k++) {
-                    cube[i][j][k] = 0;
-                }
-            }
-        }
+        cube.remove_block(x1, y1, z1, x2, y2, z2);
     }
 
-
-    int remaining = 0;
-    for (int i = 1; i <= w; i++) {
-        for (int j = 1; j <= x; j++) {
-            for (int k = 1; k <= h; k++) {
-                if (cube[i][j][k] == 1) {
-                    remaining++;
-                }
-            }
-        }
-    }
-
-    cout << remaining << endl;
+    cout << cube.count_remaining() << '\n';
 
     return 0;
 }

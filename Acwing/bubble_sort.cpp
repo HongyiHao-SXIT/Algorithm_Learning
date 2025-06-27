@@ -1,41 +1,44 @@
 #include <iostream>
 #include <vector>
+#include <utility> // For std::swap
 
 void bubbleSort(std::vector<int>& arr) {
-    int n = arr.size();
-    for (int i = 0; i < n - 1; i++) {
-        bool swapped = false;
-        for (int j = 0; j < n - i - 1; j++) {
+    bool swapped;
+    const size_t n = arr.size();
+    
+    for (size_t i = 0; i < n - 1; ++i) {
+        swapped = false;
+        
+        for (size_t j = 0; j < n - i - 1; ++j) {
             if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                std::swap(arr[j], arr[j + 1]);
                 swapped = true;
             }
         }
+        
         if (!swapped) {
             break;
         }
     }
 }
 
-void printArray(const std::vector<int>& arr) {
-    for (int num : arr) {
-        std::cout << num << " ";
+void printVector(const std::vector<int>& vec) {
+    for (const auto& num : vec) {
+        std::cout << num << ' ';
     }
-    std::cout << std::endl;
+    std::cout << '\n';
 }
 
 int main() {
-    std::vector<int> arr = {64, 34, 25, 12, 22, 11, 90};
-
-    std::cout << "排序前的数组: ";
-    printArray(arr);
-
-    bubbleSort(arr);
-
-    std::cout << "排序后的数组: ";
-    printArray(arr);
-
+    std::vector<int> data = {64, 34, 25, 12, 22, 11, 90};
+    
+    std::cout << "Original array: ";
+    printVector(data);
+    
+    bubbleSort(data);
+    
+    std::cout << "Sorted array: ";
+    printVector(data);
+    
     return 0;
-}    
+}
