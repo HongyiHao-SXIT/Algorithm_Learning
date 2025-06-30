@@ -6,22 +6,27 @@ using namespace std;
 const int N = 1'000'010;
 int q[N];
 
-void quick_sort(int q[], int l, int r) {
+void quick_sort(int q[], int l, int r) 
+{
     if (l >= r) return;
 
     int i = l - 1, j = r + 1;
     int pivot = q[(l + r) / 2];
 
-    while (i < j) {
-        do { 
+    while (i < j) 
+    {
+        do 
+        { 
             i++; 
         } while (q[i] < pivot);
 
-        do { 
+        do 
+        { 
             j--; 
         } while (q[j] > pivot);
 
-        if (i < j) {
+        if (i < j) 
+        {
             swap(q[i], q[j]);
         }
     }
@@ -30,17 +35,20 @@ void quick_sort(int q[], int l, int r) {
     quick_sort(q, j + 1, r);
 }
 
-int main() {
+int main() 
+{
     int n;
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         scanf("%d", &q[i]);
     }
 
     quick_sort(q, 0, n - 1);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         printf("%d ", q[i]);
     }
     putchar('\n');

@@ -1,70 +1,85 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct Node {
+typedef struct Node 
+{
     int data;
     struct Node* next;
 } Node;
 
-Node* create_node(int data) {
+Node* create_node(int data) 
+{
     Node* new_node = (Node*)malloc(sizeof(Node));
     new_node->data = data;
     new_node->next = NULL;
     return new_node;
 }
 
-void insert_tail(Node** head, int data) {
+void insert_tail(Node** head, int data) 
+{
     Node* new_node = create_node(data);
-    if (*head == NULL) {
+    if (*head == NULL) 
+    {
         *head = new_node;
         return;
     }
     Node* temp = *head;
-    while (temp->next != NULL) {
+    while (temp->next != NULL) 
+    {
         temp = temp->next;
     }
     temp->next = new_node;
 }
 
-void print_list(Node* head) {
+void print_list(Node* head) 
+{
     Node* temp = head;
-    while (temp != NULL) {
+    while (temp != NULL) 
+    {
         printf("%d -> ", temp->data);
         temp = temp->next;
     }
     printf("NULL\n");
 }
 
-void delete_node(Node** head, int target) {
+void delete_node(Node** head, int target) 
+{
     Node* temp = *head;
     Node* prev = NULL;
 
-    while (temp != NULL && temp->data != target) {
+    while (temp != NULL && temp->data != target) 
+    {
         prev = temp;
         temp = temp->next;
     }
 
     if (temp == NULL) return;
 
-    if (prev == NULL) {
+    if (prev == NULL) 
+    {
         *head = temp->next;
-    } else {
+    } 
+    else 
+    {
         prev->next = temp->next;
     }
 
     free(temp);
 }
 
-void free_list(Node* head) {
+void free_list(Node* head) 
+{
     Node* temp;
-    while (head != NULL) {
+    while (head != NULL) 
+    {
         temp = head;
         head = head->next;
         free(temp);
     }
 }
 
-int main() {
+int main() 
+{
     Node* head = NULL;
 
     insert_tail(&head, 10);
@@ -72,12 +87,12 @@ int main() {
     insert_tail(&head, 30);
     insert_tail(&head, 40);
 
-    printf("链表内容: ");
+    printf("Linked list: ");
     print_list(head);
 
     delete_node(&head, 20);
 
-    printf("删除 20 后: ");
+    printf("After deleting 20: ");
     print_list(head);
 
     free_list(head);

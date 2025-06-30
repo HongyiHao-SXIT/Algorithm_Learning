@@ -16,7 +16,6 @@ int main() {
         cin >> interval.first >> interval.second;
     }
 
-    // Sort intervals by start point
     sort(intervals.begin(), intervals.end());
 
     int remaining = l + 1;

@@ -3,59 +3,17 @@ using namespace std;
 
 class Student {
 public:
-    friend void Input(Student stu[]);
-    friend void Statistic(Student stu[]);
-    friend void Lookup(Student stu[]);
-    friend void Modify(Student stu[]);
-    friend void Delete(Student stu[]);
-    friend void Output(Student stu[]);
-    friend void Insert(Student stu[]);
-    friend void Sort(Student stu[]);
-    friend void Write(Student stu[], int n);
-    friend int Read(Student stu[]);
-
-private:
+    string className;
     int id;
-    char name[20];
-    char className[20];
-    float elec, cpp, english, math, media, sport, politics;
+    string name;
+    map<string, float> scores;
     float average;
-    int rank;
-} stu[100];
 
-void Write(Student stu[], int n) {
-    ofstream file("score.txt");
-    if (!file) {
-        cout << "Error: Cannot open score.txt for writing!" << endl;
-        exit(1);
-    }
-    file << n << endl;
-    for (int i = 0; i < n; i++) {
-        file << stu[i].className << "\t" << stu[i].id << "\t" << stu[i].name << "\t"
-             << stu[i].elec << "\t" << stu[i].cpp << "\t" << stu[i].media << "\t"
-             << stu[i].english << "\t" << stu[i].math << "\t" << stu[i].sport << "\t"
-             << stu[i].politics << "\t" << stu[i].average << endl;
-    }
-    file.close();
-}
+    Student() = default;
+};
 
-int Read(Student stu[]) {
-    ifstream file("score.txt");
-    if (!file) {
-        cout << "Error: Cannot open score.txt for reading!" << endl;
-        exit(1);
-    }
-    int count;
-    file >> count;
-    for (int i = 0; i < count; i++) {
-        file >> stu[i].className >> stu[i].id >> stu[i].name
-             >> stu[i].elec >> stu[i].cpp >> stu[i].media
-             >> stu[i].english >> stu[i].math >> stu[i].sport
-             >> stu[i].politics >> stu[i].average;
-    }
-    file.close();
-    return count;
-}
+vector<Student> stuList;
+set<string> globalCourseNames;
 
 float InputScore(const string& subject) {
     float score;
@@ -63,166 +21,170 @@ float InputScore(const string& subject) {
         cout << "Enter score for " << subject << " (1-100): ";
         cin >> score;
         if (score >= 1 && score <= 100) break;
-        cout << "Invalid input. Please enter a score between 1 and 100." << endl;
+        cout << "Invalid input. Please enter a score between 1 and 100.\n";
     }
     return score;
 }
 
-void Input(Student stu[]) {
+void Input(vector<Student>& students) {
     system("cls");
-    int i = 0;
     char cont = 'y';
-    cout << "\n======>> Enter Student Records <<======\n";
-    while (tolower(cont) == 'y') {
-        cout << "Enter Class Name: ";
-        cin >> stu[i].className;
 
-        while (true) {
-            bool duplicate = false;
-            cout << "Enter Student ID: ";
-            cin >> stu[i].id;
-            for (int j = 0; j < i; j++) {
-                if (stu[i].id == stu[j].id) {
-                    cout << "This ID already exists. Please enter a unique ID." << endl;
-                    duplicate = true;
-                    break;
-                }
-            }
-            if (!duplicate) break;
-        }
+    while (tolower(cont) == 'y') {
+        Student s;
+
+        cout << "Enter Class Name: ";
+        cin >> s.className;
+
+        cout << "Enter Student ID: ";
+        cin >> s.id;
 
         cout << "Enter Student Name: ";
-        cin >> stu[i].name;
+        cin >> s.name;
 
-        stu[i].elec = InputScore("Electronics");
-        stu[i].cpp = InputScore("C++ Programming");
-        stu[i].media = InputScore("Multimedia Technology");
-        stu[i].english = InputScore("College English");
-        stu[i].math = InputScore("Advanced Mathematics");
-        stu[i].sport = InputScore("Physical Education");
-        stu[i].politics = InputScore("Political Science");
+        int courseCount;
+        cout << "Enter number of courses: ";
+        cin >> courseCount;
 
-        stu[i].average = (stu[i].elec + stu[i].cpp + stu[i].media +
-                          stu[i].english + stu[i].math + stu[i].sport + stu[i].politics) / 7;
+        float sum = 0;
+        for (int i = 0; i < courseCount; i++) {
+            string course;
+            float score;
 
-        cout << "Average Score: " << stu[i].average << endl;
+            cout << "Enter course name: ";
+            cin >> course;
+            globalCourseNames.insert(course);
+
+            score = InputScore(course);
+            s.scores[course] = score;
+            sum += score;
+        }
+
+        s.average = (courseCount > 0) ? sum / courseCount : 0;
+        students.push_back(s);
 
         cout << "Continue entering? (y/n): ";
         cin >> cont;
-        i++;
     }
-    Write(stu, i);
 }
 
-void Statistic(Student stu[]) {
-    system("cls");
-    int n = Read(stu);
-    cout << "\n======>> Student Statistics <<======\n";
-    cout << "-------------------------------------------------\n";
-    cout << "Class\tID\tName\tAverage Score\n";
-    cout << "-------------------------------------------------\n";
-    for (int i = 0; i < n; i++) {
-        cout << stu[i].className << "\t" << stu[i].id << "\t" << stu[i].name << "\t" << stu[i].average << endl;
+void Write(const vector<Student>& students) {
+    ofstream file("score.txt");
+    if (!file) {
+        cout << "Error: Cannot open file for writing.\n";
+        return;
     }
-    cout << "-------------------------------------------------\n";
-    system("pause");
-}
 
-void Lookup(Student stu[]) {
-    system("cls");
-    int n = Read(stu);
-    int targetId;
-    cout << "\n======>> Lookup Student Record <<======\n";
-    cout << "Enter Student ID to search: ";
-    cin >> targetId;
+    file << globalCourseNames.size() << "\n";
+    for (const string& course : globalCourseNames) {
+        file << course << " ";
+    }
+    file << "\n";
 
-    bool found = false;
-    for (int i = 0; i < n; i++) {
-        if (stu[i].id == targetId) {
-            found = true;
-            cout << "--------------------------------------\n";
-            cout << "Class: " << stu[i].className << endl;
-            cout << "ID: " << stu[i].id << endl;
-            cout << "Name: " << stu[i].name << endl;
-            cout << "Electronics: " << stu[i].elec << endl;
-            cout << "C++ Programming: " << stu[i].cpp << endl;
-            cout << "Multimedia: " << stu[i].media << endl;
-            cout << "College English: " << stu[i].english << endl;
-            cout << "Advanced Math: " << stu[i].math << endl;
-            cout << "Physical Education: " << stu[i].sport << endl;
-            cout << "Political Science: " << stu[i].politics << endl;
-            cout << "Average Score: " << stu[i].average << endl;
-            cout << "--------------------------------------\n";
-            break;
+    file << students.size() << "\n";
+    for (const auto& s : students) {
+        file << s.className << " " << s.id << " " << s.name << " " << s.average << "\n";
+        for (const string& course : globalCourseNames) {
+            if (s.scores.count(course))
+                file << s.scores.at(course) << " ";
+            else
+                file << -1 << " ";
         }
+        file << "\n";
     }
 
-    if (!found) {
-        cout << "Student record not found!" << endl;
-    }
-    system("pause");
+    file.close();
 }
 
-void Sort(Student stu[]) {
-    system("cls");
-    int n = Read(stu);
-    cout << "\n======>> Sorting by Average Score <<======\n";
-    sort(stu, stu + n, [](Student a, Student b) {
-        return a.average > b.average;
-    });
+vector<Student> Read() {
+    ifstream file("score.txt");
+    vector<Student> students;
+    if (!file) {
+        cout << "No score.txt file found.\n";
+        return students;
+    }
 
-    cout << "-------------------------------------------\n";
-    cout << "Rank\tID\tName\tAverage Score\n";
-    cout << "-------------------------------------------\n";
+    int courseCount;
+    file >> courseCount;
+    globalCourseNames.clear();
+
+    for (int i = 0; i < courseCount; i++) {
+        string course;
+        file >> course;
+        globalCourseNames.insert(course);
+    }
+
+    int n;
+    file >> n;
     for (int i = 0; i < n; i++) {
-        cout << i + 1 << "\t" << stu[i].id << "\t" << stu[i].name << "\t" << stu[i].average << endl;
+        Student s;
+        file >> s.className >> s.id >> s.name >> s.average;
+
+        for (const string& course : globalCourseNames) {
+            float score;
+            file >> score;
+            if (score != -1)
+                s.scores[course] = score;
+        }
+
+        students.push_back(s);
     }
-    cout << "-------------------------------------------\n";
-    Write(stu, n);
-    system("pause");
+
+    file.close();
+    return students;
 }
 
-void Output(Student stu[]) {
+void Output(const vector<Student>& students) {
     system("cls");
-    int n = Read(stu);
-    cout << "\n======>> All Student Records <<======\n";
-    cout << "-------------------------------------------------------------\n";
-    cout << "Class\tID\tName\tElec\tC++\tMedia\tEng\tMath\tSport\tPolitics\tAvg\n";
-    cout << "-------------------------------------------------------------\n";
-    for (int i = 0; i < n; i++) {
-        cout << stu[i].className << "\t" << stu[i].id << "\t" << stu[i].name << "\t"
-             << stu[i].elec << "\t" << stu[i].cpp << "\t" << stu[i].media << "\t"
-             << stu[i].english << "\t" << stu[i].math << "\t" << stu[i].sport << "\t"
-             << stu[i].politics << "\t" << stu[i].average << endl;
+    if (students.empty()) {
+        cout << "No records to display.\n";
+        system("pause");
+        return;
     }
+
+    cout << "Class\tID\tName";
+    for (const string& c : globalCourseNames) cout << "\t" << c;
+    cout << "\tAverage\n";
+    cout << "-------------------------------------------------------------\n";
+
+    for (const auto& s : students) {
+        cout << s.className << "\t" << s.id << "\t" << s.name;
+        for (const string& c : globalCourseNames) {
+            if (s.scores.count(c)) cout << "\t" << s.scores.at(c);
+            else cout << "\t-";
+        }
+        cout << "\t" << s.average << "\n";
+    }
+
     cout << "-------------------------------------------------------------\n";
     system("pause");
 }
 
-// Menu
 int main() {
     int choice;
     do {
         system("cls");
-        cout << "\n======>> Student Management System <<======\n";
+        cout << "====== Student Management System ======\n";
         cout << "1. Input Student Records\n";
-        cout << "2. View Statistics\n";
-        cout << "3. Lookup Student\n";
-        cout << "4. Sort Students\n";
-        cout << "5. Display All Records\n";
+        cout << "2. Output All Records\n";
         cout << "0. Exit\n";
-        cout << "============================================\n";
+        cout << "=======================================\n";
         cout << "Enter your choice: ";
         cin >> choice;
 
         switch (choice) {
-            case 1: Input(stu); break;
-            case 2: Statistic(stu); break;
-            case 3: Lookup(stu); break;
-            case 4: Sort(stu); break;
-            case 5: Output(stu); break;
-            case 0: cout << "Exiting the system. Goodbye!" << endl; break;
-            default: cout << "Invalid choice. Please try again." << endl; system("pause");
+            case 1:
+                Input(stuList);
+                Write(stuList);
+                break;
+            case 2:
+                stuList = Read();
+                Output(stuList);
+                break;
+            case 0:
+                cout << "Goodbye!\n"; break;
+            default:
+                cout << "Invalid choice!\n"; system("pause");
         }
     } while (choice != 0);
 

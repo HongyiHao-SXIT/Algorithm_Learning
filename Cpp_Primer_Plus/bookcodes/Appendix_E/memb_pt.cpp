@@ -1,4 +1,3 @@
-// memb_pt.cpp -- dereferencing pointers to class members
 #include <iostream>
 using namespace std;
 
