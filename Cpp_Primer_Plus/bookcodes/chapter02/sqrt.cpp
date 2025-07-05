@@ -1,7 +1,5 @@
-// sqrt.cpp -- using the sqrt() function
-
 #include <iostream>
-#include <cmath>    // or math.h
+#include <cmath>
 
 int main()
 {

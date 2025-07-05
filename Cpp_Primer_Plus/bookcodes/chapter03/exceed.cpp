@@ -1,12 +1,11 @@
-// exceed.cpp -- exceeding some integer limits
 #include <iostream>
-#define ZERO 0      // makes ZERO symbol for 0 value
-#include <climits>  // defines INT_MAX as largest int value
+#define ZERO 0
+#include <climits>
 int main()
 {
     using namespace std;
-    short sam = SHRT_MAX;     // initialize a variable to max value
-    unsigned short sue = sam;// okay if variable sam already defined
+    short sam = SHRT_MAX;
+    unsigned short sue = sam;
 
     cout << "Sam has " << sam << " dollars and Sue has " << sue;
     cout << " dollars deposited." << endl

@@ -1,4 +1,3 @@
-// modulus.cpp -- uses % operator to convert lbs to stone
 #include <iostream>
 int main()
 {
@@ -8,8 +7,8 @@ int main()
 
     cout << "Enter your weight in pounds: ";
     cin >> lbs;
-    int stone = lbs / Lbs_per_stn;      // whole stone
-    int pounds = lbs % Lbs_per_stn;     // remainder in pounds
+    int stone = lbs / Lbs_per_stn;
+    int pounds = lbs % Lbs_per_stn;
     cout << lbs << " pounds are " << stone
          << " stone, " << pounds << " pound(s).\n";
     // cin.get();

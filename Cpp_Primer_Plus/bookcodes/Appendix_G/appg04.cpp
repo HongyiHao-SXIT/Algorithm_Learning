@@ -1,4 +1,3 @@
-// setops.cpp -- some set operations
 #include <iostream>
 #include <string>
 #include <set>

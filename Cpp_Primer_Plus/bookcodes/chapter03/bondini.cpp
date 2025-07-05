@@ -1,4 +1,3 @@
-// bondini.cpp -- using escape sequences
 #include <iostream>
 int main()
 {

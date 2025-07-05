@@ -19,22 +19,7 @@ int main()
 	us.insert(&c);
 	for_each(us.begin(),us.end(),[](S* i) {cout << (*i).a << ", ";});
 	cout << "\nNext\n";
-
 	
-/*	if(pt != vi.end())
-		cout  << *pt << endl;
-	else
-		cout << "not found\n";
-	cout << vi.count("cow") << endl;
-	cout << vi.count("fondu") << endl;
-	cout << endl;
-	cout << *vi.lower_bound("cow") << endl;
-	cout << *vi.upper_bound("hen") << endl;
-	cout << vi.bucket_count() << endl;
-	cout << vi.bucket("cow") << endl;
-	cout << vi.bucket("starkA") << endl;
-	cout << vi.bucket("stark") << endl;*/
-
 	cin.get();
 		
 }

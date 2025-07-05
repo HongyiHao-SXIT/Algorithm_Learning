@@ -1,5 +1,3 @@
-// food processing program
-
 #include <iostream>
 
 int main() {

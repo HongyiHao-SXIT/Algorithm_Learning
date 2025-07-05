@@ -1,4 +1,3 @@
-// divide.cpp -- integer and floating-point division
 #include <iostream>
 int main()
 {
