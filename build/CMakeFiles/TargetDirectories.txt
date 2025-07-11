@@ -1,3 +1,0 @@
-C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build/CMakeFiles/Monopoly.dir
-C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build/CMakeFiles/edit_cache.dir
-C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build/CMakeFiles/rebuild_cache.dir
