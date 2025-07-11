@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Monopoly.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Monopoly.dir\\src\\main.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Funny_code\\Monopoly\\src\\main.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Funny_code/Monopoly/src/main.cpp",
+  "output": "CMakeFiles/Monopoly.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/build",
+  "command": "\"D:\\Program Files (x86)\\mingw64\\bin\\g++.exe\"  @CMakeFiles/Monopoly.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Monopoly.dir\\src\\Game.cpp.obj -c C:\\Users\\Lanyi\\Desktop\\Project\\Algorithm_Learning\\Funny_code\\Monopoly\\src\\Game.cpp",
+  "file": "C:/Users/Lanyi/Desktop/Project/Algorithm_Learning/Funny_code/Monopoly/src/Game.cpp",
+  "output": "CMakeFiles/Monopoly.dir/src/Game.cpp.obj"
+}
+]
