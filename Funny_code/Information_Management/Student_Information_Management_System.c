@@ -5,9 +5,9 @@
 #define MAX_CLASSES 6
 
 typedef struct {
-    int id;
+    long id;
     char name[20];
-    int classNum;
+    char classNum;
     char address[50];
     char phone[20];
     char major[50];
@@ -17,6 +17,12 @@ typedef struct Node {
     Student data;
     struct Node* next;
 } Node;
+
+typedef enum {
+    SEARCH_BY_ID,
+    SEARCH_BY_NAME,
+    SEARCH_BY_CLASS
+} SearchType;
 
 Node* createList();
 Node* createNode(Student data);
@@ -31,8 +37,9 @@ void addStudent(Node* head, Student data);
 void displayStudents(Node* head);
 void searchById(Node* head, int id);
 void searchByName(Node* head, char* name);
-void searchByClass(Node* head, int classNum);
+void searchByClass(Node* head, char* classNum);
 void deleteById(Node* head, int id);
+void deleteByIds(Node* head, int begin, int end);
 void deleteByName(Node* head, char* name);
 void updateById(Node* head, int id);
 void updateByName(Node* head, char* name);
@@ -251,49 +258,72 @@ void displayStudents(Node* head) {
     }
 }
 
-void searchById(Node* head, int id) {
-    Node* current = head->next;
-    while (current) {
-        if (current->data.id == id) {
-            printf("ID\tName\tClass\tAddress\tPhone\t\tMajor\n");
-            printf("%d\t%s\t%d\t%s\t%s\t%s\n", current->data.id, current->data.name, current->data.classNum,
-                   current->data.address, current->data.phone, current->data.major);
-            return;
-        }
-        current = current->next;
+void searchStudents(Node* head, SearchType type, void* key) {
+    if (head == NULL || head->next == NULL) {
+        printf("Student list is empty.\n");
+        return;
     }
-    printf("Student with ID %d not found.\n", id);
-}
 
-void searchByName(Node* head, char* name) {
     Node* current = head->next;
-    while (current) {
-        if (strcmp(current->data.name, name) == 0) {
-            printf("ID\tName\tClass\tAddress\tPhone\t\tMajor\n");
-            printf("%d\t%s\t%d\t%s\t%s\t%s\n", current->data.id, current->data.name, current->data.classNum,
-                   current->data.address, current->data.phone, current->data.major);
-            return;
-        }
-        current = current->next;
-    }
-    printf("Student with name %s not found.\n", name);
-}
-
-void searchByClass(Node* head, int classNum) {
-    Node* current = head->next;
-    int found = 0;
-
+    bool found = false;
+    
     printf("ID\tName\tClass\tAddress\tPhone\t\tMajor\n");
-    while (current) {
-        if (current->data.classNum == classNum) {
-            printf("%d\t%s\t%d\t%s\t%s\t%s\n", current->data.id, current->data.name, current->data.classNum,
-                   current->data.address, current->data.phone, current->data.major);
-            found = 1;
+    
+    while (current != NULL) {
+        bool match = false;
+        
+        switch (type) {
+            case SEARCH_BY_ID:
+                if (current->data.id == *(int*)key) {
+                    match = true;
+                }
+                break;
+                
+            case SEARCH_BY_NAME:
+                if (strcmp(current->data.name, (char*)key) == 0) {
+                    match = true;
+                }
+                break;
+                
+            case SEARCH_BY_CLASS:
+                if (current->data.classNum == *(int*)key) {
+                    match = true;
+                }
+                break;
         }
+        
+        if (match) {
+            printf("%d\t%s\t%d\t%s\t%s\t%s\n", 
+                  current->data.id, 
+                  current->data.name, 
+                  current->data.classNum,
+                  current->data.address, 
+                  current->data.phone, 
+                  current->data.major);
+            found = true;
+            
+            if (type == SEARCH_BY_ID) {
+                return;
+            }
+        }
+        
         current = current->next;
     }
+    
     if (!found) {
-        printf("No students found in class %d.\n", classNum);
+        switch (type) {
+            case SEARCH_BY_ID:
+                printf("Student with ID %d not found.\n", *(int*)key);
+                break;
+                
+            case SEARCH_BY_NAME:
+                printf("Student with name \"%s\" not found.\n", (char*)key);
+                break;
+                
+            case SEARCH_BY_CLASS:
+                printf("No students found in class %d.\n", *(int*)key);
+                break;
+        }
     }
 }
 
@@ -314,6 +344,37 @@ void deleteById(Node* head, int id) {
     prev->next = current->next;
     free(current);
     printf("Student deleted successfully.\n");
+}
+
+void deleteByIds(Node* head, int begin, int end) {
+    if (head == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
+
+    if (begin > end) {
+        printf("Invalid range: begin ID > end ID.\n");
+        return;
+    }
+
+    Node* prev = head;
+    Node* current = head->next;
+    int count = 0;
+
+    while (current != NULL) {
+        if (current->data.id >= begin && current->data.id <= end) {
+            Node* toDelete = current;
+            prev->next = current->next;
+            current = current->next;
+            free(toDelete);
+            count++;
+        } else {
+            prev = current;
+            current = current->next;
+        }
+    }
+
+    printf("Deleted %d students with IDs between %d and %d.\n", count, begin, end);
 }
 
 void deleteByName(Node* head, char* name) {
