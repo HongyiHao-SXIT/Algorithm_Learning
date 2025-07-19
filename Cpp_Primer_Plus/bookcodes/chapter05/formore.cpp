@@ -1,6 +1,5 @@
-// formore.cpp -- more looping with for
 #include <iostream>
-const int ArSize = 16;      // example of external declaration
+const int ArSize = 16;
 int main()
 {
     long long factorials[ArSize];

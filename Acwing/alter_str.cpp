@@ -6,28 +6,32 @@
 using namespace std;
 
 int main() {
-    string s, a, b;
+    string inputLine;
+    string targetWord;
+    string replacementWord;
     
-    getline(cin, s);
-    cin >> a >> b;
+    getline(cin, inputLine);
+    cin >> targetWord >> replacementWord;
     
-    vector<string> words;
-    string word;
-    stringstream ss(s);
+    vector<string> wordList;
+    string currentWord;
+    stringstream stringStream(inputLine);
     
-    while (ss >> word) {
-        words.push_back(word);
+    while (stringStream >> currentWord) {
+        wordList.push_back(currentWord);
     }
     
-    for (auto& w : words) {
-        if (w == a) {
-            w = b;
+    for (auto& word : wordList) {
+        if (word == targetWord) {
+            word = replacementWord;
         }
     }
 
-    for (int i = 0; i < words.size(); ++i) {
-        if (i != 0) cout << " ";
-        cout << words[i];
+    for (size_t i = 0; i < wordList.size(); ++i) {
+        if (i != 0) {
+            cout << " ";
+        }
+        cout << wordList[i];
     }
     cout << endl;
     

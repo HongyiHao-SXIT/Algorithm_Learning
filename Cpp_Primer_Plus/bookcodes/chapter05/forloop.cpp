@@ -1,4 +1,3 @@
-// forloop.cpp -- introducing the for loop
 #include <iostream>
 int main()
 {
