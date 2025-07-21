@@ -31,13 +31,3 @@ public:
         return total;
     }
 };
-
-int main() {
-    Solution sol;
-    cout << "III => " << sol.romanToInt("III") << endl;
-    cout << "IV => " << sol.romanToInt("IV") << endl;
-    cout << "IX => " << sol.romanToInt("IX") << endl;
-    cout << "LVIII => " << sol.romanToInt("LVIII") << endl;
-    cout << "MCMXCIV => " << sol.romanToInt("MCMXCIV") << endl;
-    return 0;
-}

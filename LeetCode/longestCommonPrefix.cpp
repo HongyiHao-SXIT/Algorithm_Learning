@@ -18,10 +18,3 @@ public:
         return prefix;
     }
 };
-
-int main() {
-    Solution sol;
-    vector<string> strs = {"flower", "flow", "flight"};
-    cout << "Longest Common Prefix: " << sol.longestCommonPrefix(strs) << endl;
-    return 0;
-}
