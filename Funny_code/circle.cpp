@@ -8,7 +8,6 @@ const float CONCRETE_PRICE = 20;
 class Circle
 {
 private:
-    /* data */
     float radius;
 public:
     Circle(float r);
