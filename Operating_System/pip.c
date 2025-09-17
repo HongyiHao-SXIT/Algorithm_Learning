@@ -27,6 +27,6 @@ void main() {
         close(file_descriptors[OUTPUT]);
         returned_count = read(file_descriptors[INPUT], buf, sizeof(buf));
         printf("%d bytes of data received from spawned process: %s/n",
-               returned_count, buf);
+        returned_count, buf);
     }
 }

@@ -1,5 +1,5 @@
 #ifndef _ _ACCOUNT_H_ _
-#define _ _ACCOUNT_H_ _ 
+#define _ _ACCOUNT_H_ _
 class SavingsAccount{
     private:
     int id;

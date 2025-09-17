@@ -16,7 +16,7 @@ bool gameOver;
 
 void InitSnake() {
     snake.clear();
-    snake.push_back({10, 10}); 
+    snake.push_back({10, 10});
     snake.push_back({9, 10});
     snake.push_back({8, 10});
     dir = RIGHT;

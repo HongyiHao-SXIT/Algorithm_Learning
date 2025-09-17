@@ -15,8 +15,8 @@ int main()
         cin >> times;
         n_chars(ch, times); // function with two arguments
         cout << "\nEnter another character or press the"
-                " q-key to quit: ";
-           cin >> ch;
+        " q-key to quit: ";
+        cin >> ch;
     }
     cout << "The value of times is " << times << ".\n";
     cout << "Bye\n";
@@ -28,5 +28,5 @@ int main()
 void n_chars(char c, int n) // displays c n times
 {
     while (n-- > 0)         // continue until n reaches 0
-        cout << c;
+    cout << c;
 }

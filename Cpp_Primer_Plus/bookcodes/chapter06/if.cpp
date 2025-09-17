@@ -3,7 +3,7 @@
 int main()
 {
     using std::cin;     // using declarations
-	using std::cout;
+    using std::cout;
     char ch;
     int spaces = 0;
     int total = 0;
@@ -11,7 +11,7 @@ int main()
     while (ch != '.')   // quit at end of sentence
     {
         if (ch == ' ')  // check if ch is a space
-            ++spaces;
+        ++spaces;
         ++total;        // done every time
         cin.get(ch);
     }

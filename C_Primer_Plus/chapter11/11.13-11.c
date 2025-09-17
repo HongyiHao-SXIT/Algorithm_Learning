@@ -69,7 +69,7 @@ int get_first(void)
         ch = tolower(getchar());
     } while (isspace(ch));
     while (getchar() != '\n')
-        continue;
+    continue;
 
     return ch;
 }
@@ -84,7 +84,7 @@ int show_menu(void)
     printf("|q) quit                                                |\n");
     printf("+-------------------------------------------------------+\n");
     printf("Please you choose: ");
-    
+
     ch = get_first();
     while (ch < 'a' || ch > 'd' && ch != 'q')
     {
@@ -141,7 +141,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;

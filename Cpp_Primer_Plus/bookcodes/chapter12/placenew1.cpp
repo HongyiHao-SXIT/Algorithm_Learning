@@ -7,11 +7,11 @@ const int BUF = 512;
 
 class JustTesting
 {
-private:
+    private:
     string words;
     int number;
-public:
-    JustTesting(const string & s = "Just Testing", int n = 0) 
+    public:
+    JustTesting(const string & s = "Just Testing", int n = 0)
     {words = s; number = n; cout << words << " constructed\n"; }
     ~JustTesting() { cout << words << " destroyed\n";}
     void Show() const { cout << words << ", " << number << endl;}
@@ -24,9 +24,9 @@ int main()
 
     pc1 = new (buffer) JustTesting;      // place object in buffer
     pc2 = new JustTesting("Heap1", 20);  // place object on heap
-    
+
     cout << "Memory block addresses:\n" << "buffer: "
-        << (void *) buffer << "    heap: " << pc2 <<endl;
+    << (void *) buffer << "    heap: " << pc2 <<endl;
     cout << "Memory contents:\n";
     cout << pc1 << ": ";
     pc1->Show();
@@ -41,8 +41,8 @@ int main()
     pc3->Show();
     cout << pc4 << ": ";
     pc4->Show();
-    
-    delete pc2;                          // free Heap1         
+
+    delete pc2;                          // free Heap1
     delete pc4;                          // free Heap2
     delete [] buffer;                    // free buffer
     cout << "Done\n";

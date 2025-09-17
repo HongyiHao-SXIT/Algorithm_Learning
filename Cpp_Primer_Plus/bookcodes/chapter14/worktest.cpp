@@ -13,7 +13,7 @@ int main()
 
     int i;
     for (i = 2; i < LIM; i++)
-        pw[i]->Set();
+    pw[i]->Set();
     for (i = 0; i < LIM; i++)
     {
         pw[i]->Show();

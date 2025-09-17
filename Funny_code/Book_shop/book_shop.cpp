@@ -6,12 +6,12 @@
 using namespace std;
 
 class Book {
-private:
+    private:
     string Name;
     string ID;
     bool isborrowed = false;
 
-public:
+    public:
     Book() = default;
     Book(string name, string id) : Name(name), ID(id) {}
 
@@ -41,16 +41,16 @@ public:
 };
 
 class User {
-private:
+    private:
     string Account;
     string Password;
     int Max_borrow = 20;
     int Num_borrow = 0;
 
-public:
+    public:
     User() = default;
     User(const string& account, const string& password)
-        : Account(account), Password(password) {}
+    : Account(account), Password(password) {}
 
     void setAccount(const string& account) {
         Account = account;
@@ -191,16 +191,16 @@ int main() {
 
         switch (choice) {
             case 1:
-                login();
-                break;
+            login();
+            break;
             case 2:
-                registerUser();
-                break;
+            registerUser();
+            break;
             case 0:
-                cout << "Thank you for using the system. Goodbye!" << endl;
-                return 0;
+            cout << "Thank you for using the system. Goodbye!" << endl;
+            return 0;
             default:
-                cout << "Invalid choice, please try again!" << endl;
+            cout << "Invalid choice, please try again!" << endl;
         }
     }
 }

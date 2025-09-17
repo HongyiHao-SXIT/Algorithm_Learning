@@ -327,17 +327,17 @@ int manageProblems(Pro* proHead, int countProblems) {
     scanf("%d", &chooseManageProblems);
     switch (chooseManageProblems) {
         case 0:
-            return countProblems;
+        return countProblems;
         case 1:
-            outputProblems(proHead, countProblems);
-            printf("Please select the question number to edit: ");
-            int problemToBeEdited;
-            scanf("%d", &problemToBeEdited);
-            countProblems = editProblem(proHead, countProblems, problemToBeEdited);
-            break;
+        outputProblems(proHead, countProblems);
+        printf("Please select the question number to edit: ");
+        int problemToBeEdited;
+        scanf("%d", &problemToBeEdited);
+        countProblems = editProblem(proHead, countProblems, problemToBeEdited);
+        break;
         case 2:
-            countProblems = addProblem(proHead, countProblems);
-            break;
+        countProblems = addProblem(proHead, countProblems);
+        break;
     }
 
     return countProblems;
@@ -379,22 +379,22 @@ int startTeacher(Stu* stuHead, Pro* proHead, int countStudents, int countProblem
         scanf("%d", &choooseTeacherManage);
         switch (choooseTeacherManage) {
             case 0:
-                return countProblems;
+            return countProblems;
             case 1:
-                outputProblems(proHead, countProblems);
-                printf("Enter any character to exit: ");
-                char c2quit[20];
-                scanf("%s", c2quit);
-                break;
+            outputProblems(proHead, countProblems);
+            printf("Enter any character to exit: ");
+            char c2quit[20];
+            scanf("%s", c2quit);
+            break;
             case 2:
-                countProblems = manageProblems(proHead, countProblems);
-                break;
+            countProblems = manageProblems(proHead, countProblems);
+            break;
             case 3:
-                outputStudents(stuHead, countStudents);
-                printf("Enter any character to exit: ");
-                char c3quit[20];
-                scanf("%s", c3quit);
-                break;
+            outputStudents(stuHead, countStudents);
+            printf("Enter any character to exit: ");
+            char c3quit[20];
+            scanf("%s", c3quit);
+            break;
         }
         saveProblems(proHead, countProblems);
         countProblems = readProblems(proHead);
@@ -496,23 +496,23 @@ int main() {
         scanf("%d", &chooseTorS);
         switch (chooseTorS) {
             case 0:
-                cls;
-                title(" Multiple-Choice Standardized Exam System ");
-                endl;
-                puts("\t\t      Exited");
-                endl;
-                title("==========================");
-                saveProblems(proHead, countProblems);
-                saveStudents(stuHead, countStudents);
-                free(stuHead);
-                free(proHead);
-                return 0;
+            cls;
+            title(" Multiple-Choice Standardized Exam System ");
+            endl;
+            puts("\t\t      Exited");
+            endl;
+            title("==========================");
+            saveProblems(proHead, countProblems);
+            saveStudents(stuHead, countStudents);
+            free(stuHead);
+            free(proHead);
+            return 0;
             case 1:
-                countProblems = startTeacher(stuHead, proHead, countStudents, countProblems);
-                break;
+            countProblems = startTeacher(stuHead, proHead, countStudents, countProblems);
+            break;
             case 2:
-                startStudent(stuHead, proHead, countStudents, countProblems);
-                break;
+            startStudent(stuHead, proHead, countStudents, countProblems);
+            break;
         }
         saveProblems(proHead, countProblems);
         saveStudents(stuHead, countStudents);

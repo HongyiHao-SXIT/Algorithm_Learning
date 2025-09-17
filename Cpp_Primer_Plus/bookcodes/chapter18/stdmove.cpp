@@ -6,12 +6,12 @@
 // interface
 class Useless
 {
-private:
+    private:
     int n;          // number of elements
     char * pc;      // pointer to data
     static int ct;  // number of objects
     void ShowObject() const;
-public:
+    public:
     Useless();
     explicit Useless(int k);
     Useless(int k, char ch);
@@ -20,7 +20,7 @@ public:
     ~Useless();
     Useless operator+(const Useless & f)const;
     Useless & operator=(const Useless & f); // copy assignment
-    Useless & operator=(Useless && f);      // move assignment 
+    Useless & operator=(Useless && f);      // move assignment
     void ShowData() const;
 };
 
@@ -32,11 +32,11 @@ Useless::Useless()
     ++ct;
     n = 0;
     pc = nullptr;
- }
+}
 
 Useless::Useless(int k) : n(k)
 {
-    ++ct; 
+    ++ct;
     pc = new char[n];
 }
 
@@ -45,18 +45,18 @@ Useless::Useless(int k, char ch) : n(k)
     ++ct;
     pc = new char[n];
     for (int i = 0; i < n; i++)
-        pc[i] = ch;
+    pc[i] = ch;
 }
 
-Useless::Useless(const Useless & f): n(f.n) 
+Useless::Useless(const Useless & f): n(f.n)
 {
     ++ct;
     pc = new char[n];
     for (int i = 0; i < n; i++)
-        pc[i] = f.pc[i];
+    pc[i] = f.pc[i];
 }
 
-Useless::Useless(Useless && f): n(f.n) 
+Useless::Useless(Useless && f): n(f.n)
 {
     ++ct;
     pc = f.pc;       // steal address
@@ -73,12 +73,12 @@ Useless & Useless::operator=(const Useless & f)  // copy assignment
 {
     std::cout << "copy assignment operator called:\n";
     if (this == &f)
-        return *this;
+    return *this;
     delete [] pc;
     n = f.n;
     pc = new char[n];
     for (int i = 0; i < n; i++)
-        pc[i] = f.pc[i];
+    pc[i] = f.pc[i];
     return *this;
 }
 
@@ -86,7 +86,7 @@ Useless & Useless::operator=(Useless && f)       // move assignment
 {
     std::cout << "move assignment operator called:\n";
     if (this == &f)
-        return *this;
+    return *this;
     delete [] pc;
     n = f.n;
     pc = f.pc;
@@ -99,14 +99,14 @@ Useless Useless::operator+(const Useless & f)const
 {
     Useless temp = Useless(n + f.n);
     for (int i = 0; i < n; i++)
-        temp.pc[i] = pc[i];
+    temp.pc[i] = pc[i];
     for (int i = n; i < temp.n; i++)
-        temp.pc[i] = f.pc[i - n];
+    temp.pc[i] = f.pc[i - n];
     return temp;
 }
 
 void Useless::ShowObject() const
-{ 
+{
     std::cout << "Number of elements: " << n;
     std::cout << " Data address: " << (void *) pc << std::endl;
 }
@@ -114,10 +114,10 @@ void Useless::ShowObject() const
 void Useless::ShowData() const
 {
     if (n == 0)
-        std::cout << "(object empty)";
+    std::cout << "(object empty)";
     else
-        for (int i = 0; i < n; i++)
-            std::cout << pc[i];
+    for (int i = 0; i < n; i++)
+    std::cout << pc[i];
     std::cout << std::endl;
 }
 
@@ -150,5 +150,5 @@ int main()
         cout << "and object one = ";
         one.ShowData();
     }
-     std::cin.get();
+    std::cin.get();
 }

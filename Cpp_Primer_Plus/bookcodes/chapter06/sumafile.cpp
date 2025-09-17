@@ -31,13 +31,13 @@ int main()
         inFile >> value;    // get next value
     }
     if (inFile.eof())
-        cout << "End of file reached.\n";
+    cout << "End of file reached.\n";
     else if (inFile.fail())
-        cout << "Input terminated by data mismatch.\n";
+    cout << "Input terminated by data mismatch.\n";
     else
-        cout << "Input terminated for unknown reason.\n";
+    cout << "Input terminated for unknown reason.\n";
     if (count == 0)
-        cout << "No data processed.\n";
+    cout << "No data processed.\n";
     else
     {
         cout << "Items read: " << count << endl;

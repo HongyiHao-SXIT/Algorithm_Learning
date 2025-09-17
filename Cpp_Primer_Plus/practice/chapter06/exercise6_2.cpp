@@ -2,10 +2,9 @@
 #include <iostream>
 #include <array>
 
-
 int main() {
     using namespace std;
-    
+
     const unsigned int size = 10;
     array<double, size> donation;
 
@@ -14,7 +13,7 @@ int main() {
 
     cout << "Enter 10 double value or type non-digital value to exit: ";
     while ((n < size) && (cin >> donation[n])) {
-        
+
         sum_value += donation[n];
         ++n;
     }
@@ -23,12 +22,12 @@ int main() {
     for (int i=0; i < n; i++) {
 
         if (donation[i]>avg)
-            ++large_avg;
+        ++large_avg;
     }
 
     cout << "The average value is: " << avg
-         << ", there are " << large_avg
-         << " larger than average value." << endl;
+    << ", there are " << large_avg
+    << " larger than average value." << endl;
 
     return 0;
 }

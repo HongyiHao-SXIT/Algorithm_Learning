@@ -196,7 +196,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;
@@ -205,7 +205,7 @@ char *s_gets(char *st, int n)
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
 }
 
 void show_empty_seats(const plane pl[], int n) //显示空座位的信息;

@@ -6,12 +6,12 @@ using namespace std;
 // interface
 class Useless
 {
-private:
+    private:
     int n;          // number of elements
     char * pc;      // pointer to data
     static int ct;  // number of objects
     void ShowObject() const;
-public:
+    public:
     Useless();
     explicit Useless(int k);
     Useless(int k, char ch);
@@ -19,7 +19,7 @@ public:
     Useless(Useless && f);      // move constructor
     ~Useless();
     Useless operator+(const Useless & f)const;
-// need operator=() in copy and move versions
+    // need operator=() in copy and move versions
     void ShowData() const;
 };
 
@@ -37,7 +37,7 @@ Useless::Useless()
 
 Useless::Useless(int k) : n(k)
 {
-    ++ct; 
+    ++ct;
     cout << "int constructor called; number of objects: " << ct << endl;
     pc = new char[n];
     ShowObject();
@@ -49,21 +49,21 @@ Useless::Useless(int k, char ch) : n(k)
     cout << "int, char constructor called; number of objects: " << ct << endl;
     pc = new char[n];
     for (int i = 0; i < n; i++)
-        pc[i] = ch;
+    pc[i] = ch;
     ShowObject();
 }
 
-Useless::Useless(const Useless & f): n(f.n) 
+Useless::Useless(const Useless & f): n(f.n)
 {
     ++ct;
     cout << "copy const called; number of objects: " << ct << endl;
     pc = new char[n];
     for (int i = 0; i < n; i++)
-        pc[i] = f.pc[i];
+    pc[i] = f.pc[i];
     ShowObject();
 }
 
-Useless::Useless(Useless && f): n(f.n) 
+Useless::Useless(Useless && f): n(f.n)
 {
     ++ct;
     cout << "move constructor called; number of objects: " << ct << endl;
@@ -86,16 +86,16 @@ Useless Useless::operator+(const Useless & f)const
     cout << "Entering operator+()\n";
     Useless temp = Useless(n + f.n);
     for (int i = 0; i < n; i++)
-        temp.pc[i] = pc[i];
+    temp.pc[i] = pc[i];
     for (int i = n; i < temp.n; i++)
-        temp.pc[i] = f.pc[i - n];
+    temp.pc[i] = f.pc[i - n];
     cout << "temp object:\n";
     cout << "Leaving operator+()\n";
     return temp;
 }
 
 void Useless::ShowObject() const
-{ 
+{
     cout << "Number of elements: " << n;
     cout << " Data address: " << (void *) pc << endl;
 }
@@ -103,7 +103,7 @@ void Useless::ShowObject() const
 void Useless::ShowData() const
 {
     for (int i = 0; i < n; i++)
-        cout << pc[i];
+    cout << pc[i];
     cout << endl;
 }
 
@@ -118,8 +118,8 @@ int main()
         cout << "object two: ";
         two.ShowData();
         Useless three = move(one);
-		cout << "object three: ";
+        cout << "object three: ";
         three.ShowData();
-     }
-     cin.get();
+    }
+    cin.get();
 }

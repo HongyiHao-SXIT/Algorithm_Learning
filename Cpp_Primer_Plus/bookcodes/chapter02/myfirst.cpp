@@ -2,11 +2,11 @@
 
 int main() {
 
-    using namespace std; 
+    using namespace std;
     cout << "Hello world!" << endl;
 
     cout << "Comme up and C++ me some time."
-         << endl;
+    << endl;
     cout << "You won't regret it! " << endl;
     cout << "Press any key to continue." << endl;
     cin.get();

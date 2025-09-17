@@ -20,7 +20,7 @@ int main(void)
         while (scanf("%lf", &n) != 1 || n < 0)
         {
             while (getchar() != '\n')
-                continue;
+            continue;
             printf("Enter a positive number: ");
         }
         switch (ch)
@@ -62,7 +62,7 @@ int get_choice(void)
         ch = getchar();
     } while (isspace(ch));
     while (getchar() != '\n')
-        continue;
+    continue;
 
     return ch;
 }
@@ -78,7 +78,7 @@ int show_menu(void)
     printf("q) quit\n");
     printf("*****************************************************************\n");
     printf("Please you choose: ");
-    
+
     ch = get_choice();
     while (ch != 'a' && ch != 'b' && ch != 'c' && ch != 'd' && ch != 'q')
     {

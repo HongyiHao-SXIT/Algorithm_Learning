@@ -26,18 +26,18 @@ int main()
     display(one);
     accumulate(team, one);
     display(team);
-// use return value as argument
+    // use return value as argument
     display(accumulate(team, two));
     accumulate(accumulate(team, three), four);
     display(team);
-// use return value in assignment
+    // use return value in assignment
     dup = accumulate(team,five);
     std::cout << "Displaying team:\n";
     display(team);
     std::cout << "Displaying dup after assignment:\n";
     display(dup);
     set_pc(four);
-// ill-advised assignment
+    // ill-advised assignment
     accumulate(dup,five) = four;
     std::cout << "Displaying dup after ill-advised assignment:\n";
     display(dup);
@@ -56,9 +56,9 @@ void display(const free_throws & ft)
 void set_pc(free_throws & ft)
 {
     if (ft.attempts != 0)
-        ft.percent = 100.0f *float(ft.made)/float(ft.attempts);
+    ft.percent = 100.0f *float(ft.made)/float(ft.attempts);
     else
-        ft.percent = 0;
+    ft.percent = 0;
 }
 
 free_throws & accumulate(free_throws & target, const free_throws & source)

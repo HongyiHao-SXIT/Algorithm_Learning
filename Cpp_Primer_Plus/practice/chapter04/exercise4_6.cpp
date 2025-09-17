@@ -9,7 +9,6 @@ struct CandyBar
     int calories;
 };
 
-
 int main() {
 
     using namespace std;
@@ -21,16 +20,16 @@ int main() {
     };
 
     cout << "The name of the CandyBar: " << candbar[0].name << "\n"
-         << "The weight of the candy: " << candbar[0].weight << "\n"
-         << "The calories information: " << candbar[0].calories << "\n\n";
+    << "The weight of the candy: " << candbar[0].weight << "\n"
+    << "The calories information: " << candbar[0].calories << "\n\n";
 
     cout << "The name of the CandyBar: " << candbar[1].name << "\n"
-         << "The weight of the candy: " << candbar[1].weight << "\n"
-         << "The calories information: " << candbar[1].calories << "\n\n";
+    << "The weight of the candy: " << candbar[1].weight << "\n"
+    << "The calories information: " << candbar[1].calories << "\n\n";
 
     cout << "The name of the CandyBar: " << candbar[2].name << "\n"
-         << "The weight of the candy: " << candbar[2].weight << "\n"
-         << "The calories information: " << candbar[2].calories << endl;
+    << "The weight of the candy: " << candbar[2].weight << "\n"
+    << "The calories information: " << candbar[2].calories << endl;
 
     return 0;
 }

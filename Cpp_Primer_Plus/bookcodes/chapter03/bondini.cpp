@@ -10,5 +10,5 @@ int main()
     cout << "\aCode verified! Proceed with Plan Z3!\n";
     // cin.get();
     // cin.get();
-    return 0; 
+    return 0;
 }

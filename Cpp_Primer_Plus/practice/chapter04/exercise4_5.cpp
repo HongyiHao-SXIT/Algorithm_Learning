@@ -9,7 +9,6 @@ struct CandyBar
     int calories;
 };
 
-
 int main() {
     using namespace std;
 
@@ -21,4 +20,3 @@ int main() {
 
     return 0;
 }
-

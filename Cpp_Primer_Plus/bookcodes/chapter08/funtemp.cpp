@@ -31,5 +31,5 @@ void Swap(T &a, T &b)
     T temp;   // temp a variable of type T
     temp = a;
     a = b;
-    b = temp; 
+    b = temp;
 }

@@ -16,6 +16,6 @@ int main()
     cout.precision(2);
     cout << "\"Furry Friends\" is $" << price1 << "!\n";
     cout << "\"Fiery Fiends\" is $" << price2 << "!\n";
-	// std::cin.get();
-    return 0; 
+    // std::cin.get();
+    return 0;
 }

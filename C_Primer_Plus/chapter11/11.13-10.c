@@ -38,7 +38,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;
@@ -47,7 +47,7 @@ char *s_gets(char *st, int n)
 void cancel(char *str)
 {
     int j = 0, len = strlen(str);
-    
+
     for (int i = 0; i < len; ++i)
     {
         if (str[i] != ' ')

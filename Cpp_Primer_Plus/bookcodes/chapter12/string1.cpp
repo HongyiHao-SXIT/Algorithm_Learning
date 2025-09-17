@@ -45,13 +45,13 @@ String::~String()                     // necessary destructor
     delete [] str;                    // required
 }
 
-// overloaded operator methods    
+// overloaded operator methods
 
 // assign a String to a String
 String & String::operator=(const String & st)
 {
     if (this == &st)
-        return *this;
+    return *this;
     delete [] str;
     len = st.len;
     str = new char[len + 1];
@@ -59,7 +59,7 @@ String & String::operator=(const String & st)
     return *this;
 }
 
-    // assign a C string to a String
+// assign a C string to a String
 String & String::operator=(const char * s)
 {
     delete [] str;
@@ -69,13 +69,13 @@ String & String::operator=(const char * s)
     return *this;
 }
 
-    // read-write char access for non-const String
+// read-write char access for non-const String
 char & String::operator[](int i)
 {
     return str[i];
 }
 
-    // read-only char access for const String
+// read-only char access for const String
 const char & String::operator[](int i) const
 {
     return str[i];
@@ -98,21 +98,21 @@ bool operator==(const String &st1, const String &st2)
     return (std::strcmp(st1.str, st2.str) == 0);
 }
 
-    // simple String output
+// simple String output
 ostream & operator<<(ostream & os, const String & st)
 {
     os << st.str;
-    return os; 
+    return os;
 }
 
-    // quick and dirty String input
+// quick and dirty String input
 istream & operator>>(istream & is, String & st)
 {
     char temp[String::CINLIM];
     is.get(temp, String::CINLIM);
     if (is)
-        st = temp;
+    st = temp;
     while (is && is.get() != '\n')
-        continue;
-    return is; 
+    continue;
+    return is;
 }

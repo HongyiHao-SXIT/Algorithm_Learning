@@ -3,11 +3,11 @@
 using namespace std;
 
 class Furry {
-private:
+    private:
     string name;
     double comment;
 
-public:
+    public:
     string getName() {
         return name;
     }
@@ -68,22 +68,22 @@ int main() {
 
         switch (wolf_activity) {
             case 1:
-                fox.setComment(1.0);
-                cout << fox.getName() << "的好感度增加了 1.0,当前好感度为：" << fox.getComment() << endl;
-                break;
+            fox.setComment(1.0);
+            cout << fox.getName() << "的好感度增加了 1.0,当前好感度为：" << fox.getComment() << endl;
+            break;
             case 2:
-                fox.setComment(2.0);
-                cout << fox.getName() << "的好感度增加了 2.0,当前好感度为：" << fox.getComment() << endl;
-                break;
+            fox.setComment(2.0);
+            cout << fox.getName() << "的好感度增加了 2.0,当前好感度为：" << fox.getComment() << endl;
+            break;
             case 3:
-                fox.setComment(5.0);
-                cout << fox.getName() << "的好感度增加了 5.0,当前好感度为：" << fox.getComment() << endl;
-                break;
+            fox.setComment(5.0);
+            cout << fox.getName() << "的好感度增加了 5.0,当前好感度为：" << fox.getComment() << endl;
+            break;
             case 4:
-                cout << "退出程序。" << endl;
-                break;
+            cout << "退出程序。" << endl;
+            break;
             default:
-                cout << "无效的选择，请重新输入。" << endl;
+            cout << "无效的选择，请重新输入。" << endl;
         }
     } while (wolf_activity != 4);
 
@@ -94,4 +94,4 @@ int main() {
     }
 
     return 0;
-}    
+}

@@ -10,7 +10,7 @@ struct job
     int floor;
 };
 
-// explicit specialization 
+// explicit specialization
 template <> void Swap<job>(job &j1, job &j2);
 void Show(job &j);
 
@@ -65,5 +65,5 @@ void Show(job &j)
 {
     using namespace std;
     cout << j.name << ": $" << j.salary
-         << " on floor " << j.floor << endl;
+    << " on floor " << j.floor << endl;
 }

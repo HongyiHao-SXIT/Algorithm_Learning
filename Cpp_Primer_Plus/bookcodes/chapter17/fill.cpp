@@ -15,5 +15,5 @@ int main()
         cout << bonus[i] << "\n";
     }
     // std::cin.get();
-    return 0; 
+    return 0;
 }

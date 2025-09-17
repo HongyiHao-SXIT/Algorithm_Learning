@@ -15,12 +15,12 @@ int main()
         cout << "Next two numbers (q to quit): ";
     }
     cout << "Bye!\n";
-// keep window open in MSVC++
-/*
+    // keep window open in MSVC++
+    /*
     cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
-    return 0; 
+    */
+    return 0;
 }

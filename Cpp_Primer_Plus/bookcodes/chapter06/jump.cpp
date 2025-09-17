@@ -5,7 +5,7 @@ int main()
 {
     using namespace std;
     char line[ArSize];
-    int spaces = 0; 
+    int spaces = 0;
 
     cout << "Enter a line of text:\n";
     cin.get(line, ArSize);
@@ -15,9 +15,9 @@ int main()
     {
         cout << line[i];    // display character
         if (line[i] == '.') // quit if it's a period
-            break;
+        break;
         if (line[i] != ' ') // skip rest of loop
-            continue;
+        continue;
         spaces++;
     }
     cout << "\n" << spaces << " spaces\n";

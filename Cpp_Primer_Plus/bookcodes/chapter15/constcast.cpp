@@ -21,8 +21,8 @@ int main()
 void change(const int * pt, int n)
 {
     int * pc;
-  
+
     pc = const_cast<int *>(pt);
     *pc += n;
- 
+
 }

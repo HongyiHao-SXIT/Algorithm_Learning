@@ -10,7 +10,7 @@ int main()
     cin >> count;
     simon(count);
     cout << "Done!" << endl;
-	// cin.get();
+    // cin.get();
     // cin.get();
     return 0;
 }

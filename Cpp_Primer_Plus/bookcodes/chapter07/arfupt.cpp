@@ -15,7 +15,7 @@ int main()
     auto p2 = f2;  // C++0x automatic type deduction
     // pre-C++0x can use the following code instead
     // const double *(*p2)(const double *, int) = f2;
-     cout << "Using pointers to functions:\n";
+    cout << "Using pointers to functions:\n";
     cout << " Address  Value\n";
     cout <<  (*p1)(av,3) << ": " << *(*p1)(av,3) << endl;
     cout << p2(av,3) << ": " << *p2(av,3) << endl;
@@ -31,20 +31,20 @@ int main()
     cout << "\nUsing an array of pointers to functions:\n";
     cout << " Address  Value\n";
     for (int i = 0; i < 3; i++)
-        cout << pa[i](av,3) << ": " << *pa[i](av,3) << endl;
+    cout << pa[i](av,3) << ": " << *pa[i](av,3) << endl;
     cout << "\nUsing a pointer to a pointer to a function:\n";
     cout << " Address  Value\n";
     for (int i = 0; i < 3; i++)
-        cout << pb[i](av,3) << ": " << *pb[i](av,3) << endl;
+    cout << pb[i](av,3) << ": " << *pb[i](av,3) << endl;
 
     // what about a pointer to an array of function pointers
     cout << "\nUsing pointers to an array of pointers:\n";
     cout << " Address  Value\n";
-    // easy way to declare pc 
-    auto pc = &pa; 
-     // pre-C++0x can use the following code instead
+    // easy way to declare pc
+    auto pc = &pa;
+    // pre-C++0x can use the following code instead
     // const double *(*(*pc)[3])(const double *, int) = &pa;
-   cout << (*pc)[0](av,3) << ": " << *(*pc)[0](av,3) << endl;
+    cout << (*pc)[0](av,3) << ": " << *(*pc)[0](av,3) << endl;
     // hard way to declare pd
     const double *(*(*pd)[3])(const double *, int) = &pa;
     // store return value in pdb

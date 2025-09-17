@@ -18,11 +18,11 @@ int main()
     }
     double objective;
     cout << "Enter the focal length of your "
-            "telescope objective in mm: ";
+    "telescope objective in mm: ";
     cin >> objective;
     double eps[LIMIT];
     cout << "Enter the focal lengths, in mm, of " << LIMIT
-         << " eyepieces:\n";
+    << " eyepieces:\n";
     for (int i = 0; i < LIMIT; i++)
     {
         cout << "Eyepiece #" << i + 1 << ": ";

@@ -21,10 +21,9 @@ int main()
     cout << f2 << ":\n";
     cout << (f2 * 1.0e4) << ":\n";
 
-
     double f3 = 2.3e-4;
     cout << f3 << ":\n";
     cout << f3 / 10 << ":\n";
     // std::cin.get();
-    return 0; 
+    return 0;
 }

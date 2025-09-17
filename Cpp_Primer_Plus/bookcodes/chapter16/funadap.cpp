@@ -25,23 +25,23 @@ int main()
 
     vector<double> sum(LIM);
     transform(gr8.begin(), gr8.end(), m8.begin(), sum.begin(),
-              plus<double>());
+    plus<double>());
     cout << "sum:\t";
     for_each(sum.begin(), sum.end(), Show);
     cout << endl;
 
     vector<double> prod(LIM);
     transform(gr8.begin(), gr8.end(), prod.begin(),
-              bind1st(multiplies<double>(), 2.5));
+    bind1st(multiplies<double>(), 2.5));
     cout << "prod:\t";
     for_each(prod.begin(), prod.end(), Show);
     cout << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }
 
 void Show(double v)
 {
     std::cout.width(6);
-    std::cout << v << ' '; 
+    std::cout << v << ' ';
 }

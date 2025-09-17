@@ -8,7 +8,7 @@ int main()
     char ruler[Len];
     int i;
     for (i = 1; i < Len - 2; i++)
-        ruler[i] = ' ';
+    ruler[i] = ' ';
     ruler[Len - 1] = '\0';
     int max = Len - 2;
     int min = 0;
@@ -19,7 +19,7 @@ int main()
         subdivide(ruler,min,max, i);
         std::cout << ruler << std::endl;
         for (int j = 1; j < Len - 2; j++)
-            ruler[j] = ' ';  // reset to blank ruler
+        ruler[j] = ' ';  // reset to blank ruler
     }
     // std::cin.get();
 
@@ -29,9 +29,9 @@ int main()
 void subdivide(char ar[], int low, int high, int level)
 {
     if (level == 0)
-        return;
+    return;
     int mid = (high + low) / 2;
     ar[mid] = '|';
     subdivide(ar, low, mid, level - 1);
-    subdivide(ar, mid, high, level - 1); 
+    subdivide(ar, mid, high, level - 1);
 }

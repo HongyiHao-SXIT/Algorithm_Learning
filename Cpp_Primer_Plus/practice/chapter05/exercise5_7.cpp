@@ -2,13 +2,12 @@
 #include <iostream>
 #include <string>
 
-
 int main() {
     using namespace std;
 
     struct Car {
         string company;
-        int year;  
+        int year;
     };
 
     int car_num = 0;

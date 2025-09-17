@@ -19,7 +19,7 @@ int main()
     cout << "Enter words (enter quit to quit):\n";
     string input;
     while (cin >> input && input != "quit")
-        words.push_back(input);
+    words.push_back(input);
 
     cout << "You entered the following words:\n";
     for_each(words.begin(), words.end(), display);
@@ -28,8 +28,8 @@ int main()
     // place words in set, converting to lowercase
     set<string> wordset;
     transform(words.begin(), words.end(),
-        insert_iterator<set<string> > (wordset, wordset.begin()),
-        ToLower);
+    insert_iterator<set<string> > (wordset, wordset.begin()),
+    ToLower);
     cout << "\nAlphabetic list of words:\n";
     for_each(wordset.begin(), wordset.end(), display);
     cout << endl;
@@ -38,12 +38,12 @@ int main()
     map<string, int> wordmap;
     set<string>::iterator si;
     for (si = wordset.begin(); si != wordset.end(); si++)
-        wordmap[*si] = count(words.begin(), words.end(), *si);
+    wordmap[*si] = count(words.begin(), words.end(), *si);
 
     // display map contents
     cout << "\nWord frequency:\n";
     for (si = wordset.begin(); si != wordset.end(); si++)
-        cout << *si << ": " << wordmap[*si] << endl;
+    cout << *si << ": " << wordmap[*si] << endl;
     // cin.get();
     // cin.get();
     return 0;
@@ -52,7 +52,7 @@ int main()
 string & ToLower(string & st)
 {
     transform(st.begin(), st.end(), st.begin(), toLower);
-    return st; 
+    return st;
 }
 
 void display(const string & s)

@@ -10,7 +10,7 @@ bool Tv::volup()
         return true;
     }
     else
-        return false;
+    return false;
 }
 bool Tv::voldown()
 {
@@ -20,23 +20,23 @@ bool Tv::voldown()
         return true;
     }
     else
-        return false;
+    return false;
 }
 
 void Tv::chanup()
 {
     if (channel < maxchannel)
-        channel++;
+    channel++;
     else
-        channel = 1;
+    channel = 1;
 }
 
 void Tv::chandown()
 {
     if (channel > 1)
-        channel--;
+    channel--;
     else
-        channel = maxchannel;
+    channel = maxchannel;
 }
 
 void Tv::settings() const
@@ -49,8 +49,8 @@ void Tv::settings() const
         cout << "Volume setting = " << volume << endl;
         cout << "Channel setting = " << channel << endl;
         cout << "Mode = "
-            << (mode == Antenna? "antenna" : "cable") << endl;
+        << (mode == Antenna? "antenna" : "cable") << endl;
         cout << "Input = "
-            << (input == TV? "TV" : "DVD") << endl;
+        << (input == TV? "TV" : "DVD") << endl;
     }
 }

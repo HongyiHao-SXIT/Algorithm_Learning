@@ -12,11 +12,11 @@ int main()
     {
         cin >> n;
         if (n < Fave)
-            cout << "Too low -- guess again: ";
+        cout << "Too low -- guess again: ";
         else if (n > Fave)
-            cout << "Too high -- guess again: ";
+        cout << "Too high -- guess again: ";
         else
-            cout << Fave << " is right!\n";
+        cout << Fave << " is right!\n";
     } while (n != Fave);
     // cin.get();
     // cin.get();

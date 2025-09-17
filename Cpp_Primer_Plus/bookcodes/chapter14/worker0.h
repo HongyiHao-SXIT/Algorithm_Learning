@@ -6,13 +6,13 @@
 
 class Worker   // an abstract base class
 {
-private:
+    private:
     std::string fullname;
     long id;
-public:
+    public:
     Worker() : fullname("no one"), id(0L) {}
     Worker(const std::string & s, long n)
-            : fullname(s), id(n) {}
+    : fullname(s), id(n) {}
     virtual ~Worker() = 0;   // pure virtual destructor
     virtual void Set();
     virtual void Show() const;
@@ -20,33 +20,33 @@ public:
 
 class Waiter : public Worker
 {
-private:
+    private:
     int panache;
-public:
+    public:
     Waiter() : Worker(), panache(0) {}
     Waiter(const std::string & s, long n, int p = 0)
-            : Worker(s, n), panache(p) {}
+    : Worker(s, n), panache(p) {}
     Waiter(const Worker & wk, int p = 0)
-            : Worker(wk), panache(p) {}
+    : Worker(wk), panache(p) {}
     void Set();
     void Show() const;
 };
 
 class Singer : public Worker
 {
-protected:
+    protected:
     enum {other, alto, contralto, soprano,
-                    bass, baritone, tenor};
+    bass, baritone, tenor};
     enum {Vtypes = 7};
-private:
+    private:
     static char *pv[Vtypes];    // string equivs of voice types
     int voice;
-public:
+    public:
     Singer() : Worker(), voice(other) {}
     Singer(const std::string & s, long n, int v = other)
-            : Worker(s, n), voice(v) {}
+    : Worker(s, n), voice(v) {}
     Singer(const Worker & wk, int v = other)
-            : Worker(wk), voice(v) {}
+    : Worker(wk), voice(v) {}
     void Set();
     void Show() const;
 };

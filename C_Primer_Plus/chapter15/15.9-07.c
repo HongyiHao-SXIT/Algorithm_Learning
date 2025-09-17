@@ -3,7 +3,7 @@
 #include <string.h>
 
 typedef unsigned long ulong;
-static ulong ft = 0x00001180; //题目初始状态; 
+static ulong ft = 0x00001180; //题目初始状态;
 //从右往左数, 第1位表示U, 第2位表示I, 第3位表示B, 第4至5位表示ALIGNMENT, 第6至第12位表示SIZE, 第13至20位表示ID
 const char *state[4] = {"off", "on"};
 const char *alignment[7] = {"left", "center", "right"};
@@ -19,7 +19,7 @@ void change_toggle(int ch);
 int main(void)
 {
     int ch;
-    
+
     while ((ch = get_choice()) != 'q')
     {
         switch (ch)
@@ -50,14 +50,14 @@ int main(void)
         putchar('\n');
     }
     printf("Bye!\n");
-    
+
     return 0;
 }
 
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
 }
 
 int get_first(void)
@@ -95,7 +95,7 @@ void change_font(void)
 {
     int ch;
     ulong id;
-    
+
     printf("Enter font id (0-255): ");
     while (scanf("%lu", &id) != 1)
     {
@@ -118,7 +118,7 @@ void change_size(void)
 {
     int ch;
     ulong sz;
-    
+
     printf("Enter font sz (0-127): ");
     while (scanf("%lu", &sz) != 1)
     {
@@ -140,7 +140,7 @@ void change_size(void)
 void change_alignment(void)
 {
     int ch;
-    
+
     printf("Select alignment:\n");
     printf("l) left    c) center    r) right\n");
     while (ch = get_first(), NULL == strchr("lcr", ch))

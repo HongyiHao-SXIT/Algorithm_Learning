@@ -47,7 +47,7 @@ int main(void)
         }
         printf("You can enter again (q to quit): ");
         while (getchar() != '\n')
-            continue;
+        continue;
     }
     printf("Done.\n");
 

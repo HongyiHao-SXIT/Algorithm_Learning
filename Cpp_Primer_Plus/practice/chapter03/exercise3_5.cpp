@@ -12,7 +12,7 @@ int main() {
 
     double rate = double(population_China)/population_world;
     cout << "The population of the China is " << rate * 100
-         << "% of the world population." << endl;
+    << "% of the world population." << endl;
 
     return 0;
 }

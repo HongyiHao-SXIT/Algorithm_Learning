@@ -1,7 +1,7 @@
 // not.cpp -- using the not operator
 #include <iostream>
 #include <climits>
-bool is_int(double); 
+bool is_int(double);
 int main()
 {
     using namespace std;
@@ -24,7 +24,7 @@ int main()
 bool is_int(double x)
 {
     if (x <= INT_MAX && x >= INT_MIN)   // use climits values
-        return true;
+    return true;
     else
-        return false; 
+    return false;
 }

@@ -12,10 +12,10 @@ int main()
     cout << ", coots = " << coots << endl;
 
     char ch = 'Z';
-    cout << "The code for " << ch << " is "; 
+    cout << "The code for " << ch << " is ";
     cout << int(ch) << endl;
     cout << "Yes, the code is ";
-    cout << static_cast<int>(ch) << endl; 
-   // cin.get();
-    return 0; 
+    cout << static_cast<int>(ch) << endl;
+    // cin.get();
+    return 0;
 }

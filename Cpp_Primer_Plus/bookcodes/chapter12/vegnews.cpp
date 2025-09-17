@@ -28,7 +28,7 @@ int main()
         cout << "Assign one object to another:\n";
         StringBad knot;
         knot = headline1;
-        cout << "knot: " << knot << endl; 
+        cout << "knot: " << knot << endl;
         cout << "Exiting the block.\n";
     }
     cout << "End of main()\n";

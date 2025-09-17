@@ -14,15 +14,15 @@ int find_smallest_factor(int n) {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    
+
     int n;
     cin >> n;
-    
+
     if (n == 1) {
         cout << 1 << endl;
         return 0;
     }
-    
+
     cout << find_smallest_factor(n) << endl;
     return 0;
 }

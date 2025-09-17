@@ -5,12 +5,12 @@
 template <class Item>
 class QueueTP
 {
-private:
+    private:
     enum {Q_SIZE = 10};
     // Node is a nested class definition
     class Node
     {
-    public:
+        public:
         Item item;
         Node * next;
         Node(const Item & i):item(i), next(0){ }
@@ -21,7 +21,7 @@ private:
     const int qsize;    // maximum number of items in Queue
     QueueTP(const QueueTP & q) : qsize(0) {}
     QueueTP & operator=(const QueueTP & q) { return *this; }
-public:
+    public:
     QueueTP(int qs = Q_SIZE);
     ~QueueTP();
     bool isempty() const
@@ -65,14 +65,14 @@ template <class Item>
 bool QueueTP<Item>::enqueue(const Item & item)
 {
     if (isfull())
-        return false;
+    return false;
     Node * add = new Node(item);    // create node
-// on failure, new throws std::bad_alloc exception
+    // on failure, new throws std::bad_alloc exception
     items++;
     if (front == 0)         // if queue is empty,
-        front = add;        // place item at front
+    front = add;        // place item at front
     else
-        rear->next = add;   // else place at rear
+    rear->next = add;   // else place at rear
     rear = add;             // have rear point to new node
     return true;
 }
@@ -82,15 +82,15 @@ template <class Item>
 bool QueueTP<Item>::dequeue(Item & item)
 {
     if (front == 0)
-        return false;
+    return false;
     item = front->item;     // set item to first item in queue
     items--;
     Node * temp = front;    // save location of first item
     front = front->next;    // reset front to next item
     delete temp;            // delete former first item
     if (items == 0)
-        rear = 0;
-    return true; 
+    rear = 0;
+    return true;
 }
 
 #endif

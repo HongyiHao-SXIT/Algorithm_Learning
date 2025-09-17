@@ -4,7 +4,7 @@
 #include <string>
 const int Seasons = 4;
 const std::array<std::string, Seasons> Snames =
-    {"Spring", "Summer", "Fall", "Winter"};
+{"Spring", "Summer", "Fall", "Winter"};
 
 void fill(std::array<double, Seasons> * pa);
 void show(std::array<double, Seasons> da);

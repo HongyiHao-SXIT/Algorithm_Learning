@@ -7,9 +7,9 @@ int main()
     int * pt = &higgens;
 
     cout << "Value of higgens = " << higgens
-         << "; Address of higgens = " << &higgens << endl;
+    << "; Address of higgens = " << &higgens << endl;
     cout << "Value of *pt = " << *pt
-         << "; Value of pt = " << pt << endl;
+    << "; Value of pt = " << pt << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

@@ -9,7 +9,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+    public:
     int getLength(ListNode* head) {
         int length = 0;
         while (head) {
@@ -23,15 +23,15 @@ public:
         ListNode* dummy = new ListNode(0, head);
         int length = getLength(head);
         ListNode* cur = dummy;
-        
+
         for (int i = 1; i < length - n + 1; ++i) {
             cur = cur->next;
         }
-        
+
         ListNode* toDelete = cur->next;
         cur->next = cur->next->next;
         delete toDelete;
-        
+
         ListNode* ans = dummy->next;
         delete dummy;
         return ans;

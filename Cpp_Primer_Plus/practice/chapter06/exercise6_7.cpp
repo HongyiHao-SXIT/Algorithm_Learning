@@ -3,7 +3,6 @@
 #include <cctype>
 #include <string>
 
-
 int main() {
 
     using namespace std;
@@ -16,7 +15,7 @@ int main() {
     cout << "Enter words (q to quit): " << endl;
     while (cin >> input) {
         if (input == "q")
-            break;
+        break;
 
         if (isalpha(input[0])) {
             switch(toupper(input[0])) {
@@ -26,12 +25,12 @@ int main() {
                 case 'I':;
                 case 'O':;
                 case 'U':
-                    ++vowels;
-                    break;
+                ++vowels;
+                break;
 
                 default:
-                    ++consonants;
-                    break;
+                ++consonants;
+                break;
             }
         } else {
             ++other;
@@ -39,8 +38,8 @@ int main() {
     }
 
     cout << vowels << " words beginning with vowels.\n"
-         << consonants << " words beginning with consonants.\n"
-         << other << " words beginning with other letter." << endl;
+    << consonants << " words beginning with consonants.\n"
+    << other << " words beginning with other letter." << endl;
 
     return 0;
 }

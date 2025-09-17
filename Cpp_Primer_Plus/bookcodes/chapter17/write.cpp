@@ -18,14 +18,14 @@ int main()
         cout << endl;
     }
 
-// concatenate output
+    // concatenate output
     cout << "Decreasing loop index:\n";
     for (i = len; i > 0; i--)
-        cout.write(state2,i) << endl;
+    cout.write(state2,i) << endl;
 
-// exceed string length
+    // exceed string length
     cout << "Exceeding string length:\n";
     cout.write(state2, len + 5) << endl;
     // std::cin.get();
-    return 0; 
+    return 0;
 }

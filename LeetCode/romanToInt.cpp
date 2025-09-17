@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
-public:
+    public:
     int romanToInt(string s) {
         map<char, int> romanMap = {
             {'I', 1},

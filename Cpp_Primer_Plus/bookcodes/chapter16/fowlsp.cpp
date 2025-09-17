@@ -19,7 +19,7 @@ int main()
 
     cout << "The nominees for best avian baseball film are\n";
     for (int i = 0; i < 5; i++)
-        cout << *films[i] << endl;
+    cout << *films[i] << endl;
     cout << "The winner is " << *pwin << "!\n";
     // cin.get();
     return 0;

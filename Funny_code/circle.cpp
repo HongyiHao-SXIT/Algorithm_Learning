@@ -7,9 +7,9 @@ const float CONCRETE_PRICE = 20;
 
 class Circle
 {
-private:
+    private:
     float radius;
-public:
+    public:
     Circle(float r);
     float circumference();
     float area();
@@ -42,5 +42,5 @@ int main(){
     cout << "Concrete Cost is $" << concreateCost <<endl;
 
     return 0;
-    
+
 }

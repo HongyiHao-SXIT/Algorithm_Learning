@@ -52,7 +52,7 @@ int login(struct User *user) {
     int success = 0;
     while (fscanf(fp, "%49[^,],%49s\n", fileAccount, filePassword) == 2) {
         if (strcmp(inputAccount, fileAccount) == 0 &&
-            strcmp(inputPassword, filePassword) == 0) {
+        strcmp(inputPassword, filePassword) == 0) {
             strcpy(user->Account, inputAccount);
             strcpy(user->Password, inputPassword);
             success = 1;
@@ -84,34 +84,34 @@ void modify_information(struct User *user) {
 
     switch (choice) {
         case 1:
-            printf("Enter new name: ");
-            fgets(user->Name, sizeof(user->Name), stdin);
-            user->Name[strcspn(user->Name, "\n")] = '\0';
-            break;
+        printf("Enter new name: ");
+        fgets(user->Name, sizeof(user->Name), stdin);
+        user->Name[strcspn(user->Name, "\n")] = '\0';
+        break;
         case 2:
-            printf("Enter new address: ");
-            fgets(user->Address, sizeof(user->Address), stdin);
-            user->Address[strcspn(user->Address, "\n")] = '\0';
-            break;
+        printf("Enter new address: ");
+        fgets(user->Address, sizeof(user->Address), stdin);
+        user->Address[strcspn(user->Address, "\n")] = '\0';
+        break;
         case 3:
-            printf("Enter new phone number: ");
-            fgets(user->Phone_Num, sizeof(user->Phone_Num), stdin);
-            user->Phone_Num[strcspn(user->Phone_Num, "\n")] = '\0';
-            break;
+        printf("Enter new phone number: ");
+        fgets(user->Phone_Num, sizeof(user->Phone_Num), stdin);
+        user->Phone_Num[strcspn(user->Phone_Num, "\n")] = '\0';
+        break;
         case 4:
-            printf("Enter new age: ");
-            scanf("%d", &user->Age);
-            break;
+        printf("Enter new age: ");
+        scanf("%d", &user->Age);
+        break;
         case 5:
-            printf("Enter new password: ");
-            fgets(user->Password, sizeof(user->Password), stdin);
-            user->Password[strcspn(user->Password, "\n")] = '\0';
-            break;
+        printf("Enter new password: ");
+        fgets(user->Password, sizeof(user->Password), stdin);
+        user->Password[strcspn(user->Password, "\n")] = '\0';
+        break;
         case 6:
-            printf("Exit modify menu.\n");
-            return;
+        printf("Exit modify menu.\n");
+        return;
         default:
-            printf("Invalid choice.\n");
+        printf("Invalid choice.\n");
     }
 }
 
@@ -214,58 +214,58 @@ void menu() {
 
         switch (choice) {
             case 1:
-                registerUser();
-                break;
+            registerUser();
+            break;
 
             case 2:
-                loggedIn = login(&currentUser);
-                break;
+            loggedIn = login(&currentUser);
+            break;
 
             case 3:
-                if (loggedIn)
-                    modify_information(&currentUser);
-                else
-                    printf("⚠ Please login first.\n");
-                break;
+            if (loggedIn)
+            modify_information(&currentUser);
+            else
+            printf("⚠ Please login first.\n");
+            break;
 
             case 4:
-                if (loggedIn)
-                    save_money(&currentUser);
-                else
-                    printf("⚠ Please login first.\n");
-                break;
+            if (loggedIn)
+            save_money(&currentUser);
+            else
+            printf("⚠ Please login first.\n");
+            break;
 
             case 5:
-                if (loggedIn)
-                    get_money(&currentUser);
-                else
-                    printf("⚠ Please login first.\n");
-                break;
+            if (loggedIn)
+            get_money(&currentUser);
+            else
+            printf("⚠ Please login first.\n");
+            break;
 
             case 6:
-                if (loggedIn) {
-                    printf("Enter target account name for demo transfer: ");
-                    scanf("%49s", anotherUser.Account);
-                    getchar();
-                    transfer(&currentUser, &anotherUser);
-                } else {
-                    printf("⚠ Please login first.\n");
-                }
-                break;
+            if (loggedIn) {
+                printf("Enter target account name for demo transfer: ");
+                scanf("%49s", anotherUser.Account);
+                getchar();
+                transfer(&currentUser, &anotherUser);
+            } else {
+                printf("⚠ Please login first.\n");
+            }
+            break;
 
             case 7:
-                if (loggedIn)
-                    printf("Current balance: %.2f\n", currentUser.balance);
-                else
-                    printf("⚠ Please login first.\n");
-                break;
+            if (loggedIn)
+            printf("Current balance: %.2f\n", currentUser.balance);
+            else
+            printf("⚠ Please login first.\n");
+            break;
 
             case 0:
-                printf("Thank you for using HongMing Bank System!\n");
-                return;
+            printf("Thank you for using HongMing Bank System!\n");
+            return;
 
             default:
-                printf("Invalid choice. Please try again.\n");
+            printf("Invalid choice. Please try again.\n");
         }
     }
 }

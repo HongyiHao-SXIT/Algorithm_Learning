@@ -3,7 +3,6 @@
 #include <fstream>
 #include <string>
 
-
 int main() {
     using namespace std;
 
@@ -22,8 +21,8 @@ int main() {
     }
     in_file_handle.close();
 
-    cout << "There are " << n << " characters in " 
-         << fn << " file." << endl;
+    cout << "There are " << n << " characters in "
+    << fn << " file." << endl;
 
     return 0;
 }

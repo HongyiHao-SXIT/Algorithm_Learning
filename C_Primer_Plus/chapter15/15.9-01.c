@@ -6,9 +6,9 @@ int convert(const char *str);
 int main(void)
 {
     const char *pbin = "01001001";
-    
+
     printf("binary %s is decimal %d\n", pbin, convert(pbin));
-    
+
     return 0;
 }
 

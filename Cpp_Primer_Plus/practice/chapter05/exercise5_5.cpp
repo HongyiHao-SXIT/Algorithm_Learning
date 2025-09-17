@@ -5,9 +5,9 @@
 int main() {
     using namespace std;
 
-    string months[12] = {"Jan", "Feb", "Mar", "Apr", 
-                         "May", "Jun", "Jul", "Aug", 
-                         "Sep", "Oct", "Nov", "Dec"};
+    string months[12] = {"Jan", "Feb", "Mar", "Apr",
+    "May", "Jun", "Jul", "Aug",
+    "Sep", "Oct", "Nov", "Dec"};
     int sell[12];
     int total_sales = 0;
 
@@ -25,7 +25,6 @@ int main() {
 
         cout << months[i] << ": " << sell[i] << endl;
     }
-
 
     return 0;
 }

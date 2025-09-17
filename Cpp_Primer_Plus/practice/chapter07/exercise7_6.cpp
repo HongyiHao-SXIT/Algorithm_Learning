@@ -8,7 +8,7 @@ int Fill_array(double data[], int max_num) {
     std::cout << "Enter double numbers (non-digital to quit): " << std::endl;
     int i = 0;
     while ((i < max_num) && (std::cin >> data[i]))
-        ++i;
+    ++i;
 
     // return the size of array
     return i;

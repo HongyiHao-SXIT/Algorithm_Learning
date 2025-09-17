@@ -14,7 +14,7 @@ int input(double data[], int max_num) {
         ++i;
 
         if (i == max_num)
-            break;
+        break;
     }
 
     return (i < max_num) ? i+1 : max_num;

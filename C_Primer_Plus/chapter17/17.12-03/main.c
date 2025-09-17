@@ -23,7 +23,7 @@ int main(void)
         puts("Enter your rating <0-10>:");
         scanf("%d", &temp.rating);
         while (getchar() != '\n')
-            continue;
+        continue;
         if (AddItem(temp, &movies) == false)
         {
             fprintf(stderr, "Problem allocating memory\n");
@@ -55,7 +55,7 @@ int main(void)
 void showmovies(Item item)
 {
     printf("Movie: %s  Rating: %d\n", item.title,
-           item.rating);
+    item.rating);
 }
 
 char *s_gets(char *st, int n)
@@ -74,7 +74,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;

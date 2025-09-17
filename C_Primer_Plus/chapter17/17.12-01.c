@@ -36,7 +36,7 @@ int main(void)
         puts("Enter your rating <0-10>:");
         scanf("%d", &current->rating);
         while (getchar() != '\n')
-            continue;
+        continue;
         puts("Enter next movie title (empty line to stop):");
         prev = current;
     }
@@ -53,7 +53,7 @@ int main(void)
     while (current != NULL)
     {
         printf("Movie: %s  Rating: %d\n",
-               current->title, current->rating);
+        current->title, current->rating);
         current = current->next;
     }
     if (head != NULL)
@@ -97,7 +97,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;

@@ -12,11 +12,11 @@ int main()
     while (std::cin >> x >> y)
     {
         if (hmean(x,y,&z))
-            std::cout << "Harmonic mean of " << x << " and " << y
-                << " is " << z << std::endl;
+        std::cout << "Harmonic mean of " << x << " and " << y
+        << " is " << z << std::endl;
         else
-            std::cout << "One value should not be the negative "
-                << "of the other - try again.\n";
+        std::cout << "One value should not be the negative "
+        << "of the other - try again.\n";
         std::cout << "Enter next set of numbers <q to quit>: ";
     }
     std::cout << "Bye!\n";

@@ -39,16 +39,16 @@ int Queue::queuecount() const
 bool Queue::enqueue(const Item & item)
 {
     if (isfull())
-        return false;
+    return false;
     Node * add = new Node;  // create node
-// on failure, new throws std::bad_alloc exception
+    // on failure, new throws std::bad_alloc exception
     add->item = item;       // set node pointers
     add->next = NULL;       // or nullptr;
     items++;
     if (front == NULL)      // if queue is empty,
-        front = add;        // place item at front
+    front = add;        // place item at front
     else
-        rear->next = add;   // else place at rear
+    rear->next = add;   // else place at rear
     rear = add;             // have rear point to new node
     return true;
 }
@@ -57,14 +57,14 @@ bool Queue::enqueue(const Item & item)
 bool Queue::dequeue(Item & item)
 {
     if (front == NULL)
-        return false;
+    return false;
     item = front->item;     // set item to first item in queue
     items--;
     Node * temp = front;    // save location of first item
     front = front->next;    // reset front to next item
     delete temp;            // delete former first item
     if (items == 0)
-        rear = NULL;
+    rear = NULL;
     return true;
 }
 
@@ -76,5 +76,5 @@ bool Queue::dequeue(Item & item)
 void Customer::set(long when)
 {
     processtime = std::rand() % 3 + 1;
-    arrive = when; 
+    arrive = when;
 }

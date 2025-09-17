@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-public:
+    public:
     string convert(string s, int numRows) {
-        
+
     }
 };

@@ -2,7 +2,6 @@
 #include <iostream>
 #include <array>
 
-
 const int ar_size = 100;
 int main() {
     using namespace std;

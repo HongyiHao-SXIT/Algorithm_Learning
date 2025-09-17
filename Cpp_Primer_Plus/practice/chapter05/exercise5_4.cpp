@@ -15,10 +15,10 @@ int main() {
         cleo_account += cleo_account * 0.05;
     }
 
-    cout << "After " << year << " Years. " 
-         << "Cleo's account is " << cleo_account
-         << " while more than the one of Daphne which is " 
-         << daphne_account << "." << endl;
+    cout << "After " << year << " Years. "
+    << "Cleo's account is " << cleo_account
+    << " while more than the one of Daphne which is "
+    << daphne_account << "." << endl;
 
     return 0;
 }

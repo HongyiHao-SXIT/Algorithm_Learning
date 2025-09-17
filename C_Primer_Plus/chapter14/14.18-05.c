@@ -51,7 +51,7 @@ void set_students(struct student ar[], int n)
             while (scanf("%f", &ar[i].grade[j]) != 1)
             {
                 while (getchar() != '\n')
-                    continue;
+                continue;
                 printf("Please enter a number: ");
             }
         }

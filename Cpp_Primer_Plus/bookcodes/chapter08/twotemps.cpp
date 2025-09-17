@@ -20,7 +20,7 @@ int main()
     int d1[Lim] = {0,7,0,4,1,7,7,6};
     int d2[Lim] = {0,7,2,0,1,9,6,9};
     cout << "Original arrays:\n";
-    Show(d1); 
+    Show(d1);
     Show(d2);
     Swap(d1,d2,Lim);        // matches new template
     cout << "Swapped arrays:\n";
@@ -31,7 +31,7 @@ int main()
 }
 
 template <typename T>
-void Swap(T &a, T &b) 
+void Swap(T &a, T &b)
 {
     T temp;
     temp = a;
@@ -57,6 +57,6 @@ void Show(int a[])
     cout << a[0] << a[1] << "/";
     cout << a[2] << a[3] << "/";
     for (int i = 4; i < Lim; i++)
-        cout << a[i];
+    cout << a[i];
     cout << endl;
 }

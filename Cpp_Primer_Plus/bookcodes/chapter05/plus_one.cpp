@@ -10,5 +10,5 @@ int main()
     cout << "a++ = " << a++ << ": ++b = " << ++b << "\n";
     cout << "a   = " << a << ":   b = " << b << "\n";
     // std::cin.get();
-	return 0;
+    return 0;
 }

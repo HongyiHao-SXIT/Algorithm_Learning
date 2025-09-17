@@ -16,5 +16,5 @@ int main()
     cout << ", c squared = " << square(c++) << "\n";
     cout << "Now c = " << c << "\n";
     // cin.get();
-    return 0;  
+    return 0;
 }

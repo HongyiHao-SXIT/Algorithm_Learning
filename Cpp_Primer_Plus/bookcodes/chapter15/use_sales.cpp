@@ -33,7 +33,7 @@ int main()
 
             cout << sales1[i] << ' ';
             if (i % 6 == 5)
-                cout << endl;
+            cout << endl;
         }
         cout << "Year = " << sales2.Year() << endl;
         cout << "Label = " << sales2.Label() << endl;
@@ -42,40 +42,40 @@ int main()
 
             cout << sales2[i] << ' ';
             if (i % 6 == 5)
-                cout << endl;
+            cout << endl;
         }
         cout << "End of try block 1.\n";
-   }
-   catch(LabeledSales::nbad_index & bad)
-   {
+    }
+    catch(LabeledSales::nbad_index & bad)
+    {
         cout << bad.what();
         cout << "Company: " << bad.label_val() << endl;
         cout << "bad index: " << bad.bi_val() << endl;
-   }
-   catch(Sales::bad_index & bad)
-   {
+    }
+    catch(Sales::bad_index & bad)
+    {
         cout << bad.what();
         cout << "bad index: " << bad.bi_val() << endl;
-   }
-   cout << "\nNext try block:\n";
-   try
+    }
+    cout << "\nNext try block:\n";
+    try
     {
         sales2[2] = 37.5;
         sales1[20] = 23345;
         cout << "End of try block 2.\n";
-   }
-   catch(LabeledSales::nbad_index & bad)
-   {
+    }
+    catch(LabeledSales::nbad_index & bad)
+    {
         cout << bad.what();
         cout << "Company: " << bad.label_val() << endl;
         cout << "bad index: " << bad.bi_val() << endl;
-   }
-   catch(Sales::bad_index & bad)
-   {
+    }
+    catch(Sales::bad_index & bad)
+    {
         cout << bad.what();
         cout << "bad index: " << bad.bi_val() << endl;
-   }
-   cout << "done\n";
-   // std::cin.get();
-   return 0;
+    }
+    cout << "done\n";
+    // std::cin.get();
+    return 0;
 }

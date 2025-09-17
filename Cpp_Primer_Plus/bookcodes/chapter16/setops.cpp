@@ -38,7 +38,7 @@ int main()
     set<string> C;
     cout << "Set C:\n";
     set_union(A.begin(), A.end(), B.begin(), B.end(),
-        insert_iterator<set<string> >(C, C.begin()));
+    insert_iterator<set<string> >(C, C.begin()));
     copy(C.begin(), C.end(), out);
     cout << endl;
 
@@ -52,5 +52,5 @@ int main()
     copy(C.lower_bound("ghost"),C.upper_bound("spook"), out);
     cout << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

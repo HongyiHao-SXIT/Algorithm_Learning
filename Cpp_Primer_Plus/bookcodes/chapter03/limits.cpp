@@ -1,12 +1,12 @@
 #include <iostream>
-#include <climits> 
+#include <climits>
 int main()
 {
     using namespace std;
     int n_int = INT_MAX;
     short n_short = SHRT_MAX;
     long n_long = LONG_MAX;
-	long long n_llong = LLONG_MAX;
+    long long n_llong = LLONG_MAX;
 
     // sizeof operator yields size of type or of variable
     cout << "int is " << sizeof (int) << " bytes." << endl;
@@ -23,6 +23,6 @@ int main()
 
     cout << "Minimum int value = " << INT_MIN << endl;
     cout << "Bits per byte = " << CHAR_BIT << endl;
-	// cin.get();
+    // cin.get();
     return 0;
 }

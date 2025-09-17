@@ -18,5 +18,5 @@ int main()
     cout << "The expression x > 3 has the value ";
     cout << (x > 3) << endl;
     /// cin.get();
-    return 0; 
+    return 0;
 }

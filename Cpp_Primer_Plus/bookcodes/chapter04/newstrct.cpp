@@ -22,5 +22,5 @@ int main()
     delete ps;                        // free memory used by structure
     // cin.get();
     // cin.get();
-    return 0; 
+    return 0;
 }

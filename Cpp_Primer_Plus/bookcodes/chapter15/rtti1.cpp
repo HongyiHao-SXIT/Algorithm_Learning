@@ -7,9 +7,9 @@ using std::cout;
 
 class Grand
 {
-private:
+    private:
     int hold;
-public:
+    public:
     Grand(int h = 0) : hold(h) {}
     virtual void Speak() const { cout << "I am a grand class!\n";}
     virtual int Value() const { return hold; }
@@ -17,22 +17,22 @@ public:
 
 class Superb : public Grand
 {
-public:
+    public:
     Superb(int h = 0) : Grand(h) {}
     void Speak() const {cout << "I am a superb class!!\n"; }
     virtual void Say() const
-        { cout << "I hold the superb value of " << Value() << "!\n";}
+    { cout << "I hold the superb value of " << Value() << "!\n";}
 };
 
 class Magnificent : public Superb
 {
-private:
+    private:
     char ch;
-public:
+    public:
     Magnificent(int h = 0, char c = 'A') : Superb(h), ch(c) {}
     void Speak() const {cout << "I am a magnificent class!!!\n";}
     void Say() const {cout << "I hold the character " << ch <<
-               " and the integer "  << Value() << "!\n"; }
+    " and the integer "  << Value() << "!\n"; }
 };
 
 Grand * GetOne();
@@ -47,7 +47,7 @@ int main()
         pg = GetOne();
         pg->Speak();
         if( ps = dynamic_cast<Superb *>(pg))
-            ps->Say();
+        ps->Say();
     }
     // std::cin.get();
     return 0;
@@ -59,12 +59,12 @@ Grand * GetOne()    // generate one of three kinds of objects randomly
     switch( std::rand() % 3)
     {
         case 0: p = new Grand(std::rand() % 100);
-                    break;
+        break;
         case 1: p = new Superb(std::rand() % 100);
-                    break;
-        case 2: p = new Magnificent(std::rand() % 100, 
-                              'A' + std::rand() % 26);
-                    break;
+        break;
+        case 2: p = new Magnificent(std::rand() % 100,
+        'A' + std::rand() % 26);
+        break;
     }
-    return p; 
+    return p;
 }

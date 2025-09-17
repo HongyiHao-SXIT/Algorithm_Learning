@@ -14,7 +14,7 @@ int main()
     using std::cout;
     using std::endl;
     using std::ios_base;
-// setting things up
+    // setting things up
     std::srand(std::time(0));    //  random initializing of rand()
 
     cout << "Case Study: Bank of Heather Automatic Teller\n";
@@ -43,14 +43,13 @@ int main()
     int wait_time = 0;      //  time until autoteller is free
     long line_wait = 0;     //  cumulative time in line
 
-
-// running the simulation
+    // running the simulation
     for (int cycle = 0; cycle < cyclelimit; cycle++)
     {
         if (newcustomer(min_per_cust))  // have newcomer
         {
             if (line.isfull())
-                turnaways++;
+            turnaways++;
             else
             {
                 customers++;
@@ -66,11 +65,11 @@ int main()
             served++;
         }
         if (wait_time > 0)
-            wait_time--;
+        wait_time--;
         sum_line += line.queuecount();
     }
 
-// reporting results
+    // reporting results
     if (customers > 0)
     {
         cout << "customers accepted: " << customers << endl;
@@ -81,10 +80,10 @@ int main()
         cout.setf(ios_base::fixed, ios_base::floatfield);
         cout << (double) sum_line / cyclelimit << endl;
         cout << " average wait time: "
-             << (double) line_wait / served << " minutes\n";
+        << (double) line_wait / served << " minutes\n";
     }
     else
-        cout << "No customers!\n";
+    cout << "No customers!\n";
     cout << "Done!\n";
     // cin.get();
     // cin.get();
@@ -95,5 +94,5 @@ int main()
 //  return value is true if customer shows up this minute
 bool newcustomer(double x)
 {
-    return (std::rand() * x / RAND_MAX < 1); 
+    return (std::rand() * x / RAND_MAX < 1);
 }

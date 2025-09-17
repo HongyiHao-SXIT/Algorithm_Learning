@@ -7,13 +7,13 @@ int main()
     using std::cin;
     using std::endl;
 
-//  read and echo input up to a # character
+    //  read and echo input up to a # character
     char ch;
 
     while(cin.get(ch))          // terminates on EOF
     {
         if (ch != '#')
-            cout << ch;
+        cout << ch;
         else
         {
             cin.putback(ch);    // reinsert character
@@ -43,13 +43,13 @@ int main()
         cout << endl << ch << " is next input character.\n";
     }
     else
-        cout << "End of file reached.\n";
-// keeping output window open 
-/*
+    cout << "End of file reached.\n";
+    // keeping output window open
+    /*
     cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
-    return 0; 
+    */
+    return 0;
 }

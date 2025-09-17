@@ -29,5 +29,5 @@ int main()
     string eight(four, 7, 16);         // ctor #7
     cout << eight << " in motion!" << endl;
     // std::cin.get();
-    return 0; 
+    return 0;
 }

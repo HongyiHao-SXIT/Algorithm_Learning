@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
-public:
+    public:
     bool isValid(string s) {
         stack<char> stk;
         for (char c : s) {
@@ -15,8 +15,8 @@ public:
 
                 char top = stk.top();
                 if ((c == ')' && top == '(') ||
-                    (c == ']' && top == '[') ||
-                    (c == '}' && top == '{')) {
+                (c == ']' && top == '[') ||
+                (c == '}' && top == '{')) {
                     stk.pop();
                 } else {
                     return false;

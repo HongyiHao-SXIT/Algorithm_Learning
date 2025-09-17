@@ -28,5 +28,5 @@ int main()
     cout << pb[0].stuff[0] << endl;
     delete [] pb;
     // cin.get();
-    return 0; 
+    return 0;
 }

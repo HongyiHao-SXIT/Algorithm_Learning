@@ -11,13 +11,13 @@ int main()
 
     cout << "Enter numbers (<=0 to quit):\n";
     while (cin >> temp && temp > 0)
-        data.push_back(temp);
+    data.push_back(temp);
     sort(data.begin(), data.end());
     int size = data.size();
     valarray<double> numbers(size);
     int i;
     for (i = 0; i < size; i++)
-        numbers[i] = data[i];
+    numbers[i] = data[i];
     valarray<double> sq_rts(size);
     sq_rts = sqrt(numbers);
     valarray<double> results(size);

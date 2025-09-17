@@ -79,7 +79,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;
@@ -163,5 +163,5 @@ int get_first(void)
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
 }

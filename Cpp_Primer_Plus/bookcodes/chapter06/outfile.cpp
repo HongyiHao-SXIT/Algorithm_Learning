@@ -22,7 +22,7 @@ int main()
     cin >> a_price;
     d_price = 0.913 * a_price;
 
-// display information on screen with cout
+    // display information on screen with cout
 
     cout << fixed;
     cout.precision(2);
@@ -32,7 +32,7 @@ int main()
     cout << "Was asking $" << a_price << endl;
     cout << "Now asking $" << d_price << endl;
 
-// now do exact same things using outFile instead of cout
+    // now do exact same things using outFile instead of cout
 
     outFile << fixed;
     outFile.precision(2);
@@ -41,7 +41,7 @@ int main()
     outFile << "Year: " << year << endl;
     outFile << "Was asking $" << a_price << endl;
     outFile << "Now asking $" << d_price << endl;
-    
+
     outFile.close();                // done with file
     // cin.get();
     // cin.get();

@@ -12,5 +12,5 @@ int main(void)
         ++count;
     }
     cout << endl << count << " characters read\n";
-	return 0; 
+    return 0;
 }

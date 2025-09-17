@@ -12,7 +12,7 @@ int main()
     {
         z = hmean(x,y);
         std::cout << "Harmonic mean of " << x << " and " << y
-            << " is " << z << std::endl;
+        << " is " << z << std::endl;
         std::cout << "Enter next set of numbers <q to quit>: ";
     }
     std::cout << "Bye!\n";
@@ -26,5 +26,5 @@ double hmean(double a, double b)
         std::cout << "untenable arguments to hmean()\n";
         std::abort();
     }
-    return 2.0 * a * b / (a + b); 
+    return 2.0 * a * b / (a + b);
 }

@@ -5,8 +5,8 @@ int main()
 {
     using namespace std;
     char mmm[15] = "minimum";    // string in an array
-// some systems require preceding char with static to
-// enable array initialization
+    // some systems require preceding char with static to
+    // enable array initialization
 
     char *wail = "ululate";    // wail points to string
 
@@ -27,8 +27,8 @@ unsigned int c_in_str(const char * str, char ch)
     while (*str)        // quit when *str is '\0'
     {
         if (*str == ch)
-            count++;
+        count++;
         str++;        // move pointer to next char
     }
-    return count; 
+    return count;
 }

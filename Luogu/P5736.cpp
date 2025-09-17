@@ -17,13 +17,13 @@ bool isprime(int x) {
 int main() {
     int n, a;
     cin >> n;
-    
+
     for (int i = 1; i <= n; i++) {
         cin >> a;
         if (isprime(a)) {
             cout << a << " ";
         }
     }
-    
+
     return 0;
 }

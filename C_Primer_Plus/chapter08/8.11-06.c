@@ -28,7 +28,7 @@ int get_first(void)
         ch = getchar();
     } while (isspace(ch));
     while (getchar() != '\n')
-        continue;
+    continue;
 
     return ch;
 }

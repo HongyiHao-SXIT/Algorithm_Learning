@@ -12,8 +12,8 @@ int main() {
     cin >> fuel_comsuption_en;
 
     double fuel_comsuption_us = (100 * Km2Mile) / (fuel_comsuption_en/Gallon2Litre);
-    cout << "The fuel comsuption in US standard is " << fuel_comsuption_us 
-         << " Miles/Gallon (mpg)." << endl;  
+    cout << "The fuel comsuption in US standard is " << fuel_comsuption_us
+    << " Miles/Gallon (mpg)." << endl;
 
     return 0;
 }

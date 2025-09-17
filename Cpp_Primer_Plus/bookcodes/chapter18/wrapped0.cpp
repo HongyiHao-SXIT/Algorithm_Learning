@@ -8,9 +8,9 @@ double dub(double x) {return 2.0*x;}
 
 int main()
 {
-	using std::cout;
-	using std::endl;
-	using std::function;
+    using std::cout;
+    using std::endl;
+    using std::function;
     typedef function<double(double)> fdd;
     double y = 1.21;
     function<double(double)> ef1 = dub;

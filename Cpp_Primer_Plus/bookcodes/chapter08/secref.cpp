@@ -21,5 +21,5 @@ int main()
     cout << "bunnies address = " << &bunnies;
     cout << ", rodents address = " << &rodents << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

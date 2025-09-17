@@ -11,9 +11,9 @@ int main()
     cout << "starting\a\n";
     clock_t start = clock();
     while (clock() - start < delay )        // wait until time elapses
-        ;                                   // note the semicolon
+    ;                                   // note the semicolon
     cout << "done \a\n";
     // cin.get();
     // cin.get();
-    return 0; 
+    return 0;
 }

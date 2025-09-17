@@ -16,21 +16,21 @@ int main()
         1.88,               // volume value
         29.99               // price value
     };  // guest is a structure variable of type inflatable
-// It's initialized to the indicated values
+    // It's initialized to the indicated values
     inflatable pal =
     {
         "Audacious Arthur",
         3.12,
         32.99
     };  // pal is a second variable of type inflatable
-// NOTE: some implementations require using
-// static inflatable guest =
+    // NOTE: some implementations require using
+    // static inflatable guest =
 
     cout << "Expand your guest list with " << guest.name;
     cout << " and " << pal.name << "!\n";
-// pal.name is the name member of the pal variable
+    // pal.name is the name member of the pal variable
     cout << "You can have both for $";
     cout << guest.price + pal.price << "!\n";
     // cin.get();
-    return 0; 
+    return 0;
 }

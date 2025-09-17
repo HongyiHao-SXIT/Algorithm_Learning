@@ -20,25 +20,25 @@ int main()
     planet pl;
     cout << fixed;
 
-// show initial contents
+    // show initial contents
     fstream finout;     // read and write streams
-    finout.open(file, 
-           ios_base::in | ios_base::out | ios_base::binary);
+    finout.open(file,
+    ios_base::in | ios_base::out | ios_base::binary);
     //NOTE: Some Unix systems require omitting | ios::binary
     int ct = 0;
     if (finout.is_open())
     {
         finout.seekg(0);    // go to beginning
         cout << "Here are the current contents of the "
-             << file << " file:\n";
+        << file << " file:\n";
         while (finout.read((char *) &pl, sizeof pl))
         {
             cout << ct++ << ": " << setw(LIM) << pl.name << ": "
-                 << setprecision(0) << setw(12) << pl.population
-                 << setprecision(2) << setw(6) << pl.g << endl;
+            << setprecision(0) << setw(12) << pl.population
+            << setprecision(2) << setw(6) << pl.g << endl;
         }
         if (finout.eof())
-            finout.clear(); // clear eof flag
+        finout.clear(); // clear eof flag
         else
         {
             cerr << "Error in reading " << file << ".\n";
@@ -51,7 +51,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-// change a record
+    // change a record
     cout << "Enter the record number you wish to change: ";
     long rec;
     cin >> rec;
@@ -72,10 +72,10 @@ int main()
     finout.read((char *) &pl, sizeof pl);
     cout << "Your selection:\n";
     cout << rec << ": " << setw(LIM) << pl.name << ": "
-         << setprecision(0) << setw(12) << pl.population
-         << setprecision(2) << setw(6) << pl.g << endl;
+    << setprecision(0) << setw(12) << pl.population
+    << setprecision(2) << setw(6) << pl.g << endl;
     if (finout.eof())
-        finout.clear();     // clear eof flag
+    finout.clear();     // clear eof flag
 
     cout << "Enter planet name: ";
     cin.get(pl.name, LIM);
@@ -92,22 +92,22 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-// show revised file
+    // show revised file
     ct = 0;
     finout.seekg(0);            // go to beginning of file
     cout << "Here are the new contents of the " << file
-         << " file:\n";
+    << " file:\n";
     while (finout.read((char *) &pl, sizeof pl))
     {
         cout << ct++ << ": " << setw(LIM) << pl.name << ": "
-             << setprecision(0) << setw(12) << pl.population
-             << setprecision(2) << setw(6) << pl.g << endl;
+        << setprecision(0) << setw(12) << pl.population
+        << setprecision(2) << setw(6) << pl.g << endl;
     }
     finout.close();
     cout << "Done.\n";
-// keeping output window open
+    // keeping output window open
     // cin.clear();
     // eatline();
     // cin.get();
-    return 0; 
+    return 0;
 }

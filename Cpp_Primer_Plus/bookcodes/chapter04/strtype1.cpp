@@ -15,14 +15,14 @@ int main()
     cin >> str1;                // use cin for input
     cout << "Here are some felines:\n";
     cout << charr1 << " " << charr2 << " "
-         << str1 << " " << str2 // use cout for output
-         << endl;
+    << str1 << " " << str2 // use cout for output
+    << endl;
     cout << "The third letter in " << charr2 << " is "
-         << charr2[2] << endl;
+    << charr2[2] << endl;
     cout << "The third letter in " << str2 << " is "
-         << str2[2] << endl;    // use array notation
+    << str2[2] << endl;    // use array notation
     // cin.get();
-	// cin.get();
+    // cin.get();
 
-    return 0; 
+    return 0;
 }

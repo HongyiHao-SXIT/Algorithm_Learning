@@ -9,13 +9,13 @@ int main(int argc, char *argv[])
     int x = TEST_NUM;
     int sz = 8 * sizeof(int);
     char bstr[8 * sizeof(int) + 1];
-    
+
     printf("%d(%s):\n", x, itobs(x, bstr));
     for (int i = sz - 1; i >= 0; --i)
     {
         printf("The position %d is %d\n", i + 1, test_bit(x, i));
     }
-    
+
     return 0;
 }
 

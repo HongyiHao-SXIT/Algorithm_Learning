@@ -23,8 +23,8 @@ int main() {
         s += num;
     }
 
-    cout << "Sum the number from " << number1 << " to " << number2 
-         << ", sum = " << s << endl;
+    cout << "Sum the number from " << number1 << " to " << number2
+    << ", sum = " << s << endl;
 
     return 0;
 }

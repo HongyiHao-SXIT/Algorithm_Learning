@@ -77,9 +77,9 @@ int main(void)
             printf("  customers served: %ld\n", malls[i].served);
             printf("         turnaways: %ld\n", malls[i].turnaways);
             printf("average queue size: %.2f\n",
-                   (double)malls[i].sum_line / malls[i].cyclelimit);
+            (double)malls[i].sum_line / malls[i].cyclelimit);
             printf(" average wait time: %.2f minutes\n",
-                   (double)malls[i].line_wait / malls[i].served);
+            (double)malls[i].line_wait / malls[i].served);
         }
         else
         {

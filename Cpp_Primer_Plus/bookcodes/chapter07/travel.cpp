@@ -34,7 +34,7 @@ travel_time sum(travel_time t1, travel_time t2)
 
     total.mins = (t1.mins + t2.mins) % Mins_per_hr;
     total.hours = t1.hours + t2.hours +
-                 (t1.mins + t2.mins) / Mins_per_hr;
+    (t1.mins + t2.mins) / Mins_per_hr;
     return total;
 }
 
@@ -42,5 +42,5 @@ void show_time(travel_time t)
 {
     using namespace std;
     cout << t.hours << " hours, "
-         << t.mins << " minutes\n";
+    << t.mins << " minutes\n";
 }

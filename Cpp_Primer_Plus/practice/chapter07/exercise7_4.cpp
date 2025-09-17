@@ -21,7 +21,7 @@ int main() {
     unsigned int field2 = 27;
 
     std::cout << "You have no chance in "
-              << probability(field1, 5) * probability(field2, 1)
-              << " of winning.\n" << std::endl;
+    << probability(field1, 5) * probability(field2, 1)
+    << " of winning.\n" << std::endl;
     return 0;
 }

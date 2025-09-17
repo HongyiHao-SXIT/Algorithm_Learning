@@ -12,8 +12,8 @@ const sysop & use(sysop & sysopref);  // function with a reference return type
 
 int main()
 {
-// NOTE: some implementations require using the keyword static
-// in the two structure declarations to enable initialization
+    // NOTE: some implementations require using the keyword static
+    // in the two structure declarations to enable initialization
     sysop looper =
     {
         "Rick \"Fortran\" Looper",
@@ -38,5 +38,5 @@ const sysop & use(sysop & sysopref)
     cout << sysopref.name << " says:\n";
     cout << sysopref.quote << endl;
     sysopref.used++;
-    return sysopref; 
+    return sysopref;
 }

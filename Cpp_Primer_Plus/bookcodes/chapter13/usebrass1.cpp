@@ -23,6 +23,6 @@ int main()
     cout << "Withdrawing $4200 from the Hogg Account:\n";
     Hoggy.Withdraw(4200.00);
     Hoggy.ViewAcct();
-	// std::cin.get();
-    return 0; 
+    // std::cin.get();
+    return 0;
 }

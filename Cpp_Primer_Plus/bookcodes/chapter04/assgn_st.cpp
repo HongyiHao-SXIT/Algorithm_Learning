@@ -23,5 +23,5 @@ int main()
     cout << "choice: " << choice.name << " for $";
     cout << choice.price << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

@@ -20,26 +20,26 @@ int main()
     planet pl;
     cout << fixed << right;
 
-// show initial contents
+    // show initial contents
     ifstream fin;
     fin.open(file, ios_base::in |ios_base::binary);  // binary file
     //NOTE: some systems don't accept the ios_base::binary mode
     if (fin.is_open())
     {
-    cout << "Here are the current contents of the "
+        cout << "Here are the current contents of the "
         << file << " file:\n";
-    while (fin.read((char *) &pl, sizeof pl))
-    {
-        cout << setw(20) << pl.name << ": "
-              << setprecision(0) << setw(12) << pl.population
-              << setprecision(2) << setw(6) << pl.g << endl;
-    }    
-    fin.close();
+        while (fin.read((char *) &pl, sizeof pl))
+        {
+            cout << setw(20) << pl.name << ": "
+            << setprecision(0) << setw(12) << pl.population
+            << setprecision(2) << setw(6) << pl.g << endl;
+        }
+        fin.close();
     }
 
-// add new data
-    ofstream fout(file, 
-             ios_base::out | ios_base::app | ios_base::binary);
+    // add new data
+    ofstream fout(file,
+    ios_base::out | ios_base::app | ios_base::binary);
     //NOTE: some systems don't accept the ios::binary mode
     if (!fout.is_open())
     {
@@ -59,30 +59,30 @@ int main()
         eatline();
         fout.write((char *) &pl, sizeof pl);
         cout << "Enter planet name (enter a blank line "
-                "to quit):\n";
+        "to quit):\n";
         cin.get(pl.name, 20);
     }
     fout.close();
 
-// show revised file
+    // show revised file
     fin.clear();    // not required for some implementations, but won't hurt
     fin.open(file, ios_base::in | ios_base::binary);
     if (fin.is_open())
     {
         cout << "Here are the new contents of the "
-             << file << " file:\n";
+        << file << " file:\n";
         while (fin.read((char *) &pl, sizeof pl))
         {
             cout << setw(20) << pl.name << ": "
-                 << setprecision(0) << setw(12) << pl.population
-                 << setprecision(2) << setw(6) << pl.g << endl;
+            << setprecision(0) << setw(12) << pl.population
+            << setprecision(2) << setw(6) << pl.g << endl;
         }
         fin.close();
     }
     cout << "Done.\n";
-// keeping output window open
+    // keeping output window open
     // cin.clear();
     // eatline();
     // cin.get();
-    return 0; 
+    return 0;
 }

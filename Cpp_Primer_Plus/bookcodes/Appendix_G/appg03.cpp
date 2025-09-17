@@ -8,20 +8,20 @@ class Items
     double x;
     double y;
     int m;
-public:
-	Items() : x(0),y(0), m(0){};
+    public:
+    Items() : x(0),y(0), m(0){};
     Items (double xx, double yy, int mm): x(xx),y(yy), m(mm){};
-	void Show() const { cout << x << ", " << y << ", " << m << endl;}
+    void Show() const { cout << x << ", " << y << ", " << m << endl;}
 };
 int main()
 {
-	vector<Items> vt(5);
+    vector<Items> vt(5);
 
-	for_each( vt.begin(), vt.end(), [](const Items & i){i.Show();});
+    for_each( vt.begin(), vt.end(), [](const Items & i){i.Show();});
 
     vt.push_back( Items(8.2, 2.8, 3));
-	for_each( vt.begin(), vt.end(), [](const Items & i){i.Show();});
-	vt.emplace_back( 8.2, 2.8, 3);
-	for_each( vt.begin(), vt.end(), [](const Items & i){i.Show();});
-	cin.get();
+    for_each( vt.begin(), vt.end(), [](const Items & i){i.Show();});
+    vt.emplace_back( 8.2, 2.8, 3);
+    for_each( vt.begin(), vt.end(), [](const Items & i){i.Show();});
+    cin.get();
 }

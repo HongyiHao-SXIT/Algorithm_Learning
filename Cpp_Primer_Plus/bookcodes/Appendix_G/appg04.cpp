@@ -13,7 +13,7 @@ int main()
 
     set<string> A(s1, s1 + N);
     set<string> B(s2, s2 + N);
-	A.insert("buffalo");
+    A.insert("buffalo");
     ostream_iterator<string, char> out(cout, " ");
     cout << "Set A: ";
     copy(A.begin(), A.end(), out);
@@ -37,7 +37,7 @@ int main()
     set<string> C;
     cout << "Set C:\n";
     set_union(A.begin(), A.end(), B.begin(), B.end(),
-        insert_iterator<set<string> >(C, C.begin()));
+    insert_iterator<set<string> >(C, C.begin()));
     copy(C.begin(), C.end(), out);
     cout << endl;
 
@@ -50,7 +50,7 @@ int main()
     cout << "Showing a range:\n";
     copy(C.lower_bound("ghost"),C.upper_bound("spook"), out);
     cout << endl;
-	cin.get();
-	cin.get();
-    return 0; 
+    cin.get();
+    cin.get();
+    return 0;
 }

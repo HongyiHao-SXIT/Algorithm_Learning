@@ -7,7 +7,7 @@ enum class CompetitionLevel { City, Province, National };
 enum class AchievementType { InventionPatent, UtilityModelPatent, DesignPatent, SoftwareCopyright, OtherRegistration };
 
 class WolfReputation {
-private:
+    private:
     int reputation = 0;
     std::chrono::system_clock::time_point last_achievement_time;
 
@@ -16,14 +16,14 @@ private:
 
         auto now = std::chrono::system_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::seconds>(
-            now - last_achievement_time);
-        
+        now - last_achievement_time);
+
         if (duration.count() >= 31536000) {
             reputation = 0;
         }
     }
 
-public:
+    public:
     void addQualification(ProfessionalLevel level) {
         checkInactivity();
         switch(level) {
@@ -74,13 +74,13 @@ public:
 
 int main() {
     WolfReputation wolf;
-    
+
     wolf.addQualification(ProfessionalLevel::Advanced);
     wolf.addEducation(EducationLevel::Master);
     wolf.addCompetition(CompetitionLevel::National);
     wolf.addAchievement(AchievementType::SoftwareCopyright);
-    
+
     std::cout << "当前声望: " << wolf.getReputation() << std::endl;
-    
+
     return 0;
 }

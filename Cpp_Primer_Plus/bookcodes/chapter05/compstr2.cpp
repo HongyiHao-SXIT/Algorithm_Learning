@@ -13,5 +13,5 @@ int main()
     }
     cout << "After loop ends, word is " << word << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

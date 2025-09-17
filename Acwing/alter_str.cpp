@@ -9,18 +9,18 @@ int main() {
     string inputLine;
     string targetWord;
     string replacementWord;
-    
+
     getline(cin, inputLine);
     cin >> targetWord >> replacementWord;
-    
+
     vector<string> wordList;
     string currentWord;
     stringstream stringStream(inputLine);
-    
+
     while (stringStream >> currentWord) {
         wordList.push_back(currentWord);
     }
-    
+
     for (auto& word : wordList) {
         if (word == targetWord) {
             word = replacementWord;
@@ -34,6 +34,6 @@ int main() {
         cout << wordList[i];
     }
     cout << endl;
-    
+
     return 0;
 }

@@ -21,10 +21,10 @@ int main()
     copy(dice.rbegin(), dice.rend(), out_iter);
     cout << endl;
     cout <<"Explicit use of reverse iterator.\n";
-   // vector<int>::reverse_iterator ri;  // use if auto doesn't work
+    // vector<int>::reverse_iterator ri;  // use if auto doesn't work
     for (auto ri = dice.rbegin(); ri != dice.rend(); ++ri)
-        cout << *ri << ' ';
+    cout << *ri << ' ';
     cout << endl;
-	// cin.get();
-    return 0; 
+    // cin.get();
+    return 0;
 }

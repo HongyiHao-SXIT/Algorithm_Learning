@@ -19,7 +19,7 @@ int main() {
 
     double degree2 = degree + minutes/60 + seconds/3600;
     cout << degree << " degrees, " << minutes << " minutes, "
-         << seconds << " seconds = " << degree2 << endl;
+    << seconds << " seconds = " << degree2 << endl;
 
     return 0;
 }

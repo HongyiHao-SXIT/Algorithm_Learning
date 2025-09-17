@@ -20,7 +20,7 @@ int main()
     {
         cout << "Enter step length: ";
         if (!(cin >> dstep))
-            break;
+        break;
 
         while (result.magval() < target)
         {
@@ -30,22 +30,22 @@ int main()
             steps++;
         }
         cout << "After " << steps << " steps, the subject "
-            "has the following location:\n";
+        "has the following location:\n";
         cout << result << endl;
         result.polar_mode();
         cout << " or\n" << result << endl;
         cout << "Average outward distance per step = "
-            << result.magval()/steps << endl;
+        << result.magval()/steps << endl;
         steps = 0;
         result.reset(0.0, 0.0);
         cout << "Enter target distance (q to quit): ";
     }
     cout << "Bye!\n";
-/* keep window open
+    /* keep window open
     cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
-    return 0; 
+    */
+    return 0;
 }

@@ -16,6 +16,6 @@ struct rect
 
 // prototypes
 polar rect_to_polar(rect xypos);
-void show_polar(polar dapos); 
+void show_polar(polar dapos);
 
 #endif

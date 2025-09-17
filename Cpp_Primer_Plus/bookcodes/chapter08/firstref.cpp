@@ -12,10 +12,10 @@ int main()
     cout << "rats = " << rats;
     cout << ", rodents = " << rodents << endl;
 
-// some implementations require type casting the following
-// addresses to type unsigned
+    // some implementations require type casting the following
+    // addresses to type unsigned
     cout << "rats address = " << &rats;
     cout << ", rodents address = " << &rodents << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

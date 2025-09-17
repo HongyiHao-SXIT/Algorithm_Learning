@@ -68,7 +68,7 @@ void inputPoly(Link head) {
         printf("Enter coefficient and exponent (e.g., 2 3 means 2x^3): ");
         scanf("%d %d", &coef, &exp);
         if (coef == 0 && exp == 0)
-            break;
+        break;
         if (!insert(head, coef, exp)) {
             printf("Insertion failed, out of memory!\n");
             break;
@@ -125,13 +125,13 @@ void print(Link head) {
             printf("%d", p->coef);
         } else {
             if (p->coef == -1)
-                printf("-");
+            printf("-");
             else if (p->coef != 1)
-                printf("%d", p->coef);
+            printf("%d", p->coef);
 
             printf("x");
             if (p->exp != 1)
-                printf("^%d", p->exp);
+            printf("^%d", p->exp);
         }
 
         isFirst = false;
@@ -154,7 +154,7 @@ void combin2List(Link heada, Link headb, Link headab) {
         } else {
             int sum = pa->coef + pb->coef;
             if (sum != 0)
-                insert(headab, sum, pa->exp);
+            insert(headab, sum, pa->exp);
             pa = pa->next;
             pb = pb->next;
         }

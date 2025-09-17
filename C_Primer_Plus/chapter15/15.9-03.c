@@ -8,9 +8,9 @@ int main(int argc, char *argv[])
 {
     int x = TEST_NUM;
     char bstr[8 * sizeof(int) + 1];
-    
+
     printf("%d(%s) has %d bit on.\n", x, itobs(x, bstr), onbits(x));
-    
+
     return 0;
 }
 

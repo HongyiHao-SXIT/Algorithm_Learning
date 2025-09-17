@@ -18,19 +18,19 @@ int main()
     {
         cin.get(next);
         while (next != '\n')    // string didn't fit!
-            cin.get(next);      // dispose of remainder
+        cin.get(next);      // dispose of remainder
         strcount(input);
         cout << "Enter next line (empty line to quit):\n";
         cin.get(input, ArSize);
     }
     cout << "Bye\n";
-// code to keep window open for MSVC++
-/*
-cin.clear();
+    // code to keep window open for MSVC++
+    /*
+    cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
+    */
     return 0;
 }
 
@@ -42,7 +42,7 @@ void strcount(const char * str)
 
     cout << "\"" << str <<"\" contains ";
     while (*str++)               // go to end of string
-        count++;
+    count++;
     total += count;
     cout << count << " characters\n";
     cout << total << " characters total\n";

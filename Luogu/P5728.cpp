@@ -17,9 +17,9 @@ int main() {
     for (int i = 0; i < n; i++) {
         for (int j = i + 1; j < n; j++) {
             if (abs(arr[i][0] - arr[j][0]) <= 5 &&
-                abs(arr[i][1] - arr[j][1]) <= 5 &&
-                abs(arr[i][2] - arr[j][2]) <= 5 &&
-                abs(sum[i] - sum[j]) <= 10) {
+            abs(arr[i][1] - arr[j][1]) <= 5 &&
+            abs(arr[i][2] - arr[j][2]) <= 5 &&
+            abs(sum[i] - sum[j]) <= 10) {
                 cnt++;
             }
         }

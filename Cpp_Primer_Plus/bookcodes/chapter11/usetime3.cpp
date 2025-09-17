@@ -18,6 +18,6 @@ int main()
     temp = aida* 1.17;  // member operator*()
     cout << "Aida * 1.17: " << temp << endl;
     cout << "10.0 * Tosca: " << 10.0 * tosca << endl;
-	// std::cin.get();
-    return 0; 
+    // std::cin.get();
+    return 0;
 }

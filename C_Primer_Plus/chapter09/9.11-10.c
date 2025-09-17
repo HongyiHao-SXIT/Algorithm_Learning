@@ -19,7 +19,7 @@ int main(void)
         while (scanf("%d", &b) != 1 || b < 2 || b > 10)
         {
             while (getchar() != '\n')
-                continue;
+            continue;
             printf("Please enter again (2 - 10): ");
         }
         printf("%d in %d base system is: ", n, b);

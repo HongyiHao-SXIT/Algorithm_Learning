@@ -24,5 +24,5 @@ double cube(double a)
 double refcube(double &ra)
 {
     ra *= ra * ra;
-    return ra; 
+    return ra;
 }

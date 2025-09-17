@@ -9,9 +9,9 @@ int main()
 
     cout << "Sam has " << sam << " dollars and Sue has " << sue;
     cout << " dollars deposited." << endl
-         << "Add $1 to each account." << endl << "Now ";
+    << "Add $1 to each account." << endl << "Now ";
     sam = sam + 1;
-    sue = sue + 1; 
+    sue = sue + 1;
     cout << "Sam has " << sam << " dollars and Sue has " << sue;
     cout << " dollars deposited.\nPoor Sam!" << endl;
     sam = ZERO;
@@ -23,6 +23,6 @@ int main()
     sue = sue - 1;
     cout << "Sam has " << sam << " dollars and Sue has " << sue;
     cout << " dollars deposited." << endl << "Lucky Sue!" << endl;
-	// cin.get();
-    return 0; 
+    // cin.get();
+    return 0;
 }

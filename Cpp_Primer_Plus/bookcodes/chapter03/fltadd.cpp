@@ -8,5 +8,5 @@ int main()
     cout << "a = " << a << endl;
     cout << "b - a = " << b - a << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }

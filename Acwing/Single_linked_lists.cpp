@@ -48,11 +48,11 @@ int main() {
     init();
     int M;
     cin >> M;
-    
+
     while (M--) {
         char op;
         cin >> op;
-        
+
         if (op == 'H') {
             int x;
             cin >> x;
@@ -67,10 +67,10 @@ int main() {
             insert_after_k(k, x);
         }
     }
-    
+
     for (int i = head; i != -1; i = nodes[i].next) {
         cout << nodes[i].val << " ";
     }
-    
+
     return 0;
 }

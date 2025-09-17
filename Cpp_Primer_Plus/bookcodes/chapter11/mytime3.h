@@ -5,10 +5,10 @@
 
 class Time
 {
-private:
+    private:
     int hours;
     int minutes;
-public:
+    public:
     Time();
     Time(int h, int m = 0);
     void AddMin(int m);
@@ -18,7 +18,7 @@ public:
     Time operator-(const Time & t) const;
     Time operator*(double n) const;
     friend Time operator*(double m, const Time & t)
-        { return t * m; }   // inline definition
+    { return t * m; }   // inline definition
     friend std::ostream & operator<<(std::ostream & os, const Time & t);
 
 };

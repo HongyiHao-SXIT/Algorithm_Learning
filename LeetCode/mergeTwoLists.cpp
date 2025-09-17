@@ -10,7 +10,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+    public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         ListNode dummy(0);
         ListNode* current = &dummy;
@@ -26,7 +26,7 @@ public:
 
             current = current ->next;
         }
-        
+
         current->next = (list1 != nullptr) ? list1 : list2;
 
         return dummy.next;

@@ -15,17 +15,17 @@ T use_f(T v, F f)
 
 class Fp
 {
-private:
+    private:
     double z_;
-public:
+    public:
     Fp(double z = 1.0) : z_(z) {}
     double operator()(double p) { return z_*p; }
 };
- class Fq
+class Fq
 {
-private:
+    private:
     double z_;
-public:
+    public:
     Fq(double z = 1.0) : z_(z) {}
     double operator()(double q) { return z_+ q; }
 };

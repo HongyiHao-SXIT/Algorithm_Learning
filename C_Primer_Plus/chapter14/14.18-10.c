@@ -90,7 +90,7 @@ double square(double x)
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
     return;
 }
 

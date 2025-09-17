@@ -13,12 +13,12 @@ int main()
     int i, j;
     for (j = 0, i = word.size() - 1; j < i; --i, ++j)
     {                       // start block
-        temp = word[i];
-        word[i] = word[j];
-        word[j] = temp;
-    }                       // end block
-    cout << word << "\nDone\n";
-    // cin.get();
-    // cin.get();
-    return 0; 
+    temp = word[i];
+    word[i] = word[j];
+    word[j] = temp;
+}                       // end block
+cout << word << "\nDone\n";
+// cin.get();
+// cin.get();
+return 0;
 }

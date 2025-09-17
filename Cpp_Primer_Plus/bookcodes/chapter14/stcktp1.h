@@ -5,12 +5,12 @@
 template <class Type>
 class Stack
 {
-private:
+    private:
     enum {SIZE = 10};    // default size
     int stacksize;
     Type * items;       // holds stack items
     int top;            // index for top stack item
-public:
+    public:
     explicit Stack(int ss = SIZE);
     Stack(const Stack & st);
     ~Stack() { delete [] items; }
@@ -34,7 +34,7 @@ Stack<Type>::Stack(const Stack & st)
     top = st.top;
     items = new Type [stacksize];
     for (int i = 0; i < top; i++)
-        items[i] = st.items[i];
+    items[i] = st.items[i];
 }
 
 template <class Type>
@@ -46,7 +46,7 @@ bool Stack<Type>::push(const Type & item)
         return true;
     }
     else
-        return false;
+    return false;
 }
 
 template <class Type>
@@ -58,21 +58,21 @@ bool Stack<Type>::pop(Type & item)
         return true;
     }
     else
-        return false;
+    return false;
 }
 
 template <class Type>
 Stack<Type> & Stack<Type>::operator=(const Stack<Type> & st)
 {
     if (this == &st)
-        return *this;
+    return *this;
     delete [] items;
     stacksize = st.stacksize;
     top = st.top;
     items = new Type [stacksize];
     for (int i = 0; i < top; i++)
-        items[i] = st.items[i];
-    return *this; 
+    items[i] = st.items[i];
+    return *this;
 }
 
 #endif

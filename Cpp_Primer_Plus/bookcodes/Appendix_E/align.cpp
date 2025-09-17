@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	cout << alignof(double) << endl;
-	cin.get();
-	return 0;
+    cout << alignof(double) << endl;
+    cin.get();
+    return 0;
 }

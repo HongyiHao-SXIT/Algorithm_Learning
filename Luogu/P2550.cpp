@@ -28,8 +28,8 @@ int main() {
 
         vector<int> matches;
         set_intersection(winning_numbers.begin(), winning_numbers.end(),
-                        ticket.begin(), ticket.end(),
-                        back_inserter(matches));
+        ticket.begin(), ticket.end(),
+        back_inserter(matches));
 
         switch (matches.size()) {
             case 7: awards[0]++; break;

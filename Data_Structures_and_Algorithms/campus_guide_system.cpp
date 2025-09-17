@@ -29,7 +29,7 @@ int main()
     char b[100];
     char user[20], mana[20] = "password", *q, *p, m = 0;
     system("color f0");
-L:
+    L:
     printf("\t     ***************************************************\n");
     printf("\tPlease log in (enter your username): ");
     scanf("%s", user);
@@ -41,10 +41,10 @@ L:
         p++;
         q++;
         if (*q == '\0')
-            break;
+        break;
     }
     if (*p != *q)
-        m = 0;
+    m = 0;
 
     if (m == 1)
     {
@@ -52,40 +52,40 @@ L:
 
         CreateMGraph(&G);
         system("cls");
-L1:
+        L1:
         menu();
         printf("Please enter your option:\n");
         scanf("%d", &a);
         switch (a)
         {
-        case 1:
+            case 1:
             floyd(G, D, P);
             opfloy(G.n, D, P);
             system("pause");
             system("cls");
             a = 35421568;
             goto L1;
-        case 2:
+            case 2:
             hamanzi(&G);
             system("pause");
             system("cls");
             a = 35421568;
             goto L1;
-        case 3:
+            case 3:
             printph();
             system("pause");
             system("cls");
             a = 35421568;
             goto L1;
-        case 4:
+            case 4:
             look();
             system("cls");
             a = 35421568;
             goto L1;
-        case 0:
+            case 0:
             break;
 
-        default:
+            default:
             printf("Your input is incorrect. Please enter again!!!\n");
             system("pause");
             gets(b);
@@ -97,7 +97,7 @@ L1:
     else
     {
         system("cls");
-L3:
+        L3:
         printf("\t\t\tYou are not an administrator and cannot modify scenic spot information.");
         printf("**********************************************************************************\n");
         printf("\t\t\t--------Campus Guide System-------\n");
@@ -112,38 +112,38 @@ L3:
         scanf("%d", &a);
         switch (a)
         {
-        case 1:
+            case 1:
             floyd(G, D, P);
             opfloy(G.n, D, P);
             system("pause");
             system("cls");
             a = 35421568;
             goto L3;
-        case 2:
+            case 2:
             hamanzi(&G);
             system("pause");
             system("cls");
             a = 35421568;
             goto L3;
-        case 3:
+            case 3:
             printph();
             system("pause");
             system("cls");
             a = 35421568;
             goto L3;
-        case 4:
+            case 4:
             look();
             system("cls");
             a = 35421568;
             goto L3;
-        case 5:
+            case 5:
             a = 35421568;
             system("cls");
             goto L;
-        case 0:
+            case 0:
             break;
 
-        default:
+            default:
             printf("Your input is incorrect. Please enter again!!!\n");
             system("pause");
             gets(b);
@@ -172,24 +172,24 @@ void floyd(Mgraph G, int D[MaxVertexNum][MaxVertexNum], int P[MaxVertexNum][MaxV
 {
     int i, j, k;
     for (i = 0; i < G.n; i++)
-        for (j = 0; j < G.n; j++)
-        {
-            D[i][j] = G.edges[i][j];
-            if ((D[i][j] < MaxCost) && (D[i][j] != 0))
-                P[i][j] = j;
-            else
-                P[i][j] = -1;
-        }
+    for (j = 0; j < G.n; j++)
+    {
+        D[i][j] = G.edges[i][j];
+        if ((D[i][j] < MaxCost) && (D[i][j] != 0))
+        P[i][j] = j;
+        else
+        P[i][j] = -1;
+    }
     for (i = 0; i < G.n; i++)
-        D[i][i] = 0;
+    D[i][i] = 0;
     for (k = 0; k < G.n; k++)
-        for (i = 0; i < G.n; i++)
-            for (j = 0; j < G.n; j++)
-                if (D[i][j] > D[i][k] + D[k][j])
-                {
-                    D[i][j] = D[i][k] + D[k][j];
-                    P[i][j] = P[i][k];
-                }
+    for (i = 0; i < G.n; i++)
+    for (j = 0; j < G.n; j++)
+    if (D[i][j] > D[i][k] + D[k][j])
+    {
+        D[i][j] = D[i][k] + D[k][j];
+        P[i][j] = P[i][k];
+    }
 }
 
 void opfloy(int n, int D[MaxVertexNum][MaxVertexNum], int P[MaxVertexNum][MaxVertexNum])
@@ -210,7 +210,7 @@ void opfloy(int n, int D[MaxVertexNum][MaxVertexNum], int P[MaxVertexNum][MaxVer
             next = P[next][j];
         }
         if (D[i][j] == MaxCost)
-            printf("->%d", j);
+        printf("->%d", j);
         printf("\t%d", D[i][j]);
     }
 }
@@ -286,10 +286,10 @@ void CreateMGraph(Mgraph *G)
     scanf("%d,%d", &(G->n), &(G->e));
     printf("Please enter vertex information:\n");
     for (i = 0; i < G->n; i++)
-        scanf("\n%c", &(G->vexs[i]));
+    scanf("\n%c", &(G->vexs[i]));
     for (i = 0; i < G->n; i++)
-        for (j = 0; j < G->n; j++)
-            G->edges[i][j] = MaxCost;
+    for (j = 0; j < G->n; j++)
+    G->edges[i][j] = MaxCost;
     printf("Please enter the serial numbers of the two vertices corresponding to each edge (input format: i,j,w):\n");
     for (k = 0; k < G->e; k++)
     {
@@ -321,7 +321,7 @@ void look()
     int a;
     char b[100];
     system("cls");
-L2:
+    L2:
     printf("\t\t\t   1: Energy Flame\n");
     printf("\t\t\t   2: Library\n");
     printf("\t\t\t   3: Diligent Learning Building\n");
@@ -337,68 +337,68 @@ L2:
     scanf("%d", &a);
     switch (a)
     {
-    case 1:
+        case 1:
         printf("The Energy Flame symbolizes the coal - related history of Shanxi Institute of Technology.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 2:
+        case 2:
         cout << "The library is newly built and has a large number of books, covering all professional courses in various disciplines.";
         system("cls");
         a = 65944899;
         goto L2;
-    case 3:
+        case 3:
         printf("The Diligent Learning Building is where students take professional courses. All classrooms are equipped with multimedia facilities to facilitate students' learning.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 4:
+        case 4:
         printf("The Big Data Center is equipped with 10 servers to support the campus network and some school - related information resources.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 5:
+        case 5:
         printf("The West Playground is a standard 400 - meter track and field stadium, providing the best space for students to exercise.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 6:
+        case 6:
         printf("Siqi Building is equipped with well - equipped college physics laboratories.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 7:
+        case 7:
         printf("Xuezhiyuan Restaurant provides first - class catering services.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 8:
+        case 8:
         printf("The Badminton and Table Tennis Hall provides a leisure and entertainment place for students.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 9:
+        case 9:
         printf("The Innovation and Entrepreneurship Center is equipped with first - class teaching resources in the province.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 10:
+        case 10:
         printf("The student dormitory provides a high - quality living environment.");
         system("pause");
         system("cls");
         a = 65944899;
         goto L2;
-    case 0:
+        case 0:
         break;
-    default:
+        default:
         printf("Your input is incorrect!!!");
         system("pause");
         gets(b);
@@ -406,4 +406,4 @@ L2:
         a = 65944899;
         goto L2;
     }
-}    
+}

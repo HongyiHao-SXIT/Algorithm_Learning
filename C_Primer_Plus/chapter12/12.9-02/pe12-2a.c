@@ -10,7 +10,7 @@ void set_mode(int n)
     if (n > 1)
     {
         printf("Invalid mode specified. Mode %s used.\n",
-               (0 == mode) ? "0(metric)" : "1(US)");
+        (0 == mode) ? "0(metric)" : "1(US)");
     }
     else
     {
@@ -49,13 +49,13 @@ void show_info(void)
     if (0 == mode)
     {
         printf("Fuel consumption is %.2lf liters per 100km.\n",
-               (fuel / range) * 100);
+        (fuel / range) * 100);
     }
 
     else
     {
         printf("Fuel consumption is %.1lf miles per gallon.\n",
-               range / fuel);
+        range / fuel);
     }
     return;
 }

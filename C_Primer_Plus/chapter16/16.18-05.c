@@ -22,7 +22,7 @@ int main(void)
         printf("Can you do again (y/n)? ");
         ch = getchar();
         while (getchar() != '\n')
-            continue;
+        continue;
     } while ('y' == ch || 'Y' == ch);
     puts("Done.");
 

@@ -6,11 +6,11 @@ typedef unsigned long Item;
 
 class Stack
 {
-private:
+    private:
     enum {MAX = 10};    // constant specific to class
     Item items[MAX];    // holds stack items
     int top;            // index for top stack item
-public:
+    public:
     Stack();
     bool isempty() const;
     bool isfull() const;

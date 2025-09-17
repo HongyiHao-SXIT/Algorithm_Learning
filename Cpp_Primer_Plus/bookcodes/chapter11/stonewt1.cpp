@@ -50,5 +50,5 @@ Stonewt::operator int() const
 
 Stonewt::operator double()const
 {
-    return pounds; 
+    return pounds;
 }

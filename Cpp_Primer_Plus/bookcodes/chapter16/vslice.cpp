@@ -14,7 +14,7 @@ int main()
 
     int i;
     for (i = 0; i < SIZE; ++i)
-        valint[i] = std::rand() % 10;
+    valint[i] = std::rand() % 10;
     cout << "Original array:\n";
     show(valint, 3);                 // show in 3 columns
     vint vcol(valint[slice(1,4,3)]); // extract 2nd column
@@ -29,7 +29,7 @@ int main()
     cout << "Set first column to sum of next two:\n";
     // + not defined for slices, so convert to valarray<int>
     valint[slice(0,4,3)]  = vint(valint[slice(1,4,3)])
-                               + vint(valint[slice(2,4,3)]);
+    + vint(valint[slice(2,4,3)]);
     show(valint, 3);
     // std::cin.get();
     return 0;
@@ -46,10 +46,10 @@ void show(const vint & v, int cols)
         cout.width(3);
         cout << v[i];
         if (i % cols == cols - 1)
-            cout << endl;
+        cout << endl;
         else
-            cout << ' ';
+        cout << ' ';
     }
     if (lim % cols != 0)
-        cout << endl;
+    cout << endl;
 }

@@ -47,8 +47,8 @@ int read_datas(TEAM players[], int n, FILE *fp)
     int m, stage_num, hit_num, base_num, rbi;
 
     while (7 == fscanf(fp, "%d %18s %18s %d %d %d %d",
-                       &m, fname, lname, &stage_num, &hit_num, &base_num, &rbi) &&
-           !feof(fp) && count < n)
+    &m, fname, lname, &stage_num, &hit_num, &base_num, &rbi) &&
+    !feof(fp) && count < n)
     {
         if (players[m].stage_num == 0) //球员信息为空则累计球员数量, 防止超出人数限制19人;
         {
@@ -87,9 +87,9 @@ void show_messages(TEAM players[], int n)
         if (players[i].stage_num)
         {
             printf("%-4d %-12s %-10s %5d %7d %11d %8d %8.2f\n",
-               players[i].id, players[i].fname, players[i].lname,
-               players[i].stage_num, players[i].hit_num, players[i].base_num,
-               players[i].rbi, players[i].hit_rate);
+            players[i].id, players[i].fname, players[i].lname,
+            players[i].stage_num, players[i].hit_num, players[i].base_num,
+            players[i].rbi, players[i].hit_rate);
         }
     }
 }

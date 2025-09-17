@@ -27,7 +27,7 @@ int main(void)
             continue;
         }
         while (getchar() != '\n')
-            continue;
+        continue;
         switch (ch)
         {
             case 'a':
@@ -86,11 +86,11 @@ int main(void)
 
     printf("Your order:\n");
     printf("%.2f lbs of artichokes at $%.2f per pound:$ %.2f\n",
-           lb_artichokes, price_artichokes, cost_artichokes);
+    lb_artichokes, price_artichokes, cost_artichokes);
     printf("%.2f lbs of beets at $%.2f per pound: $%.2f\n",
-           lb_beets, price_beets, cost_beets);
+    lb_beets, price_beets, cost_beets);
     printf("%.2f lbs of carrots at $%.2f per pound: $%.2f\n",
-           lb_carrots, price_carrots, cost_carrots);
+    lb_carrots, price_carrots, cost_carrots);
     printf("Total cost of vegetables: $%.2f\n", cost_total);
     if (cost_total > 100)
     {

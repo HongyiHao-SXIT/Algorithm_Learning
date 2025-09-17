@@ -72,5 +72,5 @@ int main(void)
 void eatline()
 {
     while (getchar() != '\n')
-        continue;
+    continue;
 }

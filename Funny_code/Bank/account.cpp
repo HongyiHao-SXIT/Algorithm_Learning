@@ -6,7 +6,7 @@ using namespace std;
 double SavingsAccount::total = 0.0;
 
 SavingsAccount::SavingsAccount(int date, int id, double rate)
-    : id(id), balance(0), rate(rate), lastDate(date), accumulation(0) {
+: id(id), balance(0), rate(rate), lastDate(date), accumulation(0) {
     cout << date << "\t#" << id << " is created" << endl;
 }
 

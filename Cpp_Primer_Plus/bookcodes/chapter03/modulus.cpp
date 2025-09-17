@@ -10,8 +10,8 @@ int main()
     int stone = lbs / Lbs_per_stn;
     int pounds = lbs % Lbs_per_stn;
     cout << lbs << " pounds are " << stone
-         << " stone, " << pounds << " pound(s).\n";
+    << " stone, " << pounds << " pound(s).\n";
     // cin.get();
     // cin.get();
-    return 0; 
+    return 0;
 }

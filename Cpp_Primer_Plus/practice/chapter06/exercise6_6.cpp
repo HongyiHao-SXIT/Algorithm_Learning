@@ -2,12 +2,11 @@
 #include <iostream>
 #include <string>
 
-
 int main() {
 
     using namespace std;
 
-    const int Grand_Amount = 10000; 
+    const int Grand_Amount = 10000;
 
     struct Patron {
         string name;
@@ -35,7 +34,7 @@ int main() {
 
         if (p_contribution[i].amount > Grand_Amount) {
             cout << "Contributor name: " << p_contribution[i].name << "\n"
-                 << "Contributor amount: " << p_contribution[i].amount << endl;
+            << "Contributor amount: " << p_contribution[i].amount << endl;
             ++grand_amount_n;
         }
     }
@@ -48,7 +47,7 @@ int main() {
     cout << "\nPatrons: " << endl;
     for (int i=0; i < contribute_num; ++i) {
         cout << "Contributor name: " << p_contribution[i].name << "\n"
-             << "Contributor amount: " << p_contribution[i].amount << endl;
+        << "Contributor amount: " << p_contribution[i].amount << endl;
 
         is_empty = false;
     }
@@ -61,4 +60,3 @@ int main() {
 
     return 0;
 }
-

@@ -3,12 +3,11 @@
 #include <fstream>
 #include <string>
 
-
 int main() {
 
     using namespace std;
     const int Grand_Amount = 10000;
-    string file_name; 
+    string file_name;
     ifstream in_file_handle;
 
     struct Patron {
@@ -27,16 +26,16 @@ int main() {
     Patron *p_contribution = new Patron [contribute_num];
     for (int i = 0; i < contribute_num; ++i) {
         /*
-         * 4 Sam Stone
-         * 2000
-         * Freida Flass
-         * 100500
-         * Tammy Tubbs
-         * 5000
-         * Rich Raptor
-         * 55000
-         *
-         */
+        * 4 Sam Stone
+        * 2000
+        * Freida Flass
+        * 100500
+        * Tammy Tubbs
+        * 5000
+        * Rich Raptor
+        * 55000
+        *
+        */
         getline(in_file_handle, p_contribution[i].name);
         in_file_handle >> p_contribution[i].amount;
         in_file_handle.get();   // 读掉空白(包括滞留在行末的回车符)
@@ -49,7 +48,7 @@ int main() {
 
         if (p_contribution[i].amount > Grand_Amount) {
             cout << "Contributor name: " << p_contribution[i].name << "\n"
-                 << "Contributor amount: " << p_contribution[i].amount << endl;
+            << "Contributor amount: " << p_contribution[i].amount << endl;
             ++grand_amount_n;
         }
     }
@@ -62,7 +61,7 @@ int main() {
     cout << "\nPatrons: " << endl;
     for (int i=0; i < contribute_num; ++i) {
         cout << "Contributor name: " << p_contribution[i].name << "\n"
-             << "Contributor amount: " << p_contribution[i].amount << endl;
+        << "Contributor amount: " << p_contribution[i].amount << endl;
 
         is_empty = false;
     }

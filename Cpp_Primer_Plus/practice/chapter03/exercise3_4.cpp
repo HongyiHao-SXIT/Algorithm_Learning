@@ -15,11 +15,11 @@ int main() {
     int minutes = ((total_seconds % 86400) % 3600) / 60;
     int seconds = ((total_seconds % 86400) % 3600) % 60;
 
-    cout << total_seconds << "seconds = " 
-         << days << " days, " 
-         << hours << " hours, "
-         << minutes << " minutes, "
-         << seconds << " seconds." << endl;
+    cout << total_seconds << "seconds = "
+    << days << " days, "
+    << hours << " hours, "
+    << minutes << " minutes, "
+    << seconds << " seconds." << endl;
 
     return 0;
 }

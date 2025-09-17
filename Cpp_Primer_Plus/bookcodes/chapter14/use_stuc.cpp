@@ -13,15 +13,15 @@ const int quizzes = 5;
 
 int main()
 {
-    Student ada[pupils] = 
-        {Student(quizzes), Student(quizzes), Student(quizzes)};
+    Student ada[pupils] =
+    {Student(quizzes), Student(quizzes), Student(quizzes)};
 
     int i;
     for (i = 0; i < pupils; ++i)
-        set(ada[i], quizzes);
+    set(ada[i], quizzes);
     cout << "\nStudent List:\n";
     for (i = 0; i < pupils; ++i)
-        cout << ada[i].Name() << endl;
+    cout << ada[i].Name() << endl;
     cout << "\nResults:";
     for (i = 0; i < pupils; ++i)
     {
@@ -40,7 +40,7 @@ void set(Student & sa, int n)
     getline(cin, sa);
     cout << "Please enter " << n << " quiz scores:\n";
     for (int i = 0; i < n; i++)
-        cin >> sa[i];
+    cin >> sa[i];
     while (cin.get() != '\n')
-        continue; 
+    continue;
 }

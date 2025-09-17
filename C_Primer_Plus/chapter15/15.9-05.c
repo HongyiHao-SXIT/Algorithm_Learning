@@ -11,10 +11,10 @@ int main(int argc, char *argv[])
     unsigned int rot = rotate_l(val, ROTATE_BITS);
     char bstr1[8 * sizeof(int) + 1];
     char bstr2[8 * sizeof(int) + 1];
-    
+
     printf("%u rotated is %u.\n", val, rot);
     printf("%s rotated is %s.\n", itobs(val, bstr1), itobs(rot, bstr2));
-    
+
     return 0;
 }
 

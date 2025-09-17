@@ -17,7 +17,7 @@ template<typename T, typename... Args>
 void show_list(const T& value, const Args&... args)
 {
     std::cout << value << ", ";
-    show_list(args...); 
+    show_list(args...);
 }
 
 int main()

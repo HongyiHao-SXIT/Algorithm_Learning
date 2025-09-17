@@ -8,21 +8,21 @@ void Stock::acquire(const std::string & co, long n, double pr)
     if (n < 0)
     {
         std::cerr << "Number of shares can't be negative; "
-                  << company << " shares set to 0.\n";
+        << company << " shares set to 0.\n";
         shares = 0;
     }
     else
-        shares = n;
+    shares = n;
     share_val = pr;
     set_tot();
 }
 
 void Stock::buy(long num, double price)
 {
-     if (num < 0)
+    if (num < 0)
     {
         std::cerr << "Number of shares purchased can't be negative. "
-             << "Transaction is aborted.\n";
+        << "Transaction is aborted.\n";
     }
     else
     {
@@ -38,12 +38,12 @@ void Stock::sell(long num, double price)
     if (num < 0)
     {
         cerr << "Number of shares sold can't be negative. "
-             << "Transaction is aborted.\n";
+        << "Transaction is aborted.\n";
     }
     else if (num > shares)
     {
         cerr << "You can't sell more than you have! "
-             << "Transaction is aborted.\n";
+        << "Transaction is aborted.\n";
     }
     else
     {
@@ -64,11 +64,11 @@ void Stock::show()
     using std::cout;
     using std::ios_base;
     // set format to #.###
-    ios_base::fmtflags orig = cout.setf(ios_base::fixed); 
+    ios_base::fmtflags orig = cout.setf(ios_base::fixed);
     int prec = cout.precision(3);
 
     cout << "Company: " << company
-        << "  Shares: " << shares << '\n';
+    << "  Shares: " << shares << '\n';
     cout << "  Share Price: $" << share_val;
     // set format to *.**
     cout.precision(2);

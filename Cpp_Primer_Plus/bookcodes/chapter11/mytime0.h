@@ -4,10 +4,10 @@
 
 class Time
 {
-private:
+    private:
     int hours;
     int minutes;
-public:
+    public:
     Time();
     Time(int h, int m = 0);
     void AddMin(int m);

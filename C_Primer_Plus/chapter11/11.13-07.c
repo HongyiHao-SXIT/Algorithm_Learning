@@ -55,7 +55,7 @@ char *s_gets(char *st, int n)
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
     return;
 }
 

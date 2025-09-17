@@ -15,12 +15,12 @@ int main()
 
     cout << "Last value entered = " << input << endl;
     cout << "Sum = " << sum << endl;
-/* keeping output window open */
-/*
+    /* keeping output window open */
+    /*
     cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
+    */
     return 0;
 }

@@ -7,7 +7,6 @@ double light_years2astromonical_unit(double light_years) {
     return light_years * 63240;
 }
 
-
 int main() {
 
     using namespace std;
@@ -17,9 +16,9 @@ int main() {
     cin >> light_years;
 
     cout << light_years
-         << " light years = "
-         << light_years2astromonical_unit(light_years)
-         << " astromonical units." << endl;
+    << " light years = "
+    << light_years2astromonical_unit(light_years)
+    << " astromonical units." << endl;
 
     return 0;
 }

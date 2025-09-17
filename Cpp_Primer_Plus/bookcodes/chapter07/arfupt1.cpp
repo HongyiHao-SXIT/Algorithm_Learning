@@ -20,7 +20,7 @@ int main()
     cout << p2(av,3) << ": " << *p2(av,3) << endl;
 
     // pa an array of pointers
-     p_fun pa[3] = {f1,f2,f3};
+    p_fun pa[3] = {f1,f2,f3};
     // auto doesn't work with list initialization
     // but it does work for initializing to a single value
     // pb a pointer to first element of pa
@@ -28,20 +28,20 @@ int main()
     cout << "\nUsing an array of pointers to functions:\n";
     cout << " Address  Value\n";
     for (int i = 0; i < 3; i++)
-        cout << pa[i](av,3) << ": " << *pa[i](av,3) << endl;
+    cout << pa[i](av,3) << ": " << *pa[i](av,3) << endl;
     cout << "\nUsing a pointer to a pointer to a function:\n";
     cout << " Address  Value\n";
     for (int i = 0; i < 3; i++)
-        cout << pb[i](av,3) << ": " << *pb[i](av,3) << endl;
+    cout << pb[i](av,3) << ": " << *pb[i](av,3) << endl;
 
     // what about a pointer to an array of function pointers
     cout << "\nUsing pointers to an array of pointers:\n";
     cout << " Address  Value\n";
-    // easy way to declare pc 
-    auto pc = &pa; 
+    // easy way to declare pc
+    auto pc = &pa;
     cout << (*pc)[0](av,3) << ": " << *(*pc)[0](av,3) << endl;
     // slightly harder way to declare pd
-	p_fun (*pd)[3] = &pa;
+    p_fun (*pd)[3] = &pa;
     // store return value in pdb
     const double * pdb = (*pd)[1](av,3);
     cout << pdb << ": " << *pdb << endl;

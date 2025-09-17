@@ -4,10 +4,10 @@
 template <class T1, class T2>
 class Pair
 {
-private:
+    private:
     T1 a;
     T2 b;
-public:
+    public:
     T1 & first();
     T2 & second();
     T1 first() const { return a; }
@@ -43,13 +43,13 @@ int main()
     int joints = sizeof(ratings) / sizeof (Pair<string, int>);
     cout << "Rating:\t Eatery\n";
     for (int i = 0; i < joints; i++)
-        cout << ratings[i].second() << ":\t "
-             << ratings[i].first() << endl;
+    cout << ratings[i].second() << ":\t "
+    << ratings[i].first() << endl;
     cout << "Oops! Revised rating:\n";
     ratings[3].first() = "Bertie's Fab Eats";
     ratings[3].second() = 6;
     cout << ratings[3].second() << ":\t "
-         << ratings[3].first() << endl;
-   // std::cin.get();
-   return 0; 
+    << ratings[3].first() << endl;
+    // std::cin.get();
+    return 0;
 }

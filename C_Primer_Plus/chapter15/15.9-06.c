@@ -28,7 +28,7 @@ void change_toggle(int ch);
 int main(void)
 {
     int ch;
-    
+
     while ((ch = get_choice()) != 'q')
     {
         switch (ch)
@@ -59,14 +59,14 @@ int main(void)
         putchar('\n');
     }
     printf("Bye!\n");
-    
+
     return 0;
 }
 
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
 }
 
 int get_first(void)
@@ -104,7 +104,7 @@ void change_font(void)
 {
     int ch;
     uint id;
-    
+
     printf("Enter font id (0-255): ");
     while (scanf("%u", &id) != 1)
     {
@@ -122,7 +122,7 @@ void change_size(void)
 {
     int ch;
     uint sz;
-    
+
     printf("Enter font sz (0-127): ");
     while (scanf("%u", &sz) != 1)
     {
@@ -139,7 +139,7 @@ void change_size(void)
 void change_alignment(void)
 {
     int ch;
-    
+
     printf("Select alignment:\n");
     printf("l) left    c) center    r) right\n");
     while (ch = get_first(), NULL == strchr("lcr", ch))

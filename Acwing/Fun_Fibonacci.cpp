@@ -12,7 +12,7 @@ int main() {
     int num;
     cout << "Please enter the number you want to know: " << endl;
     cin >> num;
-    
+
     cout << "The number is " << Fibonacci(num) << endl;
     return 0;
 }

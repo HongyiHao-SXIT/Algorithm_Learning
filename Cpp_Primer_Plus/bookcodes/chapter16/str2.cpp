@@ -16,8 +16,8 @@ int main()
     cout << "\tsmall: " << small.capacity() << endl;
     cout << "\tlarger: " << larger.capacity() << endl;
     empty.reserve(50);
-    cout << "Capacity after empty.reserve(50): " 
-         << empty.capacity() << endl;
-	// cin.get();
+    cout << "Capacity after empty.reserve(50): "
+    << empty.capacity() << endl;
+    // cin.get();
     return 0;
 }

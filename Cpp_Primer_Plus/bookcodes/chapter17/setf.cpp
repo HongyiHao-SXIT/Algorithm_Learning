@@ -22,6 +22,6 @@ int main()
     cout << "How " << true << "!  oops -- How ";
     cout.setf(ios_base::boolalpha);
     cout << true << "!\n";
-	// std::cin.get();
-    return 0; 
+    // std::cin.get();
+    return 0;
 }

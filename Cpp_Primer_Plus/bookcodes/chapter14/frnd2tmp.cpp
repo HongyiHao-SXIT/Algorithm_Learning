@@ -6,10 +6,10 @@ using std::endl;
 template <typename T>
 class HasFriend
 {
-private:
+    private:
     T item;
     static int ct;
-public:
+    public:
     HasFriend(const T & i) : item(i) {ct++;}
     ~HasFriend()  {ct--; }
     friend void counts();
@@ -51,10 +51,10 @@ int main()
     counts();
     HasFriend<double> hfdb(10.5);
     cout << "After hfdb declared: ";
-    counts(); 
+    counts();
     reports(hfi1);
     reports(hfi2);
     reports(hfdb);
     // std::cin.get();
-    return 0; 
+    return 0;
 }

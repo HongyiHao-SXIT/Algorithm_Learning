@@ -46,7 +46,7 @@ int main(void)
                 puts("Current contents of book.dat:");
             }
             printf("%s by %s: $%.2f\n", library[count].books.title,
-                   library[count].books.author, library[count].books.value);
+            library[count].books.author, library[count].books.value);
             printf("Do you want to change or delete this entry(y/n)?\n");
             printf("Please you enter to choose: ");
             if (get_first("yn") == 'y')
@@ -118,7 +118,7 @@ int main(void)
         if (library[index].canceled == false)
         {
             printf("%s by %s: $%.2f\n", library[index].books.title,
-                   library[index].books.author, library[index].books.value);
+            library[index].books.author, library[index].books.value);
         }
     }
     if ((pbooks = fopen("book.dat", "wb")) == NULL)
@@ -252,7 +252,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;
@@ -261,5 +261,5 @@ char *s_gets(char *st, int n)
 void eatline(void)
 {
     while (getchar() != '\n')
-        continue;
+    continue;
 }

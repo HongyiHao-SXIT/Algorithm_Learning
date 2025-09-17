@@ -45,5 +45,5 @@ int main()
     cout << endl;
     // cin.get();
 
-    return 0; 
+    return 0;
 }

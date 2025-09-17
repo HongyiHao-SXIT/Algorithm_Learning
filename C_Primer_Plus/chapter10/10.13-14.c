@@ -51,7 +51,7 @@ double average2d(int rows, int cols, double ar[rows][cols])
             sum += ar[i][j];
         }
     }
-    return rows * cols > 0 ? sum / (rows * cols) : 0.0; 
+    return rows * cols > 0 ? sum / (rows * cols) : 0.0;
 }
 
 double max2d(int rows, int cols, double ar[rows][cols])

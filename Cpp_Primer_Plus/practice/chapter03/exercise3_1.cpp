@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-
 const int Foot2inch = 12;
 
 int main() {
@@ -16,10 +15,10 @@ int main() {
     int height_foot = input_height / Foot2inch;
     int height_inch = input_height % Foot2inch;
 
-    cout << "Your height in inch is: " << input_height 
-         << "; transforming in foot and inch is: " 
-         << height_foot << " foot "
-         << height_inch << " inch." << endl;
+    cout << "Your height in inch is: " << input_height
+    << "; transforming in foot and inch is: "
+    << height_foot << " foot "
+    << height_inch << " inch." << endl;
 
     return 0;
 }

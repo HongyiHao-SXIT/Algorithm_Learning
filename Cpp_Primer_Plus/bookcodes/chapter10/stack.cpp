@@ -15,7 +15,7 @@ bool Stack::isfull() const
     return top == MAX;
 }
 
-bool Stack::push(const Item & item) 
+bool Stack::push(const Item & item)
 {
     if (top < MAX)
     {
@@ -23,7 +23,7 @@ bool Stack::push(const Item & item)
         return true;
     }
     else
-        return false;
+    return false;
 }
 
 bool Stack::pop(Item & item)
@@ -34,5 +34,5 @@ bool Stack::pop(Item & item)
         return true;
     }
     else
-        return false; 
+    return false;
 }

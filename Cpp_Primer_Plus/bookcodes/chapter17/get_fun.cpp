@@ -20,7 +20,7 @@ int main()
     cout << "The next input character is " << ch << endl;
 
     if (ch != '\n')
-        cin.ignore(Limit, '\n');    // discard rest of line
+    cin.ignore(Limit, '\n');    // discard rest of line
 
     cout << "Enter a string for get() processing:\n";
     cin.get(input, Limit, '#');
@@ -29,12 +29,12 @@ int main()
 
     cin.get(ch);
     cout << "The next input character is " << ch << endl;
-/* keeping output window open */
-/*
+    /* keeping output window open */
+    /*
     cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
-    return 0; 
+    */
+    return 0;
 }

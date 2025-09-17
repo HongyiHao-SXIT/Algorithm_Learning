@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
         printf("Please enter a character: ");
         ch = getchar();
         while (getchar() != '\n')
-            continue;
+        continue;
         printf("String: %s\n", str);
         if (!is_within(ch, str))
         {
@@ -48,7 +48,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;

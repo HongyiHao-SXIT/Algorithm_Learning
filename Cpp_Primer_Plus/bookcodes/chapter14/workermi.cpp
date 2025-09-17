@@ -20,7 +20,7 @@ void Worker::Get()
     cout << "Enter worker's ID: ";
     cin >> id;
     while (cin.get() != '\n')
-        continue;
+    continue;
 }
 
 // Waiter methods
@@ -49,13 +49,13 @@ void Waiter::Get()
     cout << "Enter waiter's panache rating: ";
     cin >> panache;
     while (cin.get() != '\n')
-        continue;
+    continue;
 }
 
 // Singer methods
 
 char * Singer::pv[Singer::Vtypes] = {"other", "alto", "contralto",
-            "soprano", "bass", "baritone", "tenor"};
+"soprano", "bass", "baritone", "tenor"};
 
 void Singer::Set()
 {
@@ -85,14 +85,14 @@ void Singer::Get()
     {
         cout << i << ": " << pv[i] << "   ";
         if ( i % 4 == 3)
-            cout << endl;
+        cout << endl;
     }
     if (i % 4 != 0)
-        cout << '\n';
+    cout << '\n';
     while (cin >>  voice && (voice < 0 || voice >= Vtypes) )
-        cout << "Please enter a value >= 0 and < " << Vtypes << endl;
+    cout << "Please enter a value >= 0 and < " << Vtypes << endl;
     while (cin.get() != '\n')
-        continue;
+    continue;
 }
 
 // SingingWaiter methods

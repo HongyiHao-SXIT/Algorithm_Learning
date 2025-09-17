@@ -4,11 +4,11 @@
 template <class Type>
 class Stack
 {
-private:
+    private:
     enum {MAX = 10};    // constant specific to class
     Type items[MAX];    // holds stack items
     int top;            // index for top stack item
-public:
+    public:
     Stack();
     bool isempty();
     bool isfull();
@@ -43,7 +43,7 @@ bool Stack<Type>::push(const Type & item)
         return true;
     }
     else
-        return false;
+    return false;
 }
 
 template <class Type>
@@ -55,7 +55,7 @@ bool Stack<Type>::pop(Type & item)
         return true;
     }
     else
-        return false; 
+    return false;
 }
 
 #endif

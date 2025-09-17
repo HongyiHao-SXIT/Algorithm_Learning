@@ -11,10 +11,10 @@ template <typename T> void report(T &);
 template <typename TT>
 class HasFriendT
 {
-private:
+    private:
     TT item;
     static int ct;
-public:
+    public:
     HasFriendT(const TT & i) : item(i) {ct++;}
     ~HasFriendT() { ct--; }
     friend void counts<TT>();
@@ -52,5 +52,5 @@ int main()
     cout << "counts<double>() output:\n";
     counts<double>();
     // std::cin.get();
-    return 0; 
+    return 0;
 }

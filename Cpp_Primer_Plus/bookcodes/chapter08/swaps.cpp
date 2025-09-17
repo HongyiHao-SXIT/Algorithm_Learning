@@ -27,7 +27,7 @@ int main()
     cout << "wallet1 = $" << wallet1;
     cout << " wallet2 = $" << wallet2 << endl;
     // cin.get();
-    return 0; 
+    return 0;
 }
 
 void swapr(int & a, int & b)    // use references
@@ -54,5 +54,5 @@ void swapv(int a, int b)        // try using values
 
     temp = a;      // use a, b for values of variables
     a = b;
-    b = temp; 
+    b = temp;
 }

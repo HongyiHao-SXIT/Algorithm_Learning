@@ -9,9 +9,9 @@ using std::string;
 double Student::Average() const
 {
     if (scores.size() > 0)
-        return scores.sum()/scores.size();  
+    return scores.sum()/scores.size();
     else
-        return 0;
+    return 0;
 }
 
 const string & Student::Name() const
@@ -40,14 +40,14 @@ ostream & Student::arr_out(ostream & os) const
         {
             os << scores[i] << " ";
             if (i % 5 == 4)
-                os << endl;
+            os << endl;
         }
         if (i % 5 != 0)
-            os << endl;
+        os << endl;
     }
     else
-        os << " empty array ";
-    return os; 
+    os << " empty array ";
+    return os;
 }
 
 // friends
@@ -56,7 +56,7 @@ ostream & Student::arr_out(ostream & os) const
 istream & operator>>(istream & is, Student & stu)
 {
     is >> stu.name;
-    return is; 
+    return is;
 }
 
 // use string friend getline(ostream &, const string &)

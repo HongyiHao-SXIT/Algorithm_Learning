@@ -14,13 +14,13 @@ int main()
         switch(choice)
         {
             case 1  :   cout << "\a\n";
-                        break;
+            break;
             case 2  :   report();
-                        break;
+            break;
             case 3  :   cout << "The boss was in all day.\n";
-                        break;
+            break;
             case 4  :   comfort();
-                        break;
+            break;
             default :   cout << "That's not a choice.\n";
         }
         showmenu();
@@ -35,18 +35,18 @@ int main()
 void showmenu()
 {
     cout << "Please enter 1, 2, 3, 4, or 5:\n"
-            "1) alarm           2) report\n"
-            "3) alibi           4) comfort\n"
-            "5) quit\n";
+    "1) alarm           2) report\n"
+    "3) alibi           4) comfort\n"
+    "5) quit\n";
 }
 void report()
 {
     cout << "It's been an excellent week for business.\n"
-        "Sales are up 120%. Expenses are down 35%.\n";
+    "Sales are up 120%. Expenses are down 35%.\n";
 }
 void comfort()
 {
     cout << "Your employees think you are the finest CEO\n"
-        "in the industry. The board of directors think\n"
-        "you are the finest CEO in the industry.\n";
+    "in the industry. The board of directors think\n"
+    "you are the finest CEO in the industry.\n";
 }

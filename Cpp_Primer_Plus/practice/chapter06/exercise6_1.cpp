@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cctype>
 
-
 int main() {
     using namespace std;
     char ch;

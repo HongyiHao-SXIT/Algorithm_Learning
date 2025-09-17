@@ -21,8 +21,8 @@ void local()                // uses local variable
     double warming = 0.8;   // new variable hides external one
 
     cout << "Local warming = " << warming << " degrees.\n";
-        // Access global variable with the
-        // scope resolution operator
+    // Access global variable with the
+    // scope resolution operator
     cout << "But global warming = " << ::warming;
     cout << " degrees.\n";
 }

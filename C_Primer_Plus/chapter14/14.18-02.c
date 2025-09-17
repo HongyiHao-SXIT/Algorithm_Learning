@@ -85,8 +85,8 @@ int days_result(char *month, int days)
     for (i = 0; i < LEN; i++)
     {
         if ((month_num == months[i].monumb) ||
-            (strcmp(month, months[i].name) == 0) ||
-            (strcmp(month, months[i].abbrev) == 0))
+        (strcmp(month, months[i].name) == 0) ||
+        (strcmp(month, months[i].abbrev) == 0))
         {
             return days > months[i].days ? -1 : total + days;
         }

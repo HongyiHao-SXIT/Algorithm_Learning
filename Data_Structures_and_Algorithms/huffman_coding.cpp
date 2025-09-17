@@ -20,7 +20,7 @@ struct MinPair {
 };
 
 class HuffmanEncoder {
-private:
+    private:
     vector<HuffmanNode> tree;
     vector<string> codes;
     string input_string;
@@ -46,7 +46,7 @@ private:
         return result;
     }
 
-public:
+    public:
     void encode(const string& str, const vector<int>& w) {
         input_string = str;
         weights = w;
@@ -96,9 +96,9 @@ public:
         cout << "Index\tWeight\tParent\tLeft\tRight\n";
         for (size_t i = 1; i < tree.size(); ++i) {
             cout << i << "\t" << tree[i].weight << "\t"
-                 << tree[i].parent << "\t"
-                 << tree[i].left_child << "\t"
-                 << tree[i].right_child << "\n";
+            << tree[i].parent << "\t"
+            << tree[i].left_child << "\t"
+            << tree[i].right_child << "\n";
         }
     }
 
@@ -107,8 +107,8 @@ public:
         cout << "Char\tWeight\tCode\n";
         for (size_t i = 1; i <= input_string.size(); ++i) {
             cout << input_string[i-1] << "\t"
-                 << weights[i-1] << "\t"
-                 << codes[i] << "\n";
+            << weights[i-1] << "\t"
+            << codes[i] << "\n";
         }
 
         cout << "\nCompact Code Representation:\n";

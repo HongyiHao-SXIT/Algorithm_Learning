@@ -6,13 +6,13 @@ using std::string;
 // simple base class
 class TableTennisPlayer
 {
-private:
+    private:
     string firstname;
     string lastname;
     bool hasTable;
-public:
+    public:
     TableTennisPlayer (const string & fn = "none",
-                       const string & ln = "none", bool ht = false);
+    const string & ln = "none", bool ht = false);
     void Name() const;
     bool HasTable() const { return hasTable; };
     void ResetTable(bool v) { hasTable = v; };
@@ -21,11 +21,11 @@ public:
 // simple derived class
 class RatedPlayer : public TableTennisPlayer
 {
-private:
+    private:
     unsigned int rating;
-public:
+    public:
     RatedPlayer (unsigned int r = 0, const string & fn = "none",
-                 const string & ln = "none", bool ht = false);
+    const string & ln = "none", bool ht = false);
     RatedPlayer(unsigned int r, const TableTennisPlayer & tp);
     unsigned int Rating() const { return rating; }
     void ResetRating (unsigned int r) {rating = r;}

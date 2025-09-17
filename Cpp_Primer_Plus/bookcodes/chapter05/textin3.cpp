@@ -13,5 +13,5 @@ int main()
         cin.get(ch);    // attempt to read another char
     }
     cout << endl << count << " characters read\n";
-    return 0; 
+    return 0;
 }

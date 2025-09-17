@@ -12,7 +12,7 @@ void quick_sort(int q[], int l, int r) {
 
     int i = l - 1, j = r + 1;
     int pivot = q[l + ((r - l) >> 1)];
-    
+
     while (i < j) {
         do i++; while (q[i] < pivot);
         do j--; while (q[j] > pivot);

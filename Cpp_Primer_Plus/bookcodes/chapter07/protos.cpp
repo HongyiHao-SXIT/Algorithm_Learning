@@ -22,11 +22,11 @@ void cheers(int n)
 {
     using namespace std;
     for (int i = 0; i < n; i++)
-        cout << "Cheers! ";
+    cout << "Cheers! ";
     cout << endl;
 }
 
 double cube(double x)
 {
-    return x * x * x; 
+    return x * x * x;
 }

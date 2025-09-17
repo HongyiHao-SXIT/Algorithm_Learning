@@ -7,9 +7,9 @@ using namespace std;
 
 class Grand
 {
-private:
+    private:
     int hold;
-public:
+    public:
     Grand(int h = 0) : hold(h) {}
     virtual void Speak() const { cout << "I am a grand class!\n";}
     virtual int Value() const { return hold; }
@@ -17,22 +17,22 @@ public:
 
 class Superb : public Grand
 {
-public:
+    public:
     Superb(int h = 0) : Grand(h) {}
     void Speak() const {cout << "I am a superb class!!\n"; }
     virtual void Say() const
-        { cout << "I hold the superb value of " << Value() << "!\n";}
+    { cout << "I hold the superb value of " << Value() << "!\n";}
 };
 
 class Magnificent : public Superb
 {
-private:
+    private:
     char ch;
-public:
+    public:
     Magnificent(int h = 0, char cv = 'A') : Superb(h), ch(cv) {}
     void Speak() const {cout << "I am a magnificent class!!!\n";}
     void Say() const {cout << "I hold the character " << ch <<
-               " and the integer "  << Value() << "!\n"; }
+    " and the integer "  << Value() << "!\n"; }
 };
 
 Grand * GetOne();
@@ -47,9 +47,9 @@ int main()
         cout << "Now processing type " << typeid(*pg).name() << ".\n";
         pg->Speak();
         if( ps = dynamic_cast<Superb *>(pg))
-            ps->Say();
+        ps->Say();
         if (typeid(Magnificent) == typeid(*pg))
-            cout << "Yes, you're really magnificent.\n";
+        cout << "Yes, you're really magnificent.\n";
     }
     // std::cin.get();
     return 0;
@@ -62,11 +62,11 @@ Grand * GetOne()
     switch( rand() % 3)
     {
         case 0: p = new Grand(rand() % 100);
-                    break;
+        break;
         case 1: p = new Superb(rand() % 100);
-                    break;
+        break;
         case 2: p = new Magnificent(rand() % 100, 'A' + rand() % 26);
-                    break;
+        break;
     }
-    return p; 
+    return p;
 }

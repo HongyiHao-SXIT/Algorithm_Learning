@@ -17,10 +17,10 @@ AcctABC::AcctABC(const string & s, long an, double bal)
 void AcctABC::Deposit(double amt)
 {
     if (amt < 0)
-        cout << "Negative deposit not allowed; "
-             << "deposit is cancelled.\n";
+    cout << "Negative deposit not allowed; "
+    << "deposit is cancelled.\n";
     else
-        balance += amt;
+    balance += amt;
 }
 
 void AcctABC::Withdraw(double amt)
@@ -31,12 +31,12 @@ void AcctABC::Withdraw(double amt)
 // protected methods for formatting
 AcctABC::Formatting AcctABC::SetFormat() const
 {
- // set up ###.## format
+    // set up ###.## format
     Formatting f;
-    f.flag = 
-        cout.setf(ios_base::fixed, ios_base::floatfield);
+    f.flag =
+    cout.setf(ios_base::fixed, ios_base::floatfield);
     f.pr = cout.precision(2);
-    return f; 
+    return f;
 }
 
 void AcctABC::Restore(Formatting & f) const
@@ -49,19 +49,19 @@ void AcctABC::Restore(Formatting & f) const
 void Brass::Withdraw(double amt)
 {
     if (amt < 0)
-        cout << "Withdrawal amount must be positive; "
-             << "withdrawal canceled.\n";
+    cout << "Withdrawal amount must be positive; "
+    << "withdrawal canceled.\n";
     else if (amt <= Balance())
-        AcctABC::Withdraw(amt);
+    AcctABC::Withdraw(amt);
     else
-        cout << "Withdrawal amount of $" << amt
-             << " exceeds your balance.\n"
-             << "Withdrawal canceled.\n";
+    cout << "Withdrawal amount of $" << amt
+    << " exceeds your balance.\n"
+    << "Withdrawal canceled.\n";
 }
 
 void Brass::ViewAcct() const
 {
-   
+
     Formatting f = SetFormat();
     cout << "Brass Client: " << FullName() << endl;
     cout << "Account Number: " << AcctNum() << endl;
@@ -71,15 +71,15 @@ void Brass::ViewAcct() const
 
 // BrassPlus Methods
 BrassPlus::BrassPlus(const string & s, long an, double bal,
-           double ml, double r) : AcctABC(s, an, bal)
+double ml, double r) : AcctABC(s, an, bal)
 {
     maxLoan = ml;
     owesBank = 0.0;
-    rate = r; 
+    rate = r;
 }
 
 BrassPlus::BrassPlus(const Brass & ba, double ml, double r)
-           : AcctABC(ba)   // uses implicit copy constructor
+: AcctABC(ba)   // uses implicit copy constructor
 {
     maxLoan = ml;
     owesBank = 0.0;
@@ -106,7 +106,7 @@ void BrassPlus::Withdraw(double amt)
 
     double bal = Balance();
     if (amt <= bal)
-        AcctABC::Withdraw(amt);
+    AcctABC::Withdraw(amt);
     else if ( amt <= bal + maxLoan - owesBank)
     {
         double advance = amt - bal;
@@ -117,6 +117,6 @@ void BrassPlus::Withdraw(double amt)
         AcctABC::Withdraw(amt);
     }
     else
-        cout << "Credit limit exceeded. Transaction cancelled.\n";
-    Restore(f); 
+    cout << "Credit limit exceeded. Transaction cancelled.\n";
+    Restore(f);
 }

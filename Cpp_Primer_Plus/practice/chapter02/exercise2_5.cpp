@@ -2,11 +2,9 @@
 
 #include <iostream>
 
-
 double celsiu2fahrenit(double celsius) {
     return 1.8 * celsius + 32.0;
 }
-
 
 int main() {
 
@@ -17,7 +15,7 @@ int main() {
     cin >> celsius;
 
     cout << celsius << " degrees Celsius is "
-         << celsiu2fahrenit(celsius) << " degrees Fahrenheit." << endl;
+    << celsiu2fahrenit(celsius) << " degrees Fahrenheit." << endl;
 
     return 0;
 }

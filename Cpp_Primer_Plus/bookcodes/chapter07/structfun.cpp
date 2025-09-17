@@ -42,7 +42,7 @@ polar rect_to_polar(rect xypos)
     polar answer;
 
     answer.distance =
-        sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
+    sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
     answer.angle = atan2(xypos.y, xypos.x);
     return answer;      // returns a polar structure
 }

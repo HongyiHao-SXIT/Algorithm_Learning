@@ -4,16 +4,16 @@
 #define STRNGBAD_H_
 class StringBad
 {
-private:
+    private:
     char * str;                // pointer to string
     int len;                   // length of string
     static int num_strings;    // number of objects
-public:
+    public:
     StringBad(const char * s); // constructor
     StringBad();               // default constructor
     ~StringBad();              // destructor
-// friend function
-    friend std::ostream & operator<<(std::ostream & os, 
-                       const StringBad & st);
+    // friend function
+    friend std::ostream & operator<<(std::ostream & os,
+    const StringBad & st);
 };
 #endif

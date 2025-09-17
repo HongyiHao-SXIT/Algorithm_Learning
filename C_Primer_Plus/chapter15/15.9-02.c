@@ -7,7 +7,7 @@ char *itobs(int n, char *str);
 int main(int argc, char *argv[])
 {
     char bstr[8 * sizeof(int) + 1];
-    
+
     if (argc != 3)
     {
         fprintf(stderr, "Usage: %s binarynum1 binarynum2\n", argv[0]);
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     printf("%s & %s = %s\n", argv[1], argv[2], itobs(v1 & v2, bstr));
     printf("%s | %s = %s\n", argv[1], argv[2], itobs(v1 | v2, bstr));
     printf("%s ^ %s = %s\n", argv[1], argv[2], itobs(v1 ^ v2, bstr));
-    
+
     return 0;
 }
 

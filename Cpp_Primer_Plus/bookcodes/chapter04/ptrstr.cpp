@@ -29,5 +29,5 @@ int main()
     cout << animal << " at " << (int *) animal << endl;
     cout << ps << " at " << (int *) ps << " " << &ps << endl;
     delete [] ps;
-    return 0; 
+    return 0;
 }

@@ -27,7 +27,7 @@ int main(int argc, char * argv[])
         }
         count = 0;
         while (fin.get(ch))
-            count++;
+        count++;
         cout << count << " characters in " << argv[file] << endl;
         total += count;
         fin.clear();           // needed for some implementations
@@ -35,5 +35,5 @@ int main(int argc, char * argv[])
     }
     cout << total << " characters in all files\n";
 
-    return 0; 
+    return 0;
 }

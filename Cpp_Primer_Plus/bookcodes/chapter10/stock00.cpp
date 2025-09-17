@@ -9,21 +9,21 @@ void Stock::acquire(const std::string & co, long n, double pr)
     if (n < 0)
     {
         std::cout << "Number of shares can't be negative; "
-                  << company << " shares set to 0.\n";
+        << company << " shares set to 0.\n";
         shares = 0;
     }
     else
-        shares = n;
+    shares = n;
     share_val = pr;
     set_tot();
 }
 
 void Stock::buy(long num, double price)
 {
-     if (num < 0)
+    if (num < 0)
     {
         std::cout << "Number of shares purchased can't be negative. "
-             << "Transaction is aborted.\n";
+        << "Transaction is aborted.\n";
     }
     else
     {
@@ -39,12 +39,12 @@ void Stock::sell(long num, double price)
     if (num < 0)
     {
         cout << "Number of shares sold can't be negative. "
-             << "Transaction is aborted.\n";
+        << "Transaction is aborted.\n";
     }
     else if (num > shares)
     {
         cout << "You can't sell more than you have! "
-             << "Transaction is aborted.\n";
+        << "Transaction is aborted.\n";
     }
     else
     {
@@ -63,7 +63,7 @@ void Stock::update(double price)
 void Stock::show()
 {
     std::cout << "Company: " << company
-              << "  Shares: " << shares << '\n'
-              << "  Share Price: $" << share_val
-              << "  Total Worth: $" << total_val << '\n';
+    << "  Shares: " << shares << '\n'
+    << "  Share Price: $" << share_val
+    << "  Total Worth: $" << total_val << '\n';
 }

@@ -1,7 +1,6 @@
 // Create by Shujia Huang on 2021-07-25
 #include <iostream>
 
-
 int main() {
 
     using namespace std;

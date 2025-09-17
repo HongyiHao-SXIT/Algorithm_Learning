@@ -6,17 +6,17 @@
 //  Base Class Using DMA
 class baseDMA
 {
-private:
+    private:
     char * label;
     int rating;
-    
-public:
+
+    public:
     baseDMA(const char * l = "null", int r = 0);
     baseDMA(const baseDMA & rs);
     virtual ~baseDMA();
     baseDMA & operator=(const baseDMA & rs);
-    friend std::ostream & operator<<(std::ostream & os, 
-                                     const baseDMA & rs);
+    friend std::ostream & operator<<(std::ostream & os,
+    const baseDMA & rs);
 };
 
 // derived class without DMA
@@ -25,31 +25,31 @@ public:
 // uses implicit assignment operator
 class lacksDMA :public baseDMA
 {
-private:
+    private:
     enum { COL_LEN = 40};
     char color[COL_LEN];
-public:
+    public:
     lacksDMA(const char * c = "blank", const char * l = "null",
-              int r = 0);
+    int r = 0);
     lacksDMA(const char * c, const baseDMA & rs);
-    friend std::ostream & operator<<(std::ostream & os, 
-                                     const lacksDMA & rs);
+    friend std::ostream & operator<<(std::ostream & os,
+    const lacksDMA & rs);
 };
 
 // derived class with DMA
 class hasDMA :public baseDMA
 {
-private:
+    private:
     char * style;
-public:
+    public:
     hasDMA(const char * s = "none", const char * l = "null",
-              int r = 0);
+    int r = 0);
     hasDMA(const char * s, const baseDMA & rs);
     hasDMA(const hasDMA & hs);
     ~hasDMA();
-    hasDMA & operator=(const hasDMA & rs);  
-    friend std::ostream & operator<<(std::ostream & os, 
-                                     const hasDMA & rs);
+    hasDMA & operator=(const hasDMA & rs);
+    friend std::ostream & operator<<(std::ostream & os,
+    const hasDMA & rs);
 };
 
 #endif

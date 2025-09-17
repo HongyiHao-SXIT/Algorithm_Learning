@@ -81,7 +81,7 @@ int menu(void)
     while ((ch = getchar()) != EOF)
     {
         while (getchar() != '\n')
-            continue;
+        continue;
         ch = tolower(ch);
         if (strchr("alrfndq", ch) == NULL)
         {
@@ -140,7 +140,7 @@ void printitem(Item item)
     if (1 == item.pets_count) //只有一个同名宠物的情况;
     {
         printf("Pet: %-19s  Kind: %-19s\n", item.petname,
-               item.many_petkinds->petkind);
+        item.many_petkinds->petkind);
     }
     else //结点中包含有多个同名不同种宠物的情况;
     {
@@ -229,7 +229,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;
@@ -242,7 +242,7 @@ void print_all_pets(Item item)
     while (temp != NULL)
     {
         printf("Pet: %-19s  Kind: %-19s\n", item.petname,
-               temp->petkind);
+        temp->petkind);
         temp = temp->next;
     }
     return;
@@ -267,7 +267,7 @@ void print_same_pets(Item item, const char *str)
         if (0 == strcmp(item.petname, str)) //打印名字相同的不同种类的宠物;
         {
             printf("Pet: %-19s  Kind: %-19s\n", item.petname,
-                   temp->petkind);
+            temp->petkind);
         }
         temp = temp->next;
     }

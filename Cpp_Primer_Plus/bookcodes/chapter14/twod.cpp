@@ -8,10 +8,9 @@ int main(void)
     ArrayTP<int, 10> sums;
     ArrayTP<double, 10> aves;
     ArrayTP< ArrayTP<int,5>, 10> twodee;
-    
-    
+
     int i, j;
-    
+
     for (i = 0; i < 10; i++)
     {
         sums[i] = 0;
@@ -33,7 +32,7 @@ int main(void)
         cout.width(3);
         cout  << sums[i] << ", average = " << aves[i] << endl;
     }
-    
+
     cout << "Done.\n";
     // std::cin.get();
     return 0;

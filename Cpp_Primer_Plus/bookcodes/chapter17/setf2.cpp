@@ -5,7 +5,7 @@
 int main()
 {
     using namespace std;
-   // use left justification, show the plus sign, show trailing
+    // use left justification, show the plus sign, show trailing
     // zeros, with a precision of 3
     cout.setf(ios_base::left, ios_base::adjustfield);
     cout.setf(ios_base::showpos);
@@ -13,7 +13,7 @@ int main()
     cout.precision(3);
     // use e-notation and save old format setting
     ios_base::fmtflags old = cout.setf(ios_base::scientific,
-        ios_base::floatfield);
+    ios_base::floatfield);
     cout << "Left Justification:\n";
     long n;
     for (n = 1; n <= 41; n+= 10)
@@ -49,6 +49,6 @@ int main()
         cout.width(12);
         cout << sqrt(double(n)) << "|\n";
     }
-	// std::cin.get();
-    return 0; 
+    // std::cin.get();
+    return 0;
 }

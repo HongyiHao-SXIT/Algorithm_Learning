@@ -5,8 +5,8 @@ int main()
 {
     using namespace std;
     cout << "Enter text for analysis, and type @"
-            " to terminate input.\n";
-    char ch;  
+    " to terminate input.\n";
+    char ch;
     int whitespace = 0;
     int digits = 0;
     int chars = 0;
@@ -17,23 +17,23 @@ int main()
     while (ch != '@')            // test for sentinel
     {
         if(isalpha(ch))         // is it an alphabetic character?
-            chars++;
+        chars++;
         else if(isspace(ch))    // is it a whitespace character?
-            whitespace++;
+        whitespace++;
         else if(isdigit(ch))    // is it a digit?
-            digits++;
+        digits++;
         else if(ispunct(ch))    // is it punctuation?
-            punct++;
+        punct++;
         else
-            others++;
+        others++;
         cin.get(ch);            // get next character
     }
     cout << chars << " letters, "
-         << whitespace << " whitespace, "
-         << digits << " digits, "
-         << punct << " punctuations, "
-         << others << " others.\n";
+    << whitespace << " whitespace, "
+    << digits << " digits, "
+    << punct << " punctuations, "
+    << others << " others.\n";
     // cin.get();
     // cin.get();
-    return 0; 
+    return 0;
 }

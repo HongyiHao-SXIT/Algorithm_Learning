@@ -18,11 +18,11 @@ int main()
     display(list, SIZE);
     // cin.get();
 
-	return 0; 
+    return 0;
 }
 
 void display(const string sa[], int n)
 {
     for (int i = 0; i < n; i++)
-        cout << i + 1 << ": " << sa[i] << endl;
+    cout << i + 1 << ": " << sa[i] << endl;
 }

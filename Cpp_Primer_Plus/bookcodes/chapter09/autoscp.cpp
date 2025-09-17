@@ -16,7 +16,7 @@ int main()
     cout << &texas << endl;
     cout << "In main(), year = " << year << ", &year = ";
     cout << &year << endl;
-	// cin.get();
+    // cin.get();
     return 0;
 }
 
@@ -30,12 +30,12 @@ void oil(int x)
     cout << "In oil(), x = " << x << ", &x = ";
     cout << &x << endl;
     {                               // start a block
-        int texas = 113;
-        cout << "In block, texas = " << texas;
-        cout << ", &texas = " << &texas << endl;
-                cout << "In block, x = " << x << ", &x = ";
-        cout << &x << endl;
-    }                               // end a block
-    cout << "Post-block texas = " << texas;
+    int texas = 113;
+    cout << "In block, texas = " << texas;
     cout << ", &texas = " << &texas << endl;
+    cout << "In block, x = " << x << ", &x = ";
+    cout << &x << endl;
+}                               // end a block
+cout << "Post-block texas = " << texas;
+cout << ", &texas = " << &texas << endl;
 }

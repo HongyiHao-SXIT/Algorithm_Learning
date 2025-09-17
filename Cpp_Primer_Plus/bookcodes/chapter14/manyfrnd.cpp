@@ -6,9 +6,9 @@ using std::endl;
 template <typename T>
 class ManyFriend
 {
-private:
+    private:
     T item;
-public:
+    public:
     ManyFriend(const T & i) : item(i) {}
     template <typename C, typename D> friend void show2(C &, D &);
 };

@@ -14,5 +14,5 @@ int main()
     cout << "Yes, 7 is my favorite.\n" ;
     // cin.get();
     // cin.get();
-    return 0; 
+    return 0;
 }

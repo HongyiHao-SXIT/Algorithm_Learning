@@ -19,7 +19,7 @@ int main(void)
     rainfall_aver(rain, YEARS);
 
     return 0;
-} 
+}
 
 void rainfall_total(const float (*rain)[MONTHS], int years)
 {

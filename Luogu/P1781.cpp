@@ -18,7 +18,7 @@ int main() {
     cin >> n;
 
     vector<Candidate> candidates(n);
-    
+
     for (int i = 0; i < n; ++i) {
         candidates[i].id = i + 1;
         cin >> candidates[i].votes;

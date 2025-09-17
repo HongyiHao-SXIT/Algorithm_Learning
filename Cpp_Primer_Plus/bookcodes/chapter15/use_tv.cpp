@@ -27,5 +27,5 @@ int main()
     cout << "\n58\" settings:\n";
     s58.settings();
     // std::cin.get();
-    return 0; 
+    return 0;
 }

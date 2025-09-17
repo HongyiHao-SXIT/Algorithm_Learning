@@ -62,7 +62,7 @@ int get_first(void)
         ch = getchar();
     } while (isspace(ch));
     while (getchar() != '\n')
-        continue;
+    continue;
 
     return ch;
 }
@@ -75,7 +75,7 @@ int get_choice(void)
     printf("a. add           s. subtract\n");
     printf("m. multiply      d. divide\n");
     printf("q. quit\n");
-    
+
     ch = get_first();
     while (ch != 'a' && ch != 's' && ch != 'm' && ch != 'd' && ch != 'q')
     {

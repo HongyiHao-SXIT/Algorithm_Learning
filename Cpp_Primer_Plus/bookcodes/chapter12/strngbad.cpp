@@ -16,7 +16,7 @@ StringBad::StringBad(const char * s)
     std::strcpy(str, s);              // initialize pointer
     num_strings++;                    // set object count
     cout << num_strings << ": \"" << str
-         << "\" object created\n";    // For Your Information
+    << "\" object created\n";    // For Your Information
 }
 
 StringBad::StringBad()                // default constructor
@@ -26,7 +26,7 @@ StringBad::StringBad()                // default constructor
     std::strcpy(str, "C++");          // default string
     num_strings++;
     cout << num_strings << ": \"" << str
-         << "\" default object created\n";  // FYI
+    << "\" default object created\n";  // FYI
 }
 
 StringBad::~StringBad()               // necessary destructor
@@ -40,5 +40,5 @@ StringBad::~StringBad()               // necessary destructor
 std::ostream & operator<<(std::ostream & os, const StringBad & st)
 {
     os << st.str;
-    return os; 
+    return os;
 }

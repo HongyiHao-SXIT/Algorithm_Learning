@@ -3,7 +3,6 @@
 //
 #include <iostream>
 
-
 long factorial(int n) {
 
     if (n == 0) {
@@ -12,7 +11,6 @@ long factorial(int n) {
 
     return n * factorial(n-1);
 }
-
 
 int main() {
 

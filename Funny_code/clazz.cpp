@@ -2,7 +2,7 @@
 using namespace std;
 
 class Clock {
-public:
+    public:
     void setTime(int newH, int newM, int newS) {
         hour = newH;
         minute = newM;
@@ -13,7 +13,7 @@ public:
         cout << "Current time is: " << hour << ":" << minute << ":" << second << endl;
     }
 
-private:
+    private:
     int hour, minute, second;
 };
 
@@ -22,6 +22,6 @@ int main() {
 
     myClock.setTime(10, 30, 45);
     myClock.showTime();
-    
+
     return 0;
 }

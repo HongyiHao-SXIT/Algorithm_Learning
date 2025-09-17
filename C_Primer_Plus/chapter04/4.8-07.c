@@ -17,7 +17,7 @@ int main(void)
 
     printf("\nfloat and double maximum precious digits:\n");
     printf("FLT_DIG = %d, DBL_DIG = %d\n", FLT_DIG, DBL_DIG);
-    //4.8-7书上问答: 不一致, 因为float精确度是6位, 而double是15位, 所以在超过精确度位数后会有差异 
+    //4.8-7书上问答: 不一致, 因为float精确度是6位, 而double是15位, 所以在超过精确度位数后会有差异
 
     return 0;
 }

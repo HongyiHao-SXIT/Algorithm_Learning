@@ -13,7 +13,7 @@ void main() {
     }
 
     while ((count = fread(buf, 1, 80, in_file)) > 0)
-        printf("received from pipe: %s/n", buf);
+    printf("received from pipe: %s/n", buf);
     fclose(in_file);
 
     out_file = fopen("myfifo", "w");

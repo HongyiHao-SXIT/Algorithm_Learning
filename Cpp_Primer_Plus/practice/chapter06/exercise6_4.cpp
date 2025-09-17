@@ -1,7 +1,6 @@
 // Create by Shujia Huang on 2021-08-03
 #include <iostream>
 
-
 int main() {
 
     using namespace std;
@@ -25,34 +24,34 @@ int main() {
 
     cout << "Benevolent order of Programmers report.\n";
     cout << "a. display by name     b. display by title\n"
-         << "c. display by bopname  d. display by preference\n"
-         << "q. quit" << endl;
+    << "c. display by bopname  d. display by preference\n"
+    << "q. quit" << endl;
 
     char ch;
     while (cin >> ch) {
 
-        if (ch == 'q') { 
-            break; 
+        if (ch == 'q') {
+            break;
         }
 
         for (int i=0; i < size; ++i) {
 
             switch (ch) {
                 case 'a':
-                    cout << bops[i].fullname << "\n";
-                    break;
+                cout << bops[i].fullname << "\n";
+                break;
                 case 'b':
-                    cout << bops[i].title << "\n";
-                    break;
+                cout << bops[i].title << "\n";
+                break;
                 case 'c':
-                    cout << bops[i].bopname << "\n";
-                    break;
+                cout << bops[i].bopname << "\n";
+                break;
                 case 'd':
-                    cout << bops[i].preference << "\n";
-                    break;
+                cout << bops[i].preference << "\n";
+                break;
 
                 default:
-                    break;
+                break;
             }
         }
 
@@ -61,4 +60,3 @@ int main() {
     cout << "** Done **" << endl;
     return 0;
 }
-

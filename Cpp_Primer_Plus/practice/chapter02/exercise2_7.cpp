@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 void display_time(double hours, double minutes) {
 
     cout << "Time: " << hours << ":" << minutes << endl;

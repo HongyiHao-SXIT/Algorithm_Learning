@@ -14,7 +14,7 @@ int main()
     cin >> name;
 
     cout << name << ", please enter up to " << ArSize
-         << " short sayings <empty line to quit>:\n";
+    << " short sayings <empty line to quit>:\n";
     String sayings[ArSize];
     char temp[MaxLen];               // temporary string storage
     int i;
@@ -23,11 +23,11 @@ int main()
         cout << i+1 << ": ";
         cin.get(temp, MaxLen);
         while (cin && cin.get() != '\n')
-            continue;
+        continue;
         if (!cin || temp[0] == '\0') // empty line?
-            break;                   // i not incremented
+        break;                   // i not incremented
         else
-            sayings[i] = temp;       // overloaded assignment
+        sayings[i] = temp;       // overloaded assignment
     }
     int total = i;                   // total # of lines read
 
@@ -35,37 +35,37 @@ int main()
     {
         cout << "Here are your sayings:\n";
         for (i = 0; i < total; i++)
-            cout << sayings[i] << "\n";
+        cout << sayings[i] << "\n";
 
-    // use pointers to keep track of shortest, first strings
+        // use pointers to keep track of shortest, first strings
         String * shortest = &sayings[0]; // initialize to first object
         String * first = &sayings[0];
         for (i = 1; i < total; i++)
         {
             if (sayings[i].length() < shortest->length())
-                shortest = &sayings[i];
+            shortest = &sayings[i];
             if (sayings[i] < *first)     // compare values
-                first = &sayings[i];     // assign address
+            first = &sayings[i];     // assign address
         }
         cout << "Shortest saying:\n" << * shortest << endl;
         cout << "First alphabetically:\n" << * first << endl;
 
         srand(time(0));
         int choice = rand() % total; // pick index at random
-    // use new to create, initialize new String object
+        // use new to create, initialize new String object
         String * favorite = new String(sayings[choice]);
         cout << "My favorite saying:\n" << *favorite << endl;
         delete favorite;
     }
     else
-        cout << "Not much to say, eh?\n";
+    cout << "Not much to say, eh?\n";
     cout << "Bye.\n";
-// keep window open
-/*    if (!cin)
-        cin.clear();
+    // keep window open
+    /*    if (!cin)
+    cin.clear();
     while (cin.get() != '\n')
-        continue;
+    continue;
     cin.get();
-*/
-    return 0; 
+    */
+    return 0;
 }

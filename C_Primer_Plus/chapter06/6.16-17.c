@@ -4,7 +4,7 @@ int main(void)
 {
     int years = 0;
     double chuckie = 100.0;
-    
+
     while (chuckie > 9)
     {
         ++years, chuckie += chuckie * 0.08, chuckie -= 10;

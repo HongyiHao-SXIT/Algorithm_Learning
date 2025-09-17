@@ -33,7 +33,7 @@ int main(void)
         book[count] = &library[count];
         count++;
         while (getchar() != '\n')
-            continue;
+        continue;
         if (count < MAXBKS)
         {
             printf("Enter the next title.\n");
@@ -45,21 +45,21 @@ int main(void)
         for (index = 0; index < count; index++)
         {
             printf("%s by %s: $%.2f\n", library[index].title,
-                   library[index].author, library[index].value);
+            library[index].author, library[index].value);
         }
         sort_title(book, count);
         printf("\nHere is the list of your books sorted by title letters:\n");
         for (index = 0; index < count; index++)
         {
             printf("%s by %s: $%.2f\n", book[index]->title,
-                   book[index]->author, book[index]->value);
+            book[index]->author, book[index]->value);
         }
         sort_value(book, count);
         printf("\nHere is the list of your books sorted by value(from low to high):\n");
         for (index = 0; index < count; index++)
         {
             printf("%s by %s: $%.2f\n", book[index]->title,
-                   book[index]->author, book[index]->value);
+            book[index]->author, book[index]->value);
         }
     }
     else
@@ -126,7 +126,7 @@ char *s_gets(char *st, int n)
         else
         {
             while (getchar() != '\n')
-                continue;
+            continue;
         }
     }
     return ret_val;

@@ -5,9 +5,9 @@
 
 class Report
 {
-private:
+    private:
     std::string str;
-public:
+    public:
     Report(const std::string s) : str(s) { std::cout << "Object created!\n"; }
     ~Report() { std::cout << "Object deleted!\n"; }
     void comment() const { std::cout << str << "\n"; }
@@ -27,6 +27,6 @@ int main()
         std::unique_ptr<Report> ps (new Report("using unique_ptr"));
         ps->comment();
     }
-    // std::cin.get();  
+    // std::cin.get();
     return 0;
 }

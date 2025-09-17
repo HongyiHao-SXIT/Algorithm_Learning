@@ -12,7 +12,7 @@ int main(void)
     while (scanf("%lf", &hours) != 1 || hours < 0)
     {
         while (getchar() != '\n')
-            continue;
+        continue;
         printf("Please enter a number(>= 0): ");
     }
     double salary = (hours > 40 ? (40 + 1.5 * (hours - 40)) : hours) * 10.0;

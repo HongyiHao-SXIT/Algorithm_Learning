@@ -15,18 +15,18 @@ int main()
     cout << "planning time = ";
     planning.Show();
     cout << endl;
- 
+
     cout << "coding time = ";
     coding.Show();
     cout << endl;
-    
+
     cout << "fixing time = ";
     fixing.Show();
     cout << endl;
 
     total = coding.Sum(fixing);
     cout << "coding.Sum(fixing) = ";
-  	total.Show();
+    total.Show();
     cout << endl;
     // std::cin.get();
     return 0;

@@ -7,7 +7,7 @@ struct Pizza
     std::string company;
     double diameter;
     double weight;
-    
+
 };
 
 int main() {
@@ -24,9 +24,9 @@ int main() {
     cin >> pizza.weight;
 
     cout << "\nHere is the pizza information: \n"
-         << "Company: " << pizza.company << "\n"
-         << "Diameter: " << pizza.diameter << "\n"
-         << "Weight: " << pizza.weight << endl;
+    << "Company: " << pizza.company << "\n"
+    << "Diameter: " << pizza.diameter << "\n"
+    << "Weight: " << pizza.weight << endl;
 
     return 0;
 }

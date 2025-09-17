@@ -3,10 +3,10 @@ using namespace std;
 
 class Example
 {
-private:
+    private:
     int feet;
     int inches;
-public:
+    public:
     Example();
     Example(int ft);
     ~Example();
@@ -66,7 +66,7 @@ int main()
 {
     Example car(15);
     Example van(20);
-    Example garage; 
+    Example garage;
 
     cout << "car.use_ptr() output:\n";
     car.use_ptr();
