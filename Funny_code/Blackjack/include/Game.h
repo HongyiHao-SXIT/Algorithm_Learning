@@ -2,8 +2,8 @@
 #define MONOPOLY_GAME_H
 
 class Game {
-    public:
-    void start();
+ public:
+  void start();
 };
 
 #endif

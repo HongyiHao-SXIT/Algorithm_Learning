@@ -5,10 +5,9 @@
 
 typedef char item;
 
-typedef struct
-{
-    item data[MAXSIZE];
-    int top;
+typedef struct {
+  item data[MAXSIZE];
+  int top;
 } stack;
 
 void init(stack *st);

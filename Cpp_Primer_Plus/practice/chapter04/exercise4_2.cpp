@@ -3,19 +3,19 @@
 #include <string>
 
 int main() {
-    using namespace std;
+  using namespace std;
 
-    string name;
-    string dessert;
+  string name;
+  string dessert;
 
-    cout << "Enter your name: \n";
-    getline(cin, name);
+  cout << "Enter your name: \n";
+  getline(cin, name);
 
-    cout << "Enter your favorite dessert:\n";
-    getline(cin, dessert);
+  cout << "Enter your favorite dessert:\n";
+  getline(cin, dessert);
 
-    cout << "I have delicious " << dessert;
-    cout << " for you,  " << name << ".\n";
+  cout << "I have delicious " << dessert;
+  cout << " for you,  " << name << ".\n";
 
-    return 0;
+  return 0;
 }

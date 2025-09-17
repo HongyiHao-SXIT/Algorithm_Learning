@@ -3,23 +3,18 @@
 void one_three(void);
 void two(void);
 
-int main(void)
-{
-    printf("starting now:\n");
-    one_three();
-    printf("done!\n");
+int main(void) {
+  printf("starting now:\n");
+  one_three();
+  printf("done!\n");
 
-    return 0;
+  return 0;
 }
 
-void one_three(void)
-{
-    printf("one\n");
-    two();
-    printf("three\n");
+void one_three(void) {
+  printf("one\n");
+  two();
+  printf("three\n");
 }
 
-void two(void)
-{
-    printf("two\n");
-}
+void two(void) { printf("two\n"); }

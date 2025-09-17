@@ -3,19 +3,17 @@
 #include <stdbool.h>
 #define TSIZE 45
 
-struct film
-{
-    char title[TSIZE];
-    int rating;
+struct film {
+  char title[TSIZE];
+  int rating;
 };
 
 typedef struct film Item;
 
 #define MAXSIZE 100
-typedef struct list
-{
-    Item entries[MAXSIZE];
-    int items;
+typedef struct list {
+  Item entries[MAXSIZE];
+  int items;
 } List;
 
 void InitializeList(List *plist);

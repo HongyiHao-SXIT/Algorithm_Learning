@@ -2,23 +2,23 @@
 #include <iostream>
 
 int main() {
-    using namespace std;
+  using namespace std;
 
-    double daphne_account = 100;
-    double cleo_account = 100;
+  double daphne_account = 100;
+  double cleo_account = 100;
 
-    int year = 0;
-    while (cleo_account <= daphne_account) {
-        ++year;
+  int year = 0;
+  while (cleo_account <= daphne_account) {
+    ++year;
 
-        daphne_account += 10;
-        cleo_account += cleo_account * 0.05;
-    }
+    daphne_account += 10;
+    cleo_account += cleo_account * 0.05;
+  }
 
-    cout << "After " << year << " Years. "
-    << "Cleo's account is " << cleo_account
-    << " while more than the one of Daphne which is "
-    << daphne_account << "." << endl;
+  cout << "After " << year << " Years. "
+       << "Cleo's account is " << cleo_account
+       << " while more than the one of Daphne which is " << daphne_account
+       << "." << endl;
 
-    return 0;
+  return 0;
 }

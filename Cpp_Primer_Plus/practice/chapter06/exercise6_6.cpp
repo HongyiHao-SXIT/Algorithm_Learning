@@ -3,60 +3,58 @@
 #include <string>
 
 int main() {
+  using namespace std;
 
-    using namespace std;
+  const int Grand_Amount = 10000;
 
-    const int Grand_Amount = 10000;
+  struct Patron {
+    string name;
+    double amount;
+  };
 
-    struct Patron {
-        string name;
-        double amount;
-    };
+  int contribute_num = 0;
+  cout << "Enter the number of contributor: ";
+  cin >> contribute_num;
+  cin.get();  // 读取输入流中的回车符
 
-    int contribute_num = 0;
-    cout << "Enter the number of contributor: ";
-    cin >> contribute_num;
+  Patron *p_contribution = new Patron[contribute_num];
+  for (int i = 0; i < contribute_num; ++i) {
+    cout << "Enter the name of " << i + 1 << " contributor: ";
+    getline(cin, p_contribution[i].name);
+
+    cout << "Enter the amount of donation: ";
+    cin >> p_contribution[i].amount;
     cin.get();  // 读取输入流中的回车符
+  }
 
-    Patron *p_contribution = new Patron [contribute_num];
-    for (int i = 0; i < contribute_num; ++i) {
-        cout << "Enter the name of " << i + 1 << " contributor: ";
-        getline(cin, p_contribution[i].name);
-
-        cout << "Enter the amount of donation: ";
-        cin >> p_contribution[i].amount;
-        cin.get();  // 读取输入流中的回车符
+  unsigned int grand_amount_n = 0;
+  cout << "\nGrand patron: " << endl;
+  for (int i = 0; i < contribute_num; ++i) {
+    if (p_contribution[i].amount > Grand_Amount) {
+      cout << "Contributor name: " << p_contribution[i].name << "\n"
+           << "Contributor amount: " << p_contribution[i].amount << endl;
+      ++grand_amount_n;
     }
+  }
 
-    unsigned int grand_amount_n = 0;
-    cout << "\nGrand patron: " << endl;
-    for (int i = 0; i < contribute_num; ++i) {
+  if (grand_amount_n == 0) {
+    cout << "None" << endl;
+  }
 
-        if (p_contribution[i].amount > Grand_Amount) {
-            cout << "Contributor name: " << p_contribution[i].name << "\n"
-            << "Contributor amount: " << p_contribution[i].amount << endl;
-            ++grand_amount_n;
-        }
-    }
+  bool is_empty = true;
+  cout << "\nPatrons: " << endl;
+  for (int i = 0; i < contribute_num; ++i) {
+    cout << "Contributor name: " << p_contribution[i].name << "\n"
+         << "Contributor amount: " << p_contribution[i].amount << endl;
 
-    if (grand_amount_n == 0) {
-        cout << "None" << endl;
-    }
+    is_empty = false;
+  }
 
-    bool is_empty = true;
-    cout << "\nPatrons: " << endl;
-    for (int i=0; i < contribute_num; ++i) {
-        cout << "Contributor name: " << p_contribution[i].name << "\n"
-        << "Contributor amount: " << p_contribution[i].amount << endl;
+  if (is_empty) {
+    cout << "** None **" << endl;
+  }
 
-        is_empty = false;
-    }
+  delete[] p_contribution;
 
-    if (is_empty) {
-        cout << "** None **" << endl;
-    }
-
-    delete [] p_contribution;
-
-    return 0;
+  return 0;
 }

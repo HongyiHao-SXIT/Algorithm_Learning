@@ -2,24 +2,22 @@
 #include <iostream>
 
 int main() {
-    using namespace std;
+  using namespace std;
 
-    double s = 0;
-    double ch;
+  double s = 0;
+  double ch;
 
-    while (1) {
+  while (1) {
+    cout << "Enter a number (int/double) (0 to exit): ";
+    cin >> ch;
 
-        cout << "Enter a number (int/double) (0 to exit): ";
-        cin >> ch;
-
-        if (ch == 0) {
-            break;
-        }
-
-        s += ch;
-        cout << "Until now, the sum of the number you inputed is: "
-        << s << endl;
+    if (ch == 0) {
+      break;
     }
 
-    return 0;
+    s += ch;
+    cout << "Until now, the sum of the number you inputed is: " << s << endl;
+  }
+
+  return 0;
 }

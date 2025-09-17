@@ -3,24 +3,21 @@
 #include <stdbool.h>
 #define SLEN 81
 
-typedef struct item
-{
-    char wrd[SLEN];
-    int count;
+typedef struct item {
+  char wrd[SLEN];
+  int count;
 } Item;
 
 #define MAXITEMS 100
-typedef struct node
-{
-    Item item;
-    struct node *left;
-    struct node *right;
+typedef struct node {
+  Item item;
+  struct node *left;
+  struct node *right;
 } Node;
 
-typedef struct tree
-{
-    Node *root;
-    int size;
+typedef struct tree {
+  Node *root;
+  int size;
 } Tree;
 
 void InitializeTree(Tree *ptree);

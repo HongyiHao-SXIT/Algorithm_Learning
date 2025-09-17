@@ -3,24 +3,21 @@
 #include <stdbool.h>
 #define TSIZE 45
 
-struct film
-{
-    char title[TSIZE];
-    int rating;
+struct film {
+  char title[TSIZE];
+  int rating;
 };
 
 typedef struct film Item;
 
-typedef struct node
-{
-    Item item;
-    struct node *next;
+typedef struct node {
+  Item item;
+  struct node *next;
 } Node;
 
-typedef struct list
-{
-    Node *head;
-    Node *end;
+typedef struct list {
+  Node *head;
+  Node *end;
 } List;
 
 void InitializeList(List *plist);

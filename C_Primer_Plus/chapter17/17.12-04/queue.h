@@ -2,25 +2,22 @@
 #define _QUEUE_H_
 #include <stdbool.h>
 
-typedef struct item
-{
-    long arrive;
-    int processtime;
+typedef struct item {
+  long arrive;
+  int processtime;
 } Item;
 
 #define MAXQUEUE 10
 
-typedef struct node
-{
-    Item item;
-    struct node *next;
+typedef struct node {
+  Item item;
+  struct node *next;
 } Node;
 
-typedef struct queue
-{
-    Node *front;
-    Node *rear;
-    int items;
+typedef struct queue {
+  Node *front;
+  Node *rear;
+  int items;
 } Queue;
 
 void InitializeQueue(Queue *pq);

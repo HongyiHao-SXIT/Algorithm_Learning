@@ -3,28 +3,25 @@
 #include <string>
 
 int main() {
-    using namespace std;
+  using namespace std;
 
-    string months[12] = {"Jan", "Feb", "Mar", "Apr",
-    "May", "Jun", "Jul", "Aug",
-    "Sep", "Oct", "Nov", "Dec"};
-    int sell[12];
-    int total_sales = 0;
+  string months[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                       "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+  int sell[12];
+  int total_sales = 0;
 
-    cout << "Enter the sales of book <<C++ for Fools>> each month." << endl;
-    for (int i=0; i < 12; ++i) {
+  cout << "Enter the sales of book <<C++ for Fools>> each month." << endl;
+  for (int i = 0; i < 12; ++i) {
+    cout << months[i] << ":";
+    cin >> sell[i];
 
-        cout << months[i] << ":";
-        cin >> sell[i];
+    total_sales += sell[i];
+  }
 
-        total_sales += sell[i];
-    }
+  cout << "\nThe total sales is " << total_sales << endl;
+  for (int i = 0; i < 12; ++i) {
+    cout << months[i] << ": " << sell[i] << endl;
+  }
 
-    cout << "\nThe total sales is " << total_sales << endl;
-    for (int i=0; i < 12; ++i) {
-
-        cout << months[i] << ": " << sell[i] << endl;
-    }
-
-    return 0;
+  return 0;
 }
