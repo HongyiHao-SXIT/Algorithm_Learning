@@ -4,8 +4,8 @@
 using namespace std;
 
 int main() {
-  SavingsAccount sa0(1, 21325302, 0.015);
-  SavingsAccount sa1(1, 58310212, 0.015);
+  Account sa0(1, 21325302, 0.015);
+  Account sa1(1, 58310212, 0.015);
 
   sa0.deposit(5, 5000);
   sa1.deposit(10, 10000);
@@ -18,7 +18,7 @@ int main() {
   sa0.show();
   sa1.show();
 
-  cout << "Total: " << SavingsAccount::getTotal() << endl;
+  cout << "Total: " << Account::getTotal() << endl;
 
   return 0;
 }
