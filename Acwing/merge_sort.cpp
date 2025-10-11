@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-void merge(vector<int>& arr, int left, int mid, int right) {
+void merge(vector<int> &arr, int left, int mid, int right) {
   vector<int> temp;
   int i = left, j = mid + 1;
 
@@ -12,16 +12,19 @@ void merge(vector<int>& arr, int left, int mid, int right) {
     else
       temp.push_back(arr[j++]);
   }
-  while (i <= mid) temp.push_back(arr[i++]);
-  while (j <= right) temp.push_back(arr[j++]);
+  while (i <= mid)
+    temp.push_back(arr[i++]);
+  while (j <= right)
+    temp.push_back(arr[j++]);
 
   for (int k = 0; k < temp.size(); ++k) {
     arr[left + k] = temp[k];
   }
 }
 
-void mergeSort(vector<int>& arr, int left, int right) {
-  if (left >= right) return;
+void mergeSort(vector<int> &arr, int left, int right) {
+  if (left >= right)
+    return;
   int mid = left + (right - left) / 2;
   mergeSort(arr, left, mid);
   mergeSort(arr, mid + 1, right);
@@ -31,7 +34,8 @@ void mergeSort(vector<int>& arr, int left, int right) {
 int main() {
   vector<int> arr = {8, 4, 5, 7, 1, 3, 6, 2};
   mergeSort(arr, 0, arr.size() - 1);
-  for (int num : arr) cout << num << " ";
+  for (int num : arr)
+    cout << num << " ";
   cout << endl;
   return 0;
 }

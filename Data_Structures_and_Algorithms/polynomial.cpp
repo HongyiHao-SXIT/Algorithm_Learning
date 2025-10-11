@@ -30,9 +30,8 @@ int main() {
   headB->next = NULL;
   headAB->next = NULL;
 
-  printf(
-      "Enter the coefficients and exponents of the first polynomial, ending "
-      "with (0 0):\n");
+  printf("Enter the coefficients and exponents of the first polynomial, ending "
+         "with (0 0):\n");
   inputPoly(headA);
   printf("First ");
   print(headA);
@@ -73,7 +72,8 @@ void inputPoly(Link head) {
   while (true) {
     printf("Enter coefficient and exponent (e.g., 2 3 means 2x^3): ");
     scanf("%d %d", &coef, &exp);
-    if (coef == 0 && exp == 0) break;
+    if (coef == 0 && exp == 0)
+      break;
     if (!insert(head, coef, exp)) {
       printf("Insertion failed, out of memory!\n");
       break;
@@ -82,7 +82,8 @@ void inputPoly(Link head) {
 }
 
 bool insert(Link head, int coef, int exp) {
-  if (coef == 0) return true;
+  if (coef == 0)
+    return true;
 
   Link prev = head;
   Link curr = head->next;
@@ -102,7 +103,8 @@ bool insert(Link head, int coef, int exp) {
   }
 
   Link newNode = (Link)malloc(sizeof(Node));
-  if (!newNode) return false;
+  if (!newNode)
+    return false;
   newNode->coef = coef;
   newNode->exp = exp;
   newNode->next = curr;
@@ -135,7 +137,8 @@ void print(Link head) {
         printf("%d", p->coef);
 
       printf("x");
-      if (p->exp != 1) printf("^%d", p->exp);
+      if (p->exp != 1)
+        printf("^%d", p->exp);
     }
 
     isFirst = false;
@@ -157,7 +160,8 @@ void combin2List(Link heada, Link headb, Link headab) {
       pb = pb->next;
     } else {
       int sum = pa->coef + pb->coef;
-      if (sum != 0) insert(headab, sum, pa->exp);
+      if (sum != 0)
+        insert(headab, sum, pa->exp);
       pa = pa->next;
       pb = pb->next;
     }

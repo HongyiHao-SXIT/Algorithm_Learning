@@ -21,7 +21,7 @@ int main() {
     wordList.push_back(currentWord);
   }
 
-  for (auto& word : wordList) {
+  for (auto &word : wordList) {
     if (word == targetWord) {
       word = replacementWord;
     }

@@ -2,7 +2,7 @@
 #include <utility>
 #include <vector>
 
-void bubbleSort(std::vector<int>& arr) {
+void bubbleSort(std::vector<int> &arr) {
   bool swapped;
   const size_t n = arr.size();
 
@@ -22,8 +22,8 @@ void bubbleSort(std::vector<int>& arr) {
   }
 }
 
-void printVector(const std::vector<int>& vec) {
-  for (const auto& num : vec) {
+void printVector(const std::vector<int> &vec) {
+  for (const auto &num : vec) {
     std::cout << num << ' ';
   }
   std::cout << '\n';

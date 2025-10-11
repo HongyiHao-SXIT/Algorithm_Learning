@@ -4,9 +4,11 @@
 using namespace std;
 
 int find_smallest_factor(int n) {
-  if (n % 2 == 0) return n / 2;
+  if (n % 2 == 0)
+    return n / 2;
   for (int i = 3; i <= sqrt(n); i += 2) {
-    if (n % i == 0) return n / i;
+    if (n % i == 0)
+      return n / i;
   }
   return 1;
 }

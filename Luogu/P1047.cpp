@@ -12,7 +12,7 @@ int main() {
   cin >> l >> m;
 
   vector<pair<int, int>> intervals(m);
-  for (auto& interval : intervals) {
+  for (auto &interval : intervals) {
     cin >> interval.first >> interval.second;
   }
 
@@ -21,7 +21,7 @@ int main() {
   int remaining = l + 1;
   int last = -1;
 
-  for (const auto& [u, v] : intervals) {
+  for (const auto &[u, v] : intervals) {
     if (u > last) {
       remaining -= (v - u + 1);
       last = v;

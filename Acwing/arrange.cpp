@@ -3,8 +3,8 @@
 
 using namespace std;
 
-void backtrack(vector<int>& nums, vector<bool>& used, vector<int>& path,
-               vector<vector<int>>& res) {
+void backtrack(vector<int> &nums, vector<bool> &used, vector<int> &path,
+               vector<vector<int>> &res) {
   if (path.size() == nums.size()) {
     res.push_back(path);
     return;
@@ -36,7 +36,7 @@ int main() {
 
   backtrack(nums, used, path, res);
 
-  for (const auto& perm : res) {
+  for (const auto &perm : res) {
     for (int num : perm) {
       cout << num << " ";
     }

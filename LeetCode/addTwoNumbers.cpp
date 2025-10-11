@@ -2,15 +2,15 @@
 
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
   ListNode(int x) : val(x), next(nullptr) {}
 };
 
 class Solution {
- public:
-  ListNode* addTwoNumbers(ListNode* List1, ListNode* List2) {
+public:
+  ListNode *addTwoNumbers(ListNode *List1, ListNode *List2) {
     ListNode dummy(0);
-    ListNode* tail = &dummy;
+    ListNode *tail = &dummy;
     int carry = 0;
 
     while (List1 || List2 || carry) {

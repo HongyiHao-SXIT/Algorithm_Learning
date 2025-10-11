@@ -12,7 +12,7 @@ int main() {
   cin >> n;
 
   vector<int> winning_numbers(7);
-  for (int& num : winning_numbers) {
+  for (int &num : winning_numbers) {
     cin >> num;
   }
   sort(winning_numbers.begin(), winning_numbers.end());
@@ -21,7 +21,7 @@ int main() {
 
   while (n--) {
     vector<int> ticket(7);
-    for (int& num : ticket) {
+    for (int &num : ticket) {
       cin >> num;
     }
     sort(ticket.begin(), ticket.end());
@@ -31,27 +31,27 @@ int main() {
                      ticket.begin(), ticket.end(), back_inserter(matches));
 
     switch (matches.size()) {
-      case 7:
-        awards[0]++;
-        break;
-      case 6:
-        awards[1]++;
-        break;
-      case 5:
-        awards[2]++;
-        break;
-      case 4:
-        awards[3]++;
-        break;
-      case 3:
-        awards[4]++;
-        break;
-      case 2:
-        awards[5]++;
-        break;
-      case 1:
-        awards[6]++;
-        break;
+    case 7:
+      awards[0]++;
+      break;
+    case 6:
+      awards[1]++;
+      break;
+    case 5:
+      awards[2]++;
+      break;
+    case 4:
+      awards[3]++;
+      break;
+    case 3:
+      awards[4]++;
+      break;
+    case 2:
+      awards[5]++;
+      break;
+    case 1:
+      awards[6]++;
+      break;
     }
   }
 

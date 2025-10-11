@@ -24,7 +24,7 @@ int main() {
     cin >> candidates[i].votes;
   }
 
-  auto compare = [](const Candidate& a, const Candidate& b) {
+  auto compare = [](const Candidate &a, const Candidate &b) {
     if (a.votes.length() != b.votes.length()) {
       return a.votes.length() > b.votes.length();
     }

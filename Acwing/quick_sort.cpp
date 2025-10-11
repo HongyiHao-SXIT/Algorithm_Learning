@@ -7,7 +7,8 @@ const int N = 1'000'010;
 int q[N];
 
 void quick_sort(int q[], int l, int r) {
-  if (l >= r) return;
+  if (l >= r)
+    return;
 
   int i = l - 1, j = r + 1;
   int pivot = q[(l + r) / 2];

@@ -8,17 +8,21 @@ const int N = 1e6 + 10;
 int q[N];
 
 void quick_sort(int q[], int l, int r) {
-  if (l >= r) return;
+  if (l >= r)
+    return;
 
   int i = l - 1, j = r + 1;
   int pivot = q[l + ((r - l) >> 1)];
 
   while (i < j) {
-    do i++;
+    do
+      i++;
     while (q[i] < pivot);
-    do j--;
+    do
+      j--;
     while (q[j] > pivot);
-    if (i < j) swap(q[i], q[j]);
+    if (i < j)
+      swap(q[i], q[j]);
   }
 
   quick_sort(q, l, j);

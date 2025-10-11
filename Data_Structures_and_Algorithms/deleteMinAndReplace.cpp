@@ -3,20 +3,21 @@ using namespace std;
 
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
   ListNode(int x) : val(x), next(nullptr) {}
 };
 
-ListNode* deleteMinAndReplace(ListNode* head) {
+ListNode *deleteMinAndReplace(ListNode *head) {
   if (!head || !head->next) {
-    if (head) delete head;
+    if (head)
+      delete head;
     return nullptr;
   }
 
-  ListNode* minNode = head;
-  ListNode* cur = head;
-  ListNode* prev = nullptr;
-  ListNode* prevMin = nullptr;
+  ListNode *minNode = head;
+  ListNode *cur = head;
+  ListNode *prev = nullptr;
+  ListNode *prevMin = nullptr;
 
   while (cur) {
     if (cur->val < minNode->val) {
@@ -27,7 +28,7 @@ ListNode* deleteMinAndReplace(ListNode* head) {
     cur = cur->next;
   }
 
-  ListNode* lastNode = prev;
+  ListNode *lastNode = prev;
 
   minNode->val = lastNode->val;
 
@@ -35,7 +36,7 @@ ListNode* deleteMinAndReplace(ListNode* head) {
     delete lastNode;
     return nullptr;
   } else {
-    ListNode* p = head;
+    ListNode *p = head;
     while (p->next != lastNode) {
       p = p->next;
     }
@@ -46,7 +47,7 @@ ListNode* deleteMinAndReplace(ListNode* head) {
   return head;
 }
 
-void printList(ListNode* head) {
+void printList(ListNode *head) {
   while (head) {
     cout << head->val << " ";
     head = head->next;
@@ -55,7 +56,7 @@ void printList(ListNode* head) {
 }
 
 int main() {
-  ListNode* head = new ListNode(5);
+  ListNode *head = new ListNode(5);
   head->next = new ListNode(2);
   head->next->next = new ListNode(7);
   head->next->next->next = new ListNode(3);

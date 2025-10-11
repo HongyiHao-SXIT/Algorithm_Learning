@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int lengthOfLongestSubstring(string s) {
     unordered_set<char> charSet;
     int n = s.size();

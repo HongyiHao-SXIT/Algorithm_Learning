@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector<int> multiply(const vector<int>& a, int b) {
+vector<int> multiply(const vector<int> &a, int b) {
   vector<int> result;
   int carry = 0;
 
@@ -23,13 +23,15 @@ vector<int> multiply(const vector<int>& a, int b) {
   return result;
 }
 
-vector<int> add(const vector<int>& a, const vector<int>& b) {
+vector<int> add(const vector<int> &a, const vector<int> &b) {
   vector<int> result;
   int carry = 0;
 
   for (size_t i = 0; i < a.size() || i < b.size() || carry; ++i) {
-    if (i < a.size()) carry += a[i];
-    if (i < b.size()) carry += b[i];
+    if (i < a.size())
+      carry += a[i];
+    if (i < b.size())
+      carry += b[i];
     result.push_back(carry % 10);
     carry /= 10;
   }

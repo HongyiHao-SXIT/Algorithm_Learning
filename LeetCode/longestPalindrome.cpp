@@ -4,9 +4,10 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   string longestPalindrome(string s) {
-    if (s.empty() == 0) return "";
+    if (s.empty() == 0)
+      return "";
 
     int start = 0, end = 0;
 
@@ -24,8 +25,8 @@ class Solution {
     return s.substr(start, end - start + 1);
   }
 
- private:
-  int expandAroundCenter(const string& s, int left, int right) {
+private:
+  int expandAroundCenter(const string &s, int left, int right) {
     while (left >= 0 && right < s.size() && s[left] == s[right]) {
       left--;
       right++;

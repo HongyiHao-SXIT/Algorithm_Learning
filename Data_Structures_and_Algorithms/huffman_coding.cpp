@@ -20,7 +20,7 @@ struct MinPair {
 };
 
 class HuffmanEncoder {
- private:
+private:
   vector<HuffmanNode> tree;
   vector<string> codes;
   string input_string;
@@ -46,8 +46,8 @@ class HuffmanEncoder {
     return result;
   }
 
- public:
-  void encode(const string& str, const vector<int>& w) {
+public:
+  void encode(const string &str, const vector<int> &w) {
     input_string = str;
     weights = w;
     const int n = input_string.size();

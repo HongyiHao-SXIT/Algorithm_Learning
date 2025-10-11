@@ -4,13 +4,15 @@
 using namespace std;
 
 void printPattern(int N) {
-  if (N == 0) return;
+  if (N == 0)
+    return;
 
   for (int i = 1; i <= N; i++) {
     for (int j = 1; j <= N; j++) {
       int value = min(min(i, N - i + 1), min(j, N - j + 1));
       cout << value;
-      if (j < N) cout << " ";
+      if (j < N)
+        cout << " ";
     }
     cout << endl;
   }
