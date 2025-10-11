@@ -31,5 +31,5 @@ void find_max(int arr[]) {
   std::cout << std::endl;
 
   std::cout << "The largest number is: " << max << std::endl
-       << "The position of this number is: " << position << std::endl;
+            << "The position of this number is: " << position << std::endl;
 }

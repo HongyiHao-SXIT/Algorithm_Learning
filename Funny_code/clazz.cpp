@@ -10,7 +10,7 @@ class Clock {
 
   void showTime() {
     std::cout << "Current time is: " << hour << ":" << minute << ":" << second
-         << std::endl;
+              << std::endl;
   }
 
  private:
