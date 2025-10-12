@@ -1,28 +1,28 @@
-#include <algorithm>
 #include <iostream>
+#include <algorithm>
 
-using namespace std;
-
-void printPattern(int N) {
-  if (N == 0)
-    return;
-
-  for (int i = 1; i <= N; i++) {
-    for (int j = 1; j <= N; j++) {
-      int value = min(min(i, N - i + 1), min(j, N - j + 1));
-      cout << value;
-      if (j < N)
-        cout << " ";
+void printPattern(int size) {
+    if (size == 0) {
+        return;
     }
-    cout << endl;
-  }
-  cout << endl;
+
+    for (int row = 1; row <= size; ++row) {
+        for (int col = 1; col <= size; ++col) {
+            int value = std::min(std::min(row, size - row + 1), std::min(col, size - col + 1));
+            std::cout << value;
+            if (col < size) {
+                std::cout << " ";
+            }
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
 }
 
 int main() {
-  int N;
-  while (cin >> N && N != 0) {
-    printPattern(N);
-  }
-  return 0;
+    int n;
+    while (std::cin >> n && n != 0) {
+        printPattern(n);
+    }
+    return 0;
 }

@@ -1,24 +1,24 @@
 #include <iostream>
-using namespace std;
 
 int main() {
-  int *pc, c;
+    int* pointerC;
+    int valueC;
 
-  c = 5;
-  cout << "Address of c (&c): " << &c << endl;
-  cout << "Value of c (c): " << c << endl << endl;
+    valueC = 5;
+    std::cout << "Address of valueC (&valueC): " << &valueC << '\n';
+    std::cout << "Value of valueC: " << valueC << "\n\n";
 
-  pc = &c;
-  cout << "Pointer pc holds address (pc): " << pc << endl;
-  cout << "Value at address held by pc (*pc): " << *pc << endl << endl;
+    pointerC = &valueC;
+    std::cout << "Pointer pointerC holds address: " << pointerC << '\n';
+    std::cout << "Value at address held by pointerC (*pointerC): " << *pointerC << "\n\n";
 
-  c = 11;
-  cout << "Pointer pc holds address (pc): " << pc << endl;
-  cout << "Value at address held by pc (*pc): " << *pc << endl << endl;
+    valueC = 11;
+    std::cout << "Pointer pointerC still holds address: " << pointerC << '\n';
+    std::cout << "Updated value via pointer (*pointerC): " << *pointerC << "\n\n";
 
-  *pc = 2;
-  cout << "Address of c (&c): " << &c << endl;
-  cout << "Value of c (c): " << c << endl;
+    *pointerC = 2;
+    std::cout << "Address of valueC (&valueC): " << &valueC << '\n';
+    std::cout << "Final value of valueC: " << valueC << '\n';
 
-  return 0;
+    return 0;
 }

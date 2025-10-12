@@ -1,40 +1,38 @@
-#include <algorithm>
 #include <iostream>
 #include <string>
 #include <vector>
-
-using namespace std;
+#include <algorithm>
 
 struct Candidate {
-  int id;
-  string votes;
+    int candidateId;
+    std::string votes;
 };
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n;
-  cin >> n;
+    int candidateCount;
+    std::cin >> candidateCount;
 
-  vector<Candidate> candidates(n);
+    std::vector<Candidate> candidates(candidateCount);
 
-  for (int i = 0; i < n; ++i) {
-    candidates[i].id = i + 1;
-    cin >> candidates[i].votes;
-  }
-
-  auto compare = [](const Candidate &a, const Candidate &b) {
-    if (a.votes.length() != b.votes.length()) {
-      return a.votes.length() > b.votes.length();
+    for (int i = 0; i < candidateCount; ++i) {
+        candidates[i].candidateId = i + 1;
+        std::cin >> candidates[i].votes;
     }
-    return a.votes > b.votes;
-  };
 
-  sort(candidates.begin(), candidates.end(), compare);
+    auto compareVotes = [](const Candidate &a, const Candidate &b) {
+        if (a.votes.length() != b.votes.length()) {
+            return a.votes.length() > b.votes.length();
+        }
+        return a.votes > b.votes;
+    };
 
-  cout << candidates[0].id << '\n';
-  cout << candidates[0].votes << endl;
+    std::sort(candidates.begin(), candidates.end(), compareVotes);
 
-  return 0;
+    std::cout << candidates[0].candidateId << '\n';
+    std::cout << candidates[0].votes << std::endl;
+
+    return 0;
 }

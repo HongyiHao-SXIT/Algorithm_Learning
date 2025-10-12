@@ -1,45 +1,49 @@
-#include <algorithm>
-#include <cstring>
 #include <iostream>
-using namespace std;
-int main() {
-  int a, b, c, d, e, f;
-  cin >> a >> b >> c >> d;
-  if (a > c) {
-    if (b > d) {
-      e = (c + 24) - a - 1;
-      f = (d + 60) - b;
-    } else if (b < d) {
-      e = (c + 24) - a;
-      f = d - b;
-    } else if (b == d) {
-      e = (c + 24) - a;
-      f = 0;
-    }
-  } else if (a < c) {
-    if (b > d) {
-      e = c - a - 1;
-      f = (d + 60) - b;
-    } else if (b < d) {
-      e = c - a;
-      f = d - b;
-    } else if (b == d) {
-      e = c - a;
-      f = 0;
-    }
-  } else if (a == c) {
-    if (b > d) {
-      e = (c + 24) - a - 1;
-      f = (d + 60) - b;
-    } else if (b < d) {
-      e = 0;
-      f = d - b;
-    } else if (b == d) {
-      e = 24;
-      f = 0;
-    }
-  }
 
-  printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)", e, f);
-  return 0;
+int main() {
+    int startHour, startMinute, endHour, endMinute;
+    int durationHour, durationMinute;
+
+    std::cin >> startHour >> startMinute >> endHour >> endMinute;
+
+    if (startHour > endHour) {
+        if (startMinute > endMinute) {
+            durationHour = (endHour + 24) - startHour - 1;
+            durationMinute = (endMinute + 60) - startMinute;
+        } else if (startMinute < endMinute) {
+            durationHour = (endHour + 24) - startHour;
+            durationMinute = endMinute - startMinute;
+        } else {
+            durationHour = (endHour + 24) - startHour;
+            durationMinute = 0;
+        }
+    } else if (startHour < endHour) {
+        if (startMinute > endMinute) {
+            durationHour = endHour - startHour - 1;
+            durationMinute = (endMinute + 60) - startMinute;
+        } else if (startMinute < endMinute) {
+            durationHour = endHour - startHour;
+            durationMinute = endMinute - startMinute;
+        } else {
+            durationHour = endHour - startHour;
+            durationMinute = 0;
+        }
+    } else {
+        if (startMinute > endMinute) {
+            durationHour = (endHour + 24) - startHour - 1;
+            durationMinute = (endMinute + 60) - startMinute;
+        } else if (startMinute < endMinute) {
+            durationHour = 0;
+            durationMinute = endMinute - startMinute;
+        } else {
+            durationHour = 24;
+            durationMinute = 0;
+        }
+    }
+
+    std::cout << "O JOGO DUROU " << durationHour 
+         << " HORA(S) E " << durationMinute 
+         << " MINUTO(S)" << std::endl;
+
+    return 0;
 }

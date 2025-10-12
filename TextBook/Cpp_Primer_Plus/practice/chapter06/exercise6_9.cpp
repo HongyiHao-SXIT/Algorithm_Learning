@@ -17,10 +17,10 @@ int main() {
   int contribute_num = 0;
   cout << "Enter a file name: ";
 
-  getline(cin, file_name); // 读一整行，行末回车符排除
+  getline(cin, file_name); // Read an entire line, excluding carriage returns at the end of the line
   in_file_handle.open(file_name.c_str());
   in_file_handle >> contribute_num;
-  in_file_handle.get(); // 读掉空白(包括滞留在行末的回车符)
+  in_file_handle.get(); // Read out the whitespace (including carriage returns stuck at the end of the line)
 
   Patron *p_contribution = new Patron[contribute_num];
   for (int i = 0; i < contribute_num; ++i) {
@@ -37,7 +37,7 @@ int main() {
      */
     getline(in_file_handle, p_contribution[i].name);
     in_file_handle >> p_contribution[i].amount;
-    in_file_handle.get(); // 读掉空白(包括滞留在行末的回车符)
+    in_file_handle.get(); // Read out the whitespace (including carriage returns stuck at the end of the line)
   }
   in_file_handle.close();
 

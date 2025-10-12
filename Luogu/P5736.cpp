@@ -4,8 +4,6 @@
 #include <cstring>
 #include <iostream>
 
-using namespace std;
-
 bool isprime(int x) {
   if (x <= 1)
     return false;
@@ -18,12 +16,12 @@ bool isprime(int x) {
 
 int main() {
   int n, a;
-  cin >> n;
+  std::cin >> n;
 
   for (int i = 1; i <= n; i++) {
-    cin >> a;
+    std::cin >> a;
     if (isprime(a)) {
-      cout << a << " ";
+      std::cout << a << " ";
     }
   }
 

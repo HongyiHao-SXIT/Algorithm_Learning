@@ -1,6 +1,5 @@
 #include <iostream>
 
-using namespace std;
 
 int Fibonacci(int n) {
   if (n == 0)
@@ -12,9 +11,9 @@ int Fibonacci(int n) {
 
 int main() {
   int num;
-  cout << "Please enter the number you want to know: " << endl;
-  cin >> num;
+  std::cout << "Please enter the number you want to know: " << std::endl;
+  std::cin >> num;
 
-  cout << "The number is " << Fibonacci(num) << endl;
+  std::cout << "The number is " << Fibonacci(num) << std::endl;
   return 0;
 }

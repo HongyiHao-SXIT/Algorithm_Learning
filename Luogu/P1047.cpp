@@ -1,37 +1,38 @@
-#include <algorithm>
 #include <iostream>
 #include <vector>
-
-using namespace std;
+#include <algorithm>
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int l, m;
-  cin >> l >> m;
+    int totalLength, intervalCount;
+    std::cin >> totalLength >> intervalCount;
 
-  vector<pair<int, int>> intervals(m);
-  for (auto &interval : intervals) {
-    cin >> interval.first >> interval.second;
-  }
-
-  sort(intervals.begin(), intervals.end());
-
-  int remaining = l + 1;
-  int last = -1;
-
-  for (const auto &[u, v] : intervals) {
-    if (u > last) {
-      remaining -= (v - u + 1);
-      last = v;
-    } else if (v > last) {
-      remaining -= (v - last);
-      last = v;
+    std::vector<std::pair<int, int>> intervals(intervalCount);
+    for (auto &interval : intervals) {
+        std::cin >> interval.first >> interval.second;
     }
-  }
 
-  cout << remaining << endl;
+    std::sort(intervals.begin(), intervals.end());
 
-  return 0;
+    int remainingLength = totalLength + 1;
+    int lastCovered = -1;
+
+    for (const auto &interval : intervals) {
+        int start = interval.first;
+        int end = interval.second;
+
+        if (start > lastCovered) {
+            remainingLength -= (end - start + 1);
+            lastCovered = end;
+        } else if (end > lastCovered) {
+            remainingLength -= (end - lastCovered);
+            lastCovered = end;
+        }
+    }
+
+    std::cout << remainingLength << "\n";
+
+    return 0;
 }

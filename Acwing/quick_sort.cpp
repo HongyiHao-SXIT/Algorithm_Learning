@@ -1,50 +1,48 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace std;
+const int MAX_SIZE = 1'000'010;
+int numbers[MAX_SIZE];
 
-const int N = 1'000'010;
-int q[N];
+void quickSort(int arr[], int left, int right) {
+    if (left >= right)
+        return;
 
-void quick_sort(int q[], int l, int r) {
-  if (l >= r)
-    return;
+    int i = left - 1, j = right + 1;
+    int pivot = arr[(left + right) / 2];
 
-  int i = l - 1, j = r + 1;
-  int pivot = q[(l + r) / 2];
+    while (i < j) {
+        do {
+            i++;
+        } while (arr[i] < pivot);
 
-  while (i < j) {
-    do {
-      i++;
-    } while (q[i] < pivot);
+        do {
+            j--;
+        } while (arr[j] > pivot);
 
-    do {
-      j--;
-    } while (q[j] > pivot);
-
-    if (i < j) {
-      swap(q[i], q[j]);
+        if (i < j) {
+            std::swap(arr[i], arr[j]);
+        }
     }
-  }
 
-  quick_sort(q, l, j);
-  quick_sort(q, j + 1, r);
+    quickSort(arr, left, j);
+    quickSort(arr, j + 1, right);
 }
 
 int main() {
-  int n;
-  scanf("%d", &n);
+    int n;
+    std::scanf("%d", &n);
 
-  for (int i = 0; i < n; i++) {
-    scanf("%d", &q[i]);
-  }
+    for (int i = 0; i < n; i++) {
+        std::scanf("%d", &numbers[i]);
+    }
 
-  quick_sort(q, 0, n - 1);
+    quickSort(numbers, 0, n - 1);
 
-  for (int i = 0; i < n; i++) {
-    printf("%d ", q[i]);
-  }
-  putchar('\n');
+    for (int i = 0; i < n; i++) {
+        std::printf("%d ", numbers[i]);
+    }
+    std::putchar('\n');
 
-  return 0;
+    return 0;
 }

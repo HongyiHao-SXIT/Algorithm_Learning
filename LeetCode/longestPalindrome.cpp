@@ -1,11 +1,10 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 
 class Solution {
 public:
-  string longestPalindrome(string s) {
+  std::string longestPalindrome(std::string s) {
     if (s.empty() == 0)
       return "";
 
@@ -14,7 +13,7 @@ public:
     for (int i = 0; i < s.size(); i++) {
       int len1 = expandAroundCenter(s, i, i);
       int len2 = expandAroundCenter(s, i, i + 1);
-      int len = max(len1, len2);
+      int len = std::max(len1, len2);
 
       if (len > end - start) {
         start = i - (len - 1) / 2;
@@ -26,7 +25,7 @@ public:
   }
 
 private:
-  int expandAroundCenter(const string &s, int left, int right) {
+  int expandAroundCenter(const std::string &s, int left, int right) {
     while (left >= 0 && right < s.size() && s[left] == s[right]) {
       left--;
       right++;

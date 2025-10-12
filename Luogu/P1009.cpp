@@ -2,10 +2,9 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
 
-vector<int> multiply(const vector<int> &a, int b) {
-  vector<int> result;
+std::vector<int> multiply(const std::vector<int> &a, int b) {
+  std::vector<int> result;
   int carry = 0;
 
   for (size_t i = 0; i < a.size() || carry; ++i) {
@@ -23,8 +22,8 @@ vector<int> multiply(const vector<int> &a, int b) {
   return result;
 }
 
-vector<int> add(const vector<int> &a, const vector<int> &b) {
-  vector<int> result;
+std::vector<int> add(const std::vector<int> &a, const std::vector<int> &b) {
+  std::vector<int> result;
   int carry = 0;
 
   for (size_t i = 0; i < a.size() || i < b.size() || carry; ++i) {
@@ -40,14 +39,14 @@ vector<int> add(const vector<int> &a, const vector<int> &b) {
 }
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
 
   int n;
-  cin >> n;
+  std::cin >> n;
 
-  vector<int> sum(1, 0);
-  vector<int> factorial(1, 1);
+  std::vector<int> sum(1, 0);
+  std::vector<int> factorial(1, 1);
 
   for (int i = 1; i <= n; ++i) {
     factorial = multiply(factorial, i);
@@ -55,9 +54,9 @@ int main() {
   }
 
   for (auto it = sum.rbegin(); it != sum.rend(); ++it) {
-    cout << *it;
+    std::cout << *it;
   }
-  cout << '\n';
+  std::cout << '\n';
 
   return 0;
 }

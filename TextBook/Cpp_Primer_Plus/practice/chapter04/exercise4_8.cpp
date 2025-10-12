@@ -19,9 +19,9 @@ int main() {
   cout << "Enter the weight of pizza: ";
   cin >> pizza->weight;
 
-  // 注意上语句输入完 weight 后，回车键留在输入流中，以下的 getline
-  // 碰到输入流中的回车就以为结束了，所以如果没有这个 cin.get() 先读
-  // 取回车，那么用户永远获得 company 的值。
+  // Note that after entering weight in the above statement, the Enter key remains in the input stream. The following getline
+  // When it encounters a carriage return in the input stream, it is considered to be over, so if there is no such cin.get(), read first
+  // Get the carriage, then the user will always get the value of company.
   cin.get();
 
   cout << "Enter the pizza company: ";

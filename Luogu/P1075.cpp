@@ -1,30 +1,34 @@
-#include <cmath>
 #include <iostream>
+#include <cmath>
 
-using namespace std;
+int computeSmallestFactor(int number) {
+    if (number % 2 == 0) {
+        return number / 2;
+    }
 
-int find_smallest_factor(int n) {
-  if (n % 2 == 0)
-    return n / 2;
-  for (int i = 3; i <= sqrt(n); i += 2) {
-    if (n % i == 0)
-      return n / i;
+    for (int divisor = 3; divisor <= std::sqrt(number); divisor += 2) {
+        if (number % divisor == 0) {
+            return number / divisor;
+        }
+    }
+
+    return 1;
   }
-  return 1;
-}
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n;
-  cin >> n;
+    int n;
+    std::cin >> n;
 
-  if (n == 1) {
-    cout << 1 << endl;
+    if (n == 1) {
+        std::cout << 1 << "\n";
+        return 0;
+    }
+
+    int result = computeSmallestFactor(n);
+    std::cout << result << "\n";
+
     return 0;
-  }
-
-  cout << find_smallest_factor(n) << endl;
-  return 0;
 }

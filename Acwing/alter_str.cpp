@@ -3,37 +3,35 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-
 int main() {
-  string inputLine;
-  string targetWord;
-  string replacementWord;
+    std::string inputLine;
+    std::string targetWord;
+    std::string replacementWord;
 
-  getline(cin, inputLine);
-  cin >> targetWord >> replacementWord;
+    std::getline(std::cin, inputLine);
+    std::cin >> targetWord >> replacementWord;
 
-  vector<string> wordList;
-  string currentWord;
-  stringstream stringStream(inputLine);
+    std::vector<std::string> wordList;
+    std::string currentWord;
+    std::stringstream stringStream(inputLine);
 
-  while (stringStream >> currentWord) {
-    wordList.push_back(currentWord);
-  }
-
-  for (auto &word : wordList) {
-    if (word == targetWord) {
-      word = replacementWord;
+    while (stringStream >> currentWord) {
+        wordList.push_back(currentWord);
     }
-  }
 
-  for (size_t i = 0; i < wordList.size(); ++i) {
-    if (i != 0) {
-      cout << " ";
+    for (auto &word : wordList) {
+        if (word == targetWord) {
+            word = replacementWord;
+        }
     }
-    cout << wordList[i];
-  }
-  cout << endl;
 
-  return 0;
+    for (size_t i = 0; i < wordList.size(); ++i) {
+        if (i != 0) {
+            std::cout << " ";
+        }
+        std::cout << wordList[i];
+    }
+    std::cout << std::endl;
+
+    return 0;
 }

@@ -1,93 +1,91 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
-class Furry {
+class FurryCharacter {
 private:
-  string name;
-  double comment;
+    std::string name_;
+    double favorability_;
 
 public:
-  string getName() { return name; }
+    FurryCharacter() : name_(""), favorability_(0.0) {}
+    std::string getName() const { return name_; }
+    void setName(const std::string& name) { name_ = name; }
 
-  void setName(string name) { this->name = name; }
-
-  double getComment() { return comment; }
-
-  void setComment(double comment) { this->comment += comment; }
-
-  Furry() {
-    name = "";
-    comment = 0;
-  }
+    double getFavorability() const { return favorability_; }
+    void adjustFavorability(double delta) { favorability_ += delta; }
 };
 
-void menu() {
-  cout << "1. 为狐狐解决学业/生活/创业问题" << endl;
-  cout << "2. 给狐狐陪伴" << endl;
-  cout << "3. 抚慰狐狐内心的创伤" << endl;
-  cout << "4. 退出" << endl;
+void displayMenu() {
+    std::cout << "1. Solve academic/life/entrepreneurial problems for Huhu\n";
+    std::cout << "2. Accompany Huhu\n";
+    std::cout << "3. Soothe the inner trauma of the fox\n";
+    std::cout << "4. Exit\n";
 }
 
 int main() {
-  Furry fox, wolf;
-  int wolf_activity;
-  fox.setName("Lanyi_adict");
-  wolf.setName("Wolf_MoMo");
+    FurryCharacter fox;
+    FurryCharacter wolf;
 
-  cout << "请输入" << fox.getName()
-       << "对狼的初始好感值（正数为好感/负数为恶意）：";
-  double fox_comment;
-  if (!(cin >> fox_comment)) {
-    cout << fox.getName() << "正在潜行并坐着睡觉。" << endl;
-    cin.clear();
-    cin.ignore(10000, '\n');
-    return 0;
-  }
-  fox.setComment(fox_comment);
+    fox.setName("Lanyi_adict");
+    wolf.setName("Wolf_MoMo");
 
-  if (fox.getComment() < 0) {
-    cout << "坏" << fox.getName() << "（好感值为负数)" << endl;
-  } else if (fox.getComment() > 0) {
-    cout << "好" << fox.getName() << "（好感值为正数)" << endl;
-  } else {
-    cout << fox.getName() << "正在潜行并坐着睡觉。" << endl;
-  }
+    std::cout << "Please enter " << fox.getName()
+              << "'s initial favorability value towards the wolf "
+                 "(positive means favorability, negative means malice): ";
 
-  do {
-    menu();
-    cout << "请选择狼的行动：";
-    cin >> wolf_activity;
-
-    switch (wolf_activity) {
-    case 1:
-      fox.setComment(1.0);
-      cout << fox.getName() << "的好感度增加了 1.0,当前好感度为："
-           << fox.getComment() << endl;
-      break;
-    case 2:
-      fox.setComment(2.0);
-      cout << fox.getName() << "的好感度增加了 2.0,当前好感度为："
-           << fox.getComment() << endl;
-      break;
-    case 3:
-      fox.setComment(5.0);
-      cout << fox.getName() << "的好感度增加了 5.0,当前好感度为："
-           << fox.getComment() << endl;
-      break;
-    case 4:
-      cout << "退出程序。" << endl;
-      break;
-    default:
-      cout << "无效的选择，请重新输入。" << endl;
+    double initialFavor;
+    if (!(std::cin >> initialFavor)) {
+        std::cout << fox.getName() << " sneaks away and goes back to sleep.\n";
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        return 0;
     }
-  } while (wolf_activity != 4);
 
-  if (fox.getComment() >= 100) {
-    cout << "我们在一起吧" << endl;
-  } else {
-    cout << "还需要努力哦" << endl;
-  }
+    fox.adjustFavorability(initialFavor);
 
-  return 0;
+    if (fox.getFavorability() < 0) {
+        std::cout << "Bad " << fox.getName() << " (negative favorability)\n";
+    } else if (fox.getFavorability() > 0) {
+        std::cout << "Good " << fox.getName() << " (positive favorability)\n";
+    } else {
+        std::cout << fox.getName() << " sneaks away and goes back to sleep.\n";
+    }
+
+    int wolfAction = 0;
+    do {
+        displayMenu();
+        std::cout << "Please choose the wolf's action: ";
+        std::cin >> wolfAction;
+
+        switch (wolfAction) {
+        case 1:
+            fox.adjustFavorability(1.0);
+            std::cout << fox.getName() << "'s favorability increased by 1.0, "
+                      << "current favorability: " << fox.getFavorability() << '\n';
+            break;
+        case 2:
+            fox.adjustFavorability(2.0);
+            std::cout << fox.getName() << "'s favorability increased by 2.0, "
+                      << "current favorability: " << fox.getFavorability() << '\n';
+            break;
+        case 3:
+            fox.adjustFavorability(5.0);
+            std::cout << fox.getName() << "'s favorability increased by 5.0, "
+                      << "current favorability: " << fox.getFavorability() << '\n';
+            break;
+        case 4:
+            std::cout << "Exiting program.\n";
+            break;
+        default:
+            std::cout << "Invalid selection, please try again.\n";
+        }
+    } while (wolfAction != 4);
+
+    if (fox.getFavorability() >= 100.0) {
+        std::cout << "Let's be together ❤️\n";
+    } else {
+        std::cout << "Still need to work harder 🐺\n";
+    }
+
+    return 0;
 }

@@ -1,76 +1,75 @@
 #include <iostream>
-using namespace std;
 
-const int N = 100010;
+const int MAX_NODES = 100010;
 
 struct Node {
-  int val;
-  int next;
-} nodes[N];
+    int value;
+    int next;
+};
 
-int head = -1;
-int idx = 0;
-int insert_idx = 0;
+Node nodes[MAX_NODES];
 
-void init() {
-  head = -1;
-  idx = 0;
-  insert_idx = 0;
+int headIndex = -1;
+int nodeCount = 0;
+
+void initialize() {
+    headIndex = -1;
+    nodeCount = 0;
 }
 
-void insert_head(int x) {
-  nodes[idx].val = x;
-  nodes[idx].next = head;
-  head = idx;
-  insert_idx++;
-  idx++;
+void insertAtHead(int value) {
+    nodes[nodeCount].value = value;
+    nodes[nodeCount].next = headIndex;
+    headIndex = nodeCount;
+    nodeCount++;
 }
 
-void delete_after_k(int k) {
-  if (k == 0) {
-    head = nodes[head].next;
-  } else {
-    int pos = k - 1;
-    nodes[pos].next = nodes[nodes[pos].next].next;
-  }
+void deleteAfterK(int k) {
+    if (k == 0) {
+        headIndex = nodes[headIndex].next;
+    } else {
+        int prevIndex = k - 1;
+        nodes[prevIndex].next = nodes[nodes[prevIndex].next].next;
+    }
 }
 
-void insert_after_k(int k, int x) {
-  int pos = k - 1;
-  nodes[idx].val = x;
-  nodes[idx].next = nodes[pos].next;
-  nodes[pos].next = idx;
-  insert_idx++;
-  idx++;
+void insertAfterK(int k, int value) {
+    int prevIndex = k - 1;
+    nodes[nodeCount].value = value;
+    nodes[nodeCount].next = nodes[prevIndex].next;
+    nodes[prevIndex].next = nodeCount;
+    nodeCount++;
 }
 
 int main() {
-  init();
-  int M;
-  cin >> M;
+    initialize();
 
-  while (M--) {
-    char op;
-    cin >> op;
+    int operationCount;
+    std::cin >> operationCount;
 
-    if (op == 'H') {
-      int x;
-      cin >> x;
-      insert_head(x);
-    } else if (op == 'D') {
-      int k;
-      cin >> k;
-      delete_after_k(k);
-    } else if (op == 'I') {
-      int k, x;
-      cin >> k >> x;
-      insert_after_k(k, x);
+    while (operationCount--) {
+        char operation;
+        std::cin >> operation;
+
+        if (operation == 'H') {
+            int value;
+            std::cin >> value;
+            insertAtHead(value);
+        } else if (operation == 'D') {
+            int k;
+            std::cin >> k;
+            deleteAfterK(k);
+        } else if (operation == 'I') {
+            int k, value;
+            std::cin >> k >> value;
+            insertAfterK(k, value);
+        }
     }
-  }
 
-  for (int i = head; i != -1; i = nodes[i].next) {
-    cout << nodes[i].val << " ";
-  }
+    for (int i = headIndex; i != -1; i = nodes[i].next) {
+        std::cout << nodes[i].value << " ";
+    }
+    std::cout << std::endl;
 
-  return 0;
+    return 0;
 }

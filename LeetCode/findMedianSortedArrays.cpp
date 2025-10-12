@@ -1,11 +1,9 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
 class Solution {
 public:
-  double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
+  double findMedianSortedArrays(std::vector<int> &nums1, std::vector<int> &nums2) {
     int m = nums1.size();
     int n = nums2.size();
 
@@ -29,7 +27,7 @@ public:
         } else if (j == 0) {
           max_of_left = nums1[i - 1];
         } else {
-          max_of_left = max(nums1[i - 1], nums2[j - 1]);
+          max_of_left = std::max(nums1[i - 1], nums2[j - 1]);
         }
 
         if ((m + n) % 2 == 1) {
@@ -42,7 +40,7 @@ public:
         } else if (j == n) {
           min_of_right = nums1[i];
         } else {
-          min_of_right = min(nums1[i], nums2[j]);
+          min_of_right = std::min(nums1[i], nums2[j]);
         }
 
         return (max_of_left + min_of_right) / 2.0;

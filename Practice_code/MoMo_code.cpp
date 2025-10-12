@@ -115,7 +115,7 @@ int main() {
   wolf.addCompetition(CompetitionLevel::National);
   wolf.addAchievement(AchievementType::SoftwareCopyright);
 
-  std::cout << "当前声望: " << wolf.getReputation() << std::endl;
+  std::cout << "Current reputation: " << wolf.getReputation() << std::endl;
 
   return 0;
 }

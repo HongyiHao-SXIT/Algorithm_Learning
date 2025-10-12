@@ -15,7 +15,7 @@ int main() {
   int contribute_num = 0;
   cout << "Enter the number of contributor: ";
   cin >> contribute_num;
-  cin.get(); // 读取输入流中的回车符
+  cin.get(); //Read the carriage return character in the input stream
 
   Patron *p_contribution = new Patron[contribute_num];
   for (int i = 0; i < contribute_num; ++i) {
@@ -24,7 +24,7 @@ int main() {
 
     cout << "Enter the amount of donation: ";
     cin >> p_contribution[i].amount;
-    cin.get(); // 读取输入流中的回车符
+    cin.get(); //Read the carriage return character in the input stream
   }
 
   unsigned int grand_amount_n = 0;

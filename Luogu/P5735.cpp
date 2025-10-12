@@ -2,8 +2,6 @@
 #include <iomanip>
 #include <iostream>
 
-using namespace std;
-
 constexpr double calculateDistance(double x1, double y1, double x2,
                                    double y2) noexcept {
   const double dx = x1 - x2;
@@ -13,7 +11,7 @@ constexpr double calculateDistance(double x1, double y1, double x2,
 
 int main() {
   ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+  std::cin.tie(nullptr);
 
   struct Point {
     double x, y;
@@ -26,7 +24,7 @@ int main() {
                            calculateDistance(p2.x, p2.y, p3.x, p3.y) +
                            calculateDistance(p3.x, p3.y, p1.x, p1.y);
 
-  cout << fixed << setprecision(2) << perimeter << '\n';
+  std::cout << std::fixed << std::setprecision(2) << perimeter << '\n';
 
   return 0;
 }

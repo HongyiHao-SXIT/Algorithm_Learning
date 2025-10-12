@@ -1,24 +1,29 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <iostream>
+#include <algorithm>
 
 const int MAX_SIZE = 2000000;
-int a[MAX_SIZE];
-int n, m;
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+    int numbers[MAX_SIZE];
+    int totalNumbers, unusedN;
 
-  cin >> n >> m;
-  for (int i = 0; i < m; ++i) {
-    cin >> a[i];
-  }
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  sort(a, a + m);
+    std::cin >> totalNumbers >> unusedN;
+    for (int i = 0; i < unusedN; ++i) {
+        std::cin >> numbers[i];
+    }
 
-  for (int i = 0; i < m; ++i) {
-    cout << a[i] << " \n"[i == m - 1];
-  }
+    std::sort(numbers, numbers + unusedN);
 
-  return 0;
+    for (int i = 0; i < unusedN; ++i) {
+        std::cout << numbers[i];
+        if (i != unusedN - 1) {
+            std::cout << " ";
+        }
+    }
+    std::cout << std::endl;
+
+    return 0;
 }

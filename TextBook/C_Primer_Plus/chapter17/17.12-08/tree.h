@@ -8,7 +8,7 @@ typedef struct kind {
   char petkind[SLEN];
   struct kind *next;
 } Kind;
-// 在二叉树接口中添加列表保存同名不同类的宠物;
+// Add a list to the binary tree interface to save pets of different types with the same name;
 
 typedef struct item {
   char petname[SLEN];

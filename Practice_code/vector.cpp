@@ -2,17 +2,16 @@
 #include <string>
 #include <vector>
 
-using namespace std;
 
 int main() {
-  vector<string> websites;
+  std::vector<std::string> websites;
 
   websites.push_back("nhooo");
   websites.push_back(".com");
 
-  for (vector<string>::iterator it = websites.begin(); it != websites.end();
+  for (std::vector<std::string>::iterator it = websites.begin(); it != websites.end();
        ++it) {
-    cout << *it;
+    std::cout << *it;
   }
 
   return 0;

@@ -1,63 +1,57 @@
-#include <algorithm>
 #include <iostream>
 #include <vector>
-
-using namespace std;
+#include <algorithm>
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n;
-  cin >> n;
+    int ticketCount;
+    std::cin >> ticketCount;
 
-  vector<int> winning_numbers(7);
-  for (int &num : winning_numbers) {
-    cin >> num;
-  }
-  sort(winning_numbers.begin(), winning_numbers.end());
-
-  vector<int> awards(7);
-
-  while (n--) {
-    vector<int> ticket(7);
-    for (int &num : ticket) {
-      cin >> num;
+    std::vector<int> winningNumbers(7);
+    for (int &num : winningNumbers) {
+        std::cin >> num;
     }
-    sort(ticket.begin(), ticket.end());
+    std::sort(winningNumbers.begin(), winningNumbers.end());
 
-    vector<int> matches;
-    set_intersection(winning_numbers.begin(), winning_numbers.end(),
-                     ticket.begin(), ticket.end(), back_inserter(matches));
+    std::vector<int> awardCounts(7, 0);
 
-    switch (matches.size()) {
-    case 7:
-      awards[0]++;
-      break;
-    case 6:
-      awards[1]++;
-      break;
-    case 5:
-      awards[2]++;
-      break;
-    case 4:
-      awards[3]++;
-      break;
-    case 3:
-      awards[4]++;
-      break;
-    case 2:
-      awards[5]++;
-      break;
-    case 1:
-      awards[6]++;
-      break;
+    while (ticketCount--) {
+        std::vector<int> ticketNumbers(7);
+        for (int &num : ticketNumbers) {
+            std::cin >> num;
+        }
+        std::sort(ticketNumbers.begin(), ticketNumbers.end());
+
+        std::vector<int> matchedNumbers;
+        std::set_intersection(
+            winningNumbers.begin(), winningNumbers.end(),
+            ticketNumbers.begin(), ticketNumbers.end(),
+            std::back_inserter(matchedNumbers)
+        );
+
+        int matchCount = static_cast<int>(matchedNumbers.size());
+
+        switch (matchCount) {
+            case 7: awardCounts[0]++; break;
+            case 6: awardCounts[1]++; break;
+            case 5: awardCounts[2]++; break;
+            case 4: awardCounts[3]++; break;
+            case 3: awardCounts[4]++; break;
+            case 2: awardCounts[5]++; break;
+            case 1: awardCounts[6]++; break;
+        }
     }
-  }
 
-  for (int i = 0; i < 7; ++i) {
-    cout << awards[i] << " \n"[i == 6];
-  }
+    for (int i = 0; i < 7; ++i) {
+        std::cout << awardCounts[i];
+        if (i < 6) {
+            std::cout << " ";
+        } else {
+            std::cout << "\n";
+        }
+    }
 
-  return 0;
+    return 0;
 }

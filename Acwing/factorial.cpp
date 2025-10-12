@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int factorial(int n) {
   if (n == 0 || n == 1) {
@@ -10,7 +9,7 @@ int factorial(int n) {
 
 int main() {
   int num;
-  cin >> num;
-  cout << factorial(num) << endl;
+  std::cin >> num;
+  std::cout << factorial(num) << std::endl;
   return 0;
 }

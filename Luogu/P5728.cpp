@@ -2,15 +2,13 @@
 #include <cstdio>
 #include <iostream>
 
-using namespace std;
-
 int n, arr[1010][3], sum[1010];
 int cnt;
 
 int main() {
-  cin >> n;
+  std::cin >> n;
   for (int i = 0; i < n; i++) {
-    cin >> arr[i][0] >> arr[i][1] >> arr[i][2];
+    std::cin >> arr[i][0] >> arr[i][1] >> arr[i][2];
     sum[i] = arr[i][0] + arr[i][1] + arr[i][2];
   }
 
@@ -23,6 +21,6 @@ int main() {
     }
   }
 
-  cout << cnt << endl;
+  std::cout << cnt << std::endl;
   return 0;
 }
