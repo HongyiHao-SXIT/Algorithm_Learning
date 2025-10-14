@@ -10,7 +10,7 @@ constexpr double calculateDistance(double x1, double y1, double x2,
 }
 
 int main() {
-  ios::sync_with_stdio(false);
+  std::ios::sync_with_stdio(false);
   std::cin.tie(nullptr);
 
   struct Point {
@@ -18,7 +18,7 @@ int main() {
   };
   Point p1, p2, p3;
 
-  cin >> p1.x >> p1.y >> p2.x >> p2.y >> p3.x >> p3.y;
+  std::cin >> p1.x >> p1.y >> p2.x >> p2.y >> p3.x >> p3.y;
 
   const double perimeter = calculateDistance(p1.x, p1.y, p2.x, p2.y) +
                            calculateDistance(p2.x, p2.y, p3.x, p3.y) +

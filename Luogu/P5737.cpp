@@ -1,13 +1,12 @@
 #include <iostream>
 #include <vector>
 
-
 bool is_leap_year(int year) {
   return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 }
 
 int main() {
-  ios::sync_with_stdio(false);
+  std::ios::sync_with_stdio(false);
   std::cin.tie(nullptr);
 
   int begin, end;

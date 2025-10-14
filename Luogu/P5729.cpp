@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 
-
 struct Cube {
   int w, x, h;
   std::vector<std::vector<std::vector<int>>> data;
@@ -28,7 +27,7 @@ struct Cube {
 };
 
 int main() {
-  ios::sync_with_stdio(false);
+  std::ios::sync_with_stdio(false);
   std::cin.tie(nullptr);
 
   int w, x, h;

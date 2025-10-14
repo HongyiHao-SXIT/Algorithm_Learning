@@ -13,7 +13,6 @@ struct Graph {
     int edgeCount = 0;
 };
 
-// 函数声明
 void showMenu();
 void floydAlgorithm(const Graph& graph, std::vector<std::vector<int>>& dist, std::vector<std::vector<int>>& next);
 void showShortestPath(const Graph& graph, const std::vector<std::vector<int>>& dist, const std::vector<std::vector<int>>& next);
@@ -22,7 +21,6 @@ void createGraph(Graph& graph);
 void displayMap();
 void viewScenicSpot();
 
-// ---------------------- 主函数 ----------------------
 int main() {
     Graph campusGraph;
     std::vector<std::vector<int>> dist(MAX_VERTEX, std::vector<int>(MAX_VERTEX, MAX_COST));
@@ -61,7 +59,6 @@ int main() {
     return 0;
 }
 
-// ---------------------- 函数定义 ----------------------
 void showMenu() {
     std::cout << "---------------- Campus Guide System ----------------\n";
     std::cout << "1: Shortest path between two scenic spots\n";

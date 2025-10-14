@@ -1,7 +1,6 @@
 #include <cstdio>
 #include <cstring>
 
-
 int main() {
   char s[105];
   scanf("%s", s);

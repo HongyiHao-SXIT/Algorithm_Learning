@@ -1,30 +1,31 @@
 #include "account.h"
-
 #include <cmath>
 #include <iostream>
-using namespace std;
 
 double Account::total = 0.0;
 
 Account::Account(int date, int id, double rate)
     : id(id), balance(0), rate(rate), lastDate(date), accumulation(0) {
-  cout << date << "\t#" << id << " is created" << endl;
+  std::cout << date << "\t#" << id << " is created" << std::endl;
 }
 
 void Account::record(int date, double amount) {
   accumulation = accumulate(date);
   lastDate = date;
-  amount = floor(amount * 100 + 0.5) / 100;
+  amount = std::floor(amount * 100 + 0.5) / 100;
   balance += amount;
   total += amount;
-  cout << date << "\t#" << id << "\t" << amount << "\t" << balance << endl;
+  std::cout << date << "\t#" << id << "\t" << amount << "\t" << balance
+            << std::endl;
 }
 
-void Account::deposit(int date, double amount) { record(date, amount); }
+void Account::deposit(int date, double amount) {
+  record(date, amount);
+}
 
 void Account::withdraw(int date, double amount) {
   if (amount > balance) {
-    cout << "Error: insufficient funds" << endl;
+    std::cout << "Error: insufficient funds" << std::endl;
   } else {
     record(date, -amount);
   }
@@ -40,5 +41,5 @@ void Account::settle(int date) {
 }
 
 void Account::show() const {
-  cout << "#" << id << "\tBalance: " << balance << endl;
+  std::cout << "#" << id << "\tBalance: " << balance << std::endl;
 }

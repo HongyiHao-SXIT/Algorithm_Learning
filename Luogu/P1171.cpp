@@ -1,50 +1,53 @@
 #include <algorithm>
 #include <iostream>
 
-using namespace std;
+constexpr int MAX_SIZE = 1'000'010;
+int numbers[MAX_SIZE];
 
-const int N = 1e6 + 10;
+void quickSort(int arr[], int left, int right) {
+    if (left >= right) return;
 
-int q[N];
+    int i = left - 1;
+    int j = right + 1;
+    int pivotValue = arr[left + (right - left) / 2];
 
-void quick_sort(int q[], int l, int r) {
-  if (l >= r)
-    return;
+    while (i < j) {
+        do {
+            ++i;
+        } while (arr[i] < pivotValue);
 
-  int i = l - 1, j = r + 1;
-  int pivot = q[l + ((r - l) >> 1)];
+        do {
+            --j;
+        } while (arr[j] > pivotValue);
 
-  while (i < j) {
-    do
-      i++;
-    while (q[i] < pivot);
-    do
-      j--;
-    while (q[j] > pivot);
-    if (i < j)
-      swap(q[i], q[j]);
-  }
+        if (i < j) {
+            std::swap(arr[i], arr[j]);
+        }
+    }
 
-  quick_sort(q, l, j);
-  quick_sort(q, j + 1, r);
+    quickSort(arr, left, j);
+    quickSort(arr, j + 1, right);
 }
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(nullptr);
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-  int n;
-  cin >> n;
+    int n;
+    std::cin >> n;
 
-  for (int i = 0; i < n; ++i) {
-    cin >> q[i];
-  }
+    for (int i = 0; i < n; ++i) {
+        std::cin >> numbers[i];
+    }
 
-  quick_sort(q, 0, n - 1);
+    quickSort(numbers, 0, n - 1);
 
-  for (int i = 0; i < n; ++i) {
-    cout << q[i] << " \n"[i == n - 1];
-  }
+    for (int i = 0; i < n; ++i) {
+        std::cout << numbers[i];
+        if (i < n - 1)
+            std::cout << ' ';
+    }
+    std::cout << '\n';
 
-  return 0;
+    return 0;
 }

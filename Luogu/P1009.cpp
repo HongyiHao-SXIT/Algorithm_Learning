@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 
-
 std::vector<int> multiply(const std::vector<int> &a, int b) {
   std::vector<int> result;
   int carry = 0;

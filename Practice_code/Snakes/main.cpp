@@ -1,18 +1,18 @@
 #include <conio.h>
 #include <windows.h>
-
 #include <iostream>
 #include <vector>
-using namespace std;
+#include <utility>
+#include <cstdlib>
 
 const int width = 20;
 const int height = 20;
 
-enum Direction { STOP = 0, LEFT, RIGHT, UP, DOWN };
+enum class Direction { STOP = 0, LEFT, RIGHT, UP, DOWN };
 Direction dir;
 
-vector<pair<int, int>> snake;
-pair<int, int> food;
+std::vector<std::pair<int, int>> snake;
+std::pair<int, int> food;
 bool gameOver;
 
 void InitSnake() {
@@ -20,8 +20,8 @@ void InitSnake() {
   snake.push_back({10, 10});
   snake.push_back({9, 10});
   snake.push_back({8, 10});
-  dir = RIGHT;
-  food = {rand() % (width - 2) + 1, rand() % (height - 2) + 1};
+  dir = Direction::RIGHT;
+  food = {std::rand() % (width - 2) + 1, std::rand() % (height - 2) + 1};
   gameOver = false;
 }
 
@@ -31,26 +31,23 @@ void Draw() {
   for (int y = 0; y <= height; y++) {
     for (int x = 0; x <= width; x++) {
       if (x == 0 || x == width || y == 0 || y == height) {
-        cout << "#";
+        std::cout << "#";
       } else if (x == food.first && y == food.second) {
-        cout << "*";
+        std::cout << "*";
       } else {
         bool isSnake = false;
-        for (int i = 0; i < snake.size(); i++) {
+        for (size_t i = 0; i < snake.size(); i++) {
           if (snake[i].first == x && snake[i].second == y) {
-            if (i == 0)
-              cout << "O";
-            else
-              cout << "o";
+            std::cout << (i == 0 ? "O" : "o");
             isSnake = true;
             break;
           }
         }
         if (!isSnake)
-          cout << " ";
+          std::cout << " ";
       }
     }
-    cout << endl;
+    std::cout << std::endl;
   }
 }
 
@@ -58,41 +55,44 @@ void Input() {
   if (_kbhit()) {
     switch (_getch()) {
     case 'a':
-      if (dir != RIGHT)
-        dir = LEFT;
+      if (dir != Direction::RIGHT)
+        dir = Direction::LEFT;
       break;
     case 'd':
-      if (dir != LEFT)
-        dir = RIGHT;
+      if (dir != Direction::LEFT)
+        dir = Direction::RIGHT;
       break;
     case 'w':
-      if (dir != DOWN)
-        dir = UP;
+      if (dir != Direction::DOWN)
+        dir = Direction::UP;
       break;
     case 's':
-      if (dir != UP)
-        dir = DOWN;
+      if (dir != Direction::UP)
+        dir = Direction::DOWN;
       break;
     case 'x':
       gameOver = true;
+      break;
+    default:
       break;
     }
   }
 }
 
 void Logic() {
-  pair<int, int> head = snake[0];
+  std::pair<int, int> head = snake[0];
+
   switch (dir) {
-  case LEFT:
+  case Direction::LEFT:
     head.first--;
     break;
-  case RIGHT:
+  case Direction::RIGHT:
     head.first++;
     break;
-  case UP:
+  case Direction::UP:
     head.second--;
     break;
-  case DOWN:
+  case Direction::DOWN:
     head.second++;
     break;
   default:
@@ -105,7 +105,7 @@ void Logic() {
     return;
   }
 
-  for (int i = 1; i < snake.size(); i++) {
+  for (size_t i = 1; i < snake.size(); i++) {
     if (snake[i] == head) {
       gameOver = true;
       return;
@@ -115,7 +115,7 @@ void Logic() {
   snake.insert(snake.begin(), head);
 
   if (head == food) {
-    food = {rand() % (width - 2) + 1, rand() % (height - 2) + 1};
+    food = {std::rand() % (width - 2) + 1, std::rand() % (height - 2) + 1};
   } else {
     snake.pop_back();
   }
@@ -129,6 +129,6 @@ int main() {
     Logic();
     Sleep(100);
   }
-  cout << "Game Over!" << endl;
+  std::cout << "Game Over!" << std::endl;
   return 0;
 }
